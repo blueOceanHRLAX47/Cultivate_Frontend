@@ -20,7 +20,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 export const AllRecipesAndWorkouts = React.createContext();
 
 const App = () => {
-  const [view, setView] = useState('forum')
+  const [view, setView] = useState('workout')
   const [recipes, setRecipes] = useState()
 
 
