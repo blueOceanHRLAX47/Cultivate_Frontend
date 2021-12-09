@@ -7,25 +7,25 @@ import * as GiIcons from 'react-icons/gi';
 export const NavigationData = [
   {
     title: 'Calendar',
-    path: '/calendar',
+    path: '/',
     icon: <AiIcons.AiOutlineCalendar />,
     className: 'nav-text'
   },
   {
     title: 'Workout',
-    path: '/workout',
+    path: '/',
     icon: <AiIcons.AiOutlineCalendar />,
     className: 'nav-text'
   },
   {
     title: 'Recipes',
-    path: '/recipes',
+    path: '/',
     icon: <GiIcons.GiMeal />,
     className: 'nav-text'
   },
   {
     title: 'Forum',
-    path: '/forum',
+    path: '/',
     icon: <IoIcons.IoIosPeople />,
     className: 'nav-text'
   },

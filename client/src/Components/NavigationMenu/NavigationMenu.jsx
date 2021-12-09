@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { NavigationData } from './NavigationData.jsx';
 import './Navigation.css';
 
-const NavigationMenu = ({setView}) => {
+const NavigationMenu = ({ setView }) => {
   const [sidebar, setSidebar] = useState(false);
 
   const toggleSideBar = () => setSidebar(!sidebar);
@@ -19,7 +19,7 @@ const NavigationMenu = ({setView}) => {
     <>
       <div className='navbar'>
         <Link to='#' className='menu-bar'>
-          <FaIcons.FaBars onClick={toggleSideBar}/>
+          <FaIcons.FaBars onClick={toggleSideBar} />
         </Link>
       </div>
       <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
