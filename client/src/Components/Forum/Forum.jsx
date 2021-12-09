@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect, useContext } from 'react';
+import { AllRecipesAndWorkouts } from '../App.jsx'
 
 const Forum = () => {
-
+  const { forumData } = useContext(AllRecipesAndWorkouts)
+  console.log(forumData)
   return (
     <div>
-      <h2>Forum Section</h2>
+      <h1>Front-Endawdwdawdwadadwadwawdawd</h1>
+      <h1>Forum Secawdawdawdawdawdawdawtion</h1>
     </div>
   )
 }
