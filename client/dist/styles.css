@@ -4,3 +4,52 @@
   padding: 0;
   font-family: 'Ubuntu';
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------
+-------------- Forum ----------------
+------------------------------------*/
+
+.socialIcons {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+}
+
+.socialIcons:hover {
+  transform: translateY(-5px);
+}
+
+
+.youtube {
+  color: #eb3223;
+}
+
+.facebook {
+  color: #4968ad;
+}
+
+.twitter {
+  color: #49a1eb;
+}
+
+.instagram {
+  color: black;
+}
