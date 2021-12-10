@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Forum from './Forum.jsx';
+import PostDetails from './PostDetails.jsx';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faYoutube,
@@ -10,6 +11,13 @@ import {
 
 const ForumPosts = (props) => {
 
+
+  const handleClick = () => {
+    props.setDetailInfo(props.item);
+    props.setShowDetails(true);
+  }
+
+
   return (
     <>
       <div className="eachPost">
@@ -19,7 +27,7 @@ const ForumPosts = (props) => {
         {props.item.likes}
       </div>
       <button className="likePostButton">Like</button>
-      <button className="commentPost">Comment</button>
+      <button className="commentPost" onClick={handleClick}>Comment</button>
       <div className="socialIcons">
         <a href="https://www.youtube.com/"
           className="youtube">

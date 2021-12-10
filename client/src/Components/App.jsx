@@ -23,7 +23,7 @@ const App = () => {
   const [view, setView] = useState('forum')
   const [recipes, setRecipes] = useState()
 
-
+  
   useEffect(() => {
     console.log('use effect run');
     console.log(`Changed view to ${view}`)
