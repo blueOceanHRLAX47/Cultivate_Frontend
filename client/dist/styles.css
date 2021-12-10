@@ -4,6 +4,7 @@
   padding: 0;
   font-family: 'Ubuntu';
 }
+<<<<<<< HEAD
 html, body, #app, #app>div {
   height: 100%
 }
@@ -34,3 +35,54 @@ html, body, #app, #app>div {
   margin-bottom: 0px;
   margin-left: 10px;
 }
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------
+-------------- Forum ----------------
+------------------------------------*/
+
+.socialIcons {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+}
+
+.socialIcons:hover {
+  transform: translateY(-5px);
+}
+
+
+.youtube {
+  color: #eb3223;
+}
+
+.facebook {
+  color: #4968ad;
+}
+
+.twitter {
+  color: #49a1eb;
+}
+
+.instagram {
+  color: black;
+}
+>>>>>>> 13a06528c646e500bd0268ec775c34842379ffcc

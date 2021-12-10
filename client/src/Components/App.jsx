@@ -24,7 +24,7 @@ const App = () => {
   const [view, setView] = useState('workout')
   const [recipes, setRecipes] = useState()
 
-
+  
   useEffect(() => {
     console.log('use effect run');
     console.log(`Changed view to ${view}`)
