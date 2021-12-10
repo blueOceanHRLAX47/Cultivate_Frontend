@@ -1,5 +1,5 @@
 const workoutData = {
-  excersise: [
+  exercise: [
     {
       id: 1,
       name: 'bench press',
@@ -54,3 +54,5 @@ const workoutData = {
     },
   ],
 };
+
+module.exports = workoutData
