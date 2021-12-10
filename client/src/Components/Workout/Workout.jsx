@@ -7,10 +7,10 @@ const Workout = () => {
 
   return (
     <Container className="primary-container">
-      <h1 style={ { fontSize: "75px"} }>Workout</h1>
-      <Container className="workout-container">
+      <h1 style={ { fontSize: "75px"} } className="mb-20">Workout</h1>
+      {/* <Container className="workout-container"> */}
         <WorkoutItem />
-      </Container>
+      {/* </Container> */}
     </Container>
 
   )
