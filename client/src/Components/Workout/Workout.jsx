@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from 'react';
-
-
+import React, { useState } from 'react';
+import { Container } from 'react-bootstrap';
+import WorkoutItem from './WorkoutItem'
 
 
 const Workout = () => {
 
   return (
-    <div>
-      <h1>Workout</h1>
-    </div>
+    <Container className="primary-container">
+      <h1 style={ { fontSize: "75px"} } className="mb-20">Workout</h1>
+      {/* <Container className="workout-container"> */}
+        <WorkoutItem />
+      {/* </Container> */}
+    </Container>
+
   )
 }
 

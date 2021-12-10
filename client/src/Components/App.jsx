@@ -14,13 +14,14 @@ import workoutData from '../Contexts/workoutContext.js'
 import calendarData from '../Contexts/calendarContext.js'
 import forumData from '../Contexts/forumContext.js'
 import userData from '../Contexts/userContext.js'
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const AllRecipesAndWorkouts = React.createContext();
 
 const App = () => {
-  const [view, setView] = useState('forum')
+  const [view, setView] = useState('workout')
   const [recipes, setRecipes] = useState()
 
   
