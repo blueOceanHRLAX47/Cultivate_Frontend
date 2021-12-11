@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { Accordion, Container } from "react-bootstrap";
+import { Accordion, Container, Button, Row, Col } from "react-bootstrap";
 import { AllRecipesAndWorkouts } from '../App';
 
 
@@ -20,21 +20,53 @@ const WorkoutItem = ({ workout }) => {
   return (
     <Container className="exercise-item">
       <p className="item-title">{workout.name}</p>
-      <p style={ {textAlign: "right"} } className="item-text">Add to Calendar</p>
+      <Button className="float-end" variant="outline-info" onClick={() => console.log('adding workout to calendar')}>Add to Calendar</Button>{' '}
+      {/* <p style={ {textAlign: "right"} } className="item-text">Add to Calendar</p> */}
       <p className="item-text">Type: {workout.type}</p>
       <p className="item-text">Duration:</p>
       <p className="item-text">Popularity Score: {workout.popularity_score}</p>
-      <Accordion className="accordion">
+      <Accordion className="accordion" >
         <Accordion.Item eventKey="0">
           <Accordion.Header>Instructions</Accordion.Header>
           <Accordion.Body>
-            Should describe the exercises included in the workout <br />
-            Exercise 1: {exerciseInfo.name} <br />
-            Equipment: {exerciseInfo.equipment} <br />
-            Target muscle: {exerciseInfo.body_group} <br />
-            Description: {exerciseInfo.description} <br />
-            Images: {exerciseInfo.images} <br />
-            Video: Place holder
+            <Row className="row">
+              <Col className="col">Should describe the exercises included in the workout <br />
+              Exercise 1: {exerciseInfo.name} <br />
+              Equipment: {exerciseInfo.equipment} <br />
+              Target muscle: {exerciseInfo.body_group} <br />
+              Description: {exerciseInfo.description} <br />
+              Images: {exerciseInfo.images} <br /></Col>
+              <Col className="col">Should describe the exercises included in the workout <br />
+              Exercise 1: {exerciseInfo.name} <br />
+              Equipment: {exerciseInfo.equipment} <br />
+              Target muscle: {exerciseInfo.body_group} <br />
+              Description: {exerciseInfo.description} <br />
+              Images: {exerciseInfo.images} <br /></Col>
+              <Col className="col">Should describe the exercises included in the workout <br />
+              Exercise 1: {exerciseInfo.name} <br />
+              Equipment: {exerciseInfo.equipment} <br />
+              Target muscle: {exerciseInfo.body_group} <br />
+              Description: {exerciseInfo.description} <br />
+              Images: {exerciseInfo.images} <br /></Col>
+              <Col className="col">Should describe the exercises included in the workout <br />
+              Exercise 1: {exerciseInfo.name} <br />
+              Equipment: {exerciseInfo.equipment} <br />
+              Target muscle: {exerciseInfo.body_group} <br />
+              Description: {exerciseInfo.description} <br />
+              Images: {exerciseInfo.images} <br /></Col>
+              <Col className="col">Should describe the exercises included in the workout <br />
+              Exercise 1: {exerciseInfo.name} <br />
+              Equipment: {exerciseInfo.equipment} <br />
+              Target muscle: {exerciseInfo.body_group} <br />
+              Description: {exerciseInfo.description} <br />
+              Images: {exerciseInfo.images} <br /></Col>
+              <Col className="col">Should describe the exercises included in the workout <br />
+              Exercise 1: {exerciseInfo.name} <br />
+              Equipment: {exerciseInfo.equipment} <br />
+              Target muscle: {exerciseInfo.body_group} <br />
+              Description: {exerciseInfo.description} <br />
+              Images: {exerciseInfo.images} <br /></Col>
+            </Row>
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>

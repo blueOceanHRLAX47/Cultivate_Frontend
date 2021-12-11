@@ -19,7 +19,7 @@ html, body, #app, #app>div {
   margin-top: 15px;
 }
 .exercise-item {
-  border: 1px solid blue;
+  border: 1px solid #264653;
   min-height: 200px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -33,10 +33,15 @@ html, body, #app, #app>div {
 .item-text {
   margin-bottom: 0px;
   margin-left: 10px;
+  font-weight: bold;
 }
-.accordion {
-  border-color: black;
+.row {
+  border-color: #f0852D;
+  flex-wrap: wrap;
 }
+/* .accordion {
+  border-color: black !important;
+} */
 /* ----------------------------------
 -------------- Forum ----------------
 ------------------------------------*/
