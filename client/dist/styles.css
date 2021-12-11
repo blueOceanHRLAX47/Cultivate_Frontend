@@ -34,6 +34,9 @@ html, body, #app, #app>div {
   margin-bottom: 0px;
   margin-left: 10px;
 }
+.accordion {
+  border-color: black;
+}
 /* ----------------------------------
 -------------- Forum ----------------
 ------------------------------------*/

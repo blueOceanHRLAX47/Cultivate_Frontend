@@ -23,7 +23,7 @@ const workoutData = {
     {
       id: 1,
       user_id_created: 1,
-      name: 'mourning routine',
+      name: 'Mourning routine',
       type: 'legs',
       popularity_score: '900',
       likes: 420,
@@ -31,7 +31,7 @@ const workoutData = {
     {
       id: 2,
       user_id_created: 1,
-      name: 'curl\'s for the girls',
+      name: 'Curl\'s for the girls',
       type: 'arms',
       popularity_score: '500',
       likes: 666,
