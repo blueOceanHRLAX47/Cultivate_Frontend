@@ -31,12 +31,14 @@
   margin: 0 1rem;
   transition: transform 250ms;
   display: inline-block;
+  position: relative;
+  right: -380px;
+  bottom: -2px;
 }
 
 .socialIcons:hover {
   transform: translateY(-5px);
 }
-
 
 .youtube {
   color: #eb3223;
@@ -52,4 +54,80 @@
 
 .instagram {
   color: black;
+}
+.forumTop {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.createPostButton {
+  display: block;
+  top:15%;
+  left:60.25%;
+  position: absolute;
+}
+.btn-primary {
+  color: black !important;
+  background-color: white !important;
+}
+.btn-primary:hover {
+  transition: transform 250ms;
+  transform: translateY(-3px);
+  background-color: lightseagreen !important;
+  color: white !important;
+}
+
+.eachPost {
+  margin: auto;
+  border: 1px solid gray;
+  margin-bottom: 10px;
+  width: 598px;
+}
+.eachPost:hover {
+  transition: transform 250ms;
+  transform: translateY(-5px);
+  border: 1.5px solid black;
+}
+
+.titlePost {
+  font-size: 18px;
+  font-weight: bold;
+}
+.innerPost {
+  margin-left: 41px;
+}
+
+.likePost {
+  position: relative;
+  left: -32px;
+  top: -10px;
+
+}
+
+.up {
+
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  position: relative;
+  left: -32px;
+  top: -25px;
+}
+.up:hover {
+  transition: transform 250ms;
+  transform: translateY(-3px);
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  position: relative;
+  left: -32px;
+  top: -5px;
+}
+.down:hover {
+  transition: transform 250ms;
+
+}
+.postLikes {
+  position: relative;
+  top: 40px;
 }
