@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { AllRecipesAndWorkouts } from '../App.jsx'
-import user from '../../Contexts/userContext.js';
-import { Inject, ScheduleComponent, Day, Week } from '@syncfusion/ej2-react-schedule';
+import { Inject, ScheduleComponent, Day, Week, ViewsDirective, ViewDirective } from '@syncfusion/ej2-react-schedule';
 
 
 const Calendar = () => {
@@ -23,6 +21,10 @@ const Calendar = () => {
     <div>
       <h1>Calendar</h1>
       <ScheduleComponent currentView='Week' eventSettings={data}>
+      <ViewsDirective>
+        <ViewDirective option='Day' interval={1} displayName='Day' startHour='02:30' endHour='18:00'/>
+        <ViewDirective option='Week' interval={1} displayName='Week' startHour='02:30' endHour='18:00' showWeekend={true} isSelected={true}/>
+      </ViewsDirective>
         <Inject services={[Day, Week]} />
       </ScheduleComponent>
     </div>
