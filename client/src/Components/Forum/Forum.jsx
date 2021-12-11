@@ -27,45 +27,47 @@ const Forum = (props) => {
 
   return (
     <>
-      {showDetails === false && <div>
-        <h1 className="forumTop">Forum</h1>
-        <Button className="createPostButton" variant="primary" onClick={handleShow}>Create Post
-        </Button>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Create a new Post</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <form>
-              <label>
-                <input type="text" title="title" style={{ width: "450px" }} placeholder="Title" />
-              </label>
-              <br />
-              <br />
-              <label>
-                <input type="text" title="body" style={{ width: "450px", height: "200px", textAlign: "left" }} placeholder="Write a new post..." />
-              </label>
-              <br />
-              <br />
-              <input type="text" title="addPhotos" style={{ width: "450px" }} placeholder="Add Photo URL" />
-              <br />
-              <input type="text" title="addVideos" style={{ width: "450px" }} placeholder="Add Video URL" />
-            </form>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>Close</Button>
-            <Button variant="primary" onClick={handleClose}>Add Post</Button>
-          </Modal.Footer>
-        </Modal>
-        <div className="mainPost">
-          {forumData.results.map((item, key) => {
-            return <ForumPosts item={item} key={key} setDetailInfo={setDetailInfo} setShowDetails={setShowDetails} />
-          })}
-        </div>
-      </div>}
-      {showDetails === true && <div>
-        <PostDetails detailInfo={detailInfo} setShowDetails={setShowDetails} />
-      </div>}
+      <div className="mainForum">
+        {showDetails === false && <div>
+          <h1 className="forumTop">Forum</h1>
+          <Button className="createPostButton" variant="primary" onClick={handleShow}>Create Post
+          </Button>
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Create a new Post</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <form>
+                <label>
+                  <input type="text" title="title" style={{ width: "450px" }} placeholder="Title" />
+                </label>
+                <br />
+                <br />
+                <label>
+                  <input type="text" title="body" style={{ width: "450px", height: "200px", textAlign: "left" }} placeholder="Write a new post..." />
+                </label>
+                <br />
+                <br />
+                <input type="text" title="addPhotos" style={{ width: "450px" }} placeholder="Add Photo URL" />
+                <br />
+                <input type="text" title="addVideos" style={{ width: "450px" }} placeholder="Add Video URL" />
+              </form>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>Close</Button>
+              <Button variant="primary" onClick={handleClose}>Add Post</Button>
+            </Modal.Footer>
+          </Modal>
+          <div className="mainPost">
+            {forumData.results.map((item, key) => {
+              return <ForumPosts item={item} key={key} setDetailInfo={setDetailInfo} setShowDetails={setShowDetails} />
+            })}
+          </div>
+        </div>}
+        {showDetails === true && <div>
+          <PostDetails detailInfo={detailInfo} setShowDetails={setShowDetails} />
+        </div>}
+      </div>
     </>
   )
 }

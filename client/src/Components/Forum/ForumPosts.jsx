@@ -23,18 +23,18 @@ const ForumPosts = (props) => {
     <>
       <div className="eachPost">
         <div className="postLikes">
-          <button className="arrow up"></button>
-          <div className="likePost">
+          <button className="arrowUp"></button>
+          <div className="likePostCount">
             {props.item.likes}
           </div>
-          <button className="arrow down"></button>
+          <button className="arrowDown"></button>
         </div>
         <div className="bodyPost" onClick={handleClick}>
           <div className="innerPost">
             <div className="titlePost">
               {props.item.title}
             </div>
-            <button className="commentPost" onClick={handleClick}>Comment</button>
+            {/* <button className="commentPost" onClick={handleClick}>Comment</button> */}
             <div className="socialIcons">
               <a href="https://www.youtube.com/"
                 className="youtube">
