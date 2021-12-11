@@ -78,12 +78,14 @@ html, body, #app, #app>div {
   margin: 0 1rem;
   transition: transform 250ms;
   display: inline-block;
+  position: relative;
+  right: -440px;
+  bottom: 1px;
 }
 
 .socialIcons:hover {
   transform: translateY(-5px);
 }
-
 
 .youtube {
   color: #eb3223;
@@ -100,3 +102,115 @@ html, body, #app, #app>div {
 .instagram {
   color: black;
 }
+.forumTop {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.createPostButton {
+  position: relative;
+  top:15%;
+  left:75%;
+}
+.btn-primary {
+  color: black !important;
+  background-color: white !important;
+}
+.btn-primary:hover {
+  transition: transform 250ms;
+  transform: translateY(-3px);
+  background-color: lightseagreen !important;
+  color: white !important;
+}
+
+.bodyPost {
+  margin: auto;
+  border: 1px solid gray;
+  margin-bottom: 10px;
+  width: 598px;
+  border-radius: 8px;
+}
+
+
+.bodyPost:hover {
+  transition: transform 250ms;
+  transform: translateY(-5px);
+  border: 1.5px solid black;
+}
+
+.titlePost {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  padding-top: 10px;
+}
+.innerPost {
+  margin-left: 41px;
+}
+
+.likePostCount {
+  text-align: center;
+  position: relative;
+  top: 10px;
+}
+.arrowUp {
+  position: relative;
+  left: 0px;
+  background-image: url("http://www.clker.com/cliparts/T/5/z/s/3/O/red-up-arrow-hi.png");
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: none;
+}
+.arrowUp:hover {
+  transition: transform 250ms;
+  transform: translateY(-5px);
+}
+.arrowDown {
+  position: relative;
+  left: 0px;
+  top: 24px;
+  background-image: url("https://www.clker.com/cliparts/d/A/H/R/z/3/red-down-arrow-hi.png");
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: none;
+}
+.arrowDown:hover {
+  transition: transform 250ms;
+  transform: translateY(5px);
+}
+
+.mainForum {
+  margin: auto;
+  background-color: rgb(250, 255, 250);
+  margin-top: 10px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  width: 800px;
+}
+
+.postLikes {
+  margin: auto;
+  width: 30px;
+  height: 117px;
+  position: relative;
+  right:40%;
+  top: 52px;
+}
+.bodyPost {
+  position: relative;
+  bottom: 65px;
+  margin-bottom: -50px;
+}
+
+/* .commentPost{
+  margin-bottom: 5px;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  border-radius:8px;
+  padding: 3px 3px 3px 3px;
+} */
