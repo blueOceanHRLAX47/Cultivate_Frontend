@@ -6,7 +6,11 @@
 }
 
 html, body, #app, #app>div {
-  height: 100%
+  height: 100%;
+  width: 100%
+}
+.main-div {
+  height: 100%;
 }
 
 
@@ -99,13 +103,39 @@ html, body, #app, #app>div {
 */
 .primary-container {
   max-width: 80%;
+  height: 100%;
   margin: auto;
+  position: relative;
+  border-right: 10px solid #f0852d;
+  border-left: 10px solid #f0852d;
+}
+.primary-container::after {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border-right: 10px solid #e7c15f;
+  border-left: 10px solid #e7c15f;
+}
+.primary-container::before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  left: -20px;
+  right: -20px;
+  bottom: 0px;
+  border-right: 10px solid #e76a4b;
+  border-left: 10px solid #e76a4b;
 }
 .exercise-list {
   margin-top: 15px;
 }
 .exercise-item {
-  border: 1px solid blue;
+  border: 1px solid #264653;
   min-height: 200px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -117,8 +147,23 @@ html, body, #app, #app>div {
   font-weight: bolder;
 }
 .item-text {
-  margin-bottom: 0px;
+  margin-bottom: 4px;
   margin-left: 10px;
+  font-weight: bold;
+}
+.row {
+  flex-wrap: wrap;
+}
+.col {
+  min-width: 333px;
+  padding: 30px;
+  border-width: 1px;
+  border-style: dashed;
+  border-color: rgb(210 208 208);
+}
+.exercise-title {
+  display: flex;
+  justify-content: center;
 }
 /* ----------------------------------
 -------------- Forum ----------------
