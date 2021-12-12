@@ -20,18 +20,22 @@ const Recipes = () => {
     } = recipe
 
     return (
-      <div key={id} id="recipeContainer">
+      <div key={id} id="individualRecipeContainer">
         <RecipeTitle name={name} readyInMinutes={readyInMinutes} />
-        <Ingredients ingredients={ingredients} />
-        <Details image={image} instructions={instructions} />
+        <div id="ingredient-details-container">
+          <Ingredients ingredients={ingredients} />
+          <Details image={image} instructions={instructions} />
+        </div>
       </div>
     )
   })
 
   return (
-    <div>
-      <h1>Recipes</h1>
-      {RecipePosts}
+    <div id="recipePageLayout">
+      <div id="recipeContainer">
+        <h1>Recipes</h1>
+        {RecipePosts}
+      </div>
     </div>
   )
 }
