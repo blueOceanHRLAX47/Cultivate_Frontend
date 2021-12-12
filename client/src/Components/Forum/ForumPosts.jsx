@@ -16,6 +16,12 @@ const ForumPosts = (props) => {
     props.setDetailInfo(props.item);
     props.setShowDetails(true);
   }
+  const handleClickLike = () => {
+    // console.log(props.item)
+  }
+  const handleClickDislike = () => {
+    // console.log(props.item)
+  }
 
   //make boxes around each post and make the whole box handleclick
 
@@ -23,11 +29,11 @@ const ForumPosts = (props) => {
     <>
       <div className="eachPost">
         <div className="postLikes">
-          <button className="arrowUp"></button>
+          <button className="arrowUp" onClick={handleClickLike}></button>
           <div className="likePostCount">
             {props.item.likes}
           </div>
-          <button className="arrowDown"></button>
+          <button className="arrowDown" onClick={handleClickDislike}></button>
         </div>
         <div className="bodyPost" onClick={handleClick}>
           <div className="innerPost">

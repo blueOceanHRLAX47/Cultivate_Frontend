@@ -243,6 +243,21 @@ html, body, #app, #app>div {
   bottom: 65px;
   margin-bottom: -50px;
 }
+.detailTitle {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+
+input {
+  margin: 0 auto;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
 
 /* .commentPost{
   margin-bottom: 5px;
