@@ -7,7 +7,7 @@ const Ingredients = ({ ingredients }) => {
       < Accordion >
         <Accordion.Item eventKey="0">
           <Accordion.Header>Ingredients</Accordion.Header>
-          <Accordion.Body>
+          <Accordion.Body id="ingredients-accordian">
             {ingredients.map((ingredient, i) => {
               return (
                 <div key={`ingredient-${i}`} id="ingredientList">
