@@ -8,6 +8,18 @@
 html, body, #app, #app>div {
   height: 100%
 }
+
+
+/*
+===================== CALENDAR CSS =======================
+*/
+#calendar, #appointment {
+  border-style: solid;
+  max-width: 60em;
+  display: block;
+  margin: auto;
+}
+
 /*
 ===================== RECIPES CSS =======================
 */
