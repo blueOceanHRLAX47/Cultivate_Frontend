@@ -67,17 +67,24 @@ html, body, #app, #app>div {
   font-weight: bolder;
 }
 .item-text {
-  margin-bottom: 0px;
+  margin-bottom: 4px;
   margin-left: 10px;
   font-weight: bold;
 }
 .row {
-  border-color: #f0852D;
   flex-wrap: wrap;
 }
-/* .accordion {
-  border-color: black !important;
-} */
+.col {
+  min-width: 333px;
+  padding: 30px;
+  border-width: 1px;
+  border-style: dashed;
+  border-color: rgb(210 208 208);
+}
+.exercise-title {
+  display: flex;
+  justify-content: center;
+}
 /* ----------------------------------
 -------------- Forum ----------------
 ------------------------------------*/

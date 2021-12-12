@@ -41,14 +41,14 @@ const workoutData = {
     {
       id: 1,
       workout_id: 1,
-      excersise_id: 1,
+      exersise_id: 1,
       set_count: 2,
       rep_range: 50
     },
     {
       id: 2,
       workout_id: 2,
-      excersise_id: 2,
+      exersise_id: 2,
       set_count: 4,
       rep_range: 25
     },
