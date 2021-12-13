@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Inject, ScheduleComponent, Day, Week, ViewsDirective, ViewDirective } from '@syncfusion/ej2-react-schedule';
+import { Inject, ScheduleComponent, Day, Week, ViewsDirective, ViewDirective, DragAndDrop } from '@syncfusion/ej2-react-schedule';
 import AppointmentInfo from './AppointmentInfo.jsx';
 
 
@@ -27,7 +27,7 @@ const Calendar = () => {
 
   const onPopupOpen = (args) => {
     setInfo(args.data);
-    args.cancel = true;
+    // args.cancel = true;
   }
   return (
     <div>
@@ -38,7 +38,7 @@ const Calendar = () => {
           <ViewDirective option='Day' interval={1} displayName='Day' startHour='08:30' endHour='18:00'/>
           <ViewDirective option='Week' interval={1} displayName='Week' startHour='08:30' endHour='18:00' showWeekend={true} isSelected={true}/>
         </ViewsDirective>
-          <Inject services={[Day, Week]} />
+          <Inject services={[Day, Week, DragAndDrop]} />
         </ScheduleComponent>
         <span>Total Calories: </span>
         <span>Workout Total: </span>
