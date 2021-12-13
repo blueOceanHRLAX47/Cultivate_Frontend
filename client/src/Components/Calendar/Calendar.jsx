@@ -30,7 +30,7 @@ const Calendar = () => {
     // args.cancel = true;
   }
   return (
-    <div>
+    <div className="calendar-div">
       <div id='calendar'>
         <h1>Calendar</h1>
         <ScheduleComponent currentView='Week' eventSettings={data} popupOpen={onPopupOpen.bind(this)}>

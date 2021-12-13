@@ -12,6 +12,22 @@ html, body, #app, #app>div {
 .main-div {
   height: 100%;
 }
+/* .nav-text a {
+  font-size: 22px !important;
+}
+.nav-text a:hover {
+  background-color: #F0852D !important;
+  color: #f5f5f5 !important;
+}
+.menu-bars {
+  font-size: 2rem !important;
+}
+a {
+  color: #f5f5f5 !important;
+}
+a:hover {
+  color: #F0852D !important;
+} */
 
 
 /*
@@ -19,7 +35,7 @@ html, body, #app, #app>div {
 */
 #calendar, #appointment {
   border-style: solid;
-  max-width: 60em;
+  max-width: 66em;
   display: block;
   margin: auto;
 }
@@ -139,15 +155,15 @@ html, body, #app, #app>div {
 /*
 ===================== Work Out CSS =======================
 */
-.primary-container {
-  max-width: 80%;
+.primary-container, .mainForum, .calendar-div {
+  width: 1111px !important;
   height: 100%;
   margin: auto;
   position: relative;
   border-right: 10px solid #f0852d;
   border-left: 10px solid #f0852d;
 }
-.primary-container::after {
+.primary-container::after, .mainForum::after, .calendar-div::after {
   content: " ";
   position: absolute;
   z-index: -1;
@@ -158,7 +174,7 @@ html, body, #app, #app>div {
   border-right: 10px solid #e7c15f;
   border-left: 10px solid #e7c15f;
 }
-.primary-container::before {
+.primary-container::before, .mainForum::before, .calendar-div::before  {
   content: " ";
   position: absolute;
   z-index: -1;
@@ -174,6 +190,7 @@ html, body, #app, #app>div {
 }
 .exercise-item {
   border: 1px solid #264653;
+  border-radius: 8px;
   min-height: 200px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -318,11 +335,12 @@ html, body, #app, #app>div {
 
 .mainForum {
   margin: auto;
-  background-color: rgb(250, 255, 250);
+  /* background-color: rgb(250, 255, 250);
   margin-top: 10px;
   border: 1px solid gray;
-  border-radius: 8px;
-  width: 800px;
+  border-radius: 8px; */
+  width: 1111px; /*edited this previous was 800px */
+  height: 100%;
 }
 
 .postLikes {

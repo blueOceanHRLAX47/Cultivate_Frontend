@@ -20,7 +20,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export const AllRecipesAndWorkouts = React.createContext();
 
 const App = () => {
-  const [view, setView] = useState('forum')
+  const [view, setView] = useState('calendar')
   const [recipes, setRecipes] = useState()
 
 
@@ -38,10 +38,10 @@ const App = () => {
         {view === 'login' && <div>
           <Login />
         </div>}
-        {view === 'calendar' && <div>
+        {view === 'calendar' && <div className="main-div">
           <Calendar />
         </div>}
-        {view === 'forum' && <div>
+        {view === 'forum' && <div className="main-div">
           <Forum />
         </div>}
         {view === 'recipes' && <div>
