@@ -31,21 +31,25 @@ html, body, #app, #app>div {
   border-style: solid;
   border-color: orange;
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
 }
 
 #recipeContainer {
   border-style: solid;
   border-color: blue;
-  max-width: 47em;
+  min-width: 30rem;
+  max-width: 35rem;
   grid-column: 2 / 3;
+  justify-self: center;
 }
 
 #individualRecipeContainer {
   border-style: solid;
   border-color: black;
   margin-bottom: 5px;
+  display: grid;
+  /* grid-template-columns: 3fr, 1fr; */
 }
 
 #ingredientList {
@@ -61,15 +65,18 @@ html, body, #app, #app>div {
   border-style: solid;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-column: 1 / 2;
 }
 
 #recipeInstructionContainer{
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
 }
 
 #recipeImage {
-  float: left;
+  /* float: left; */
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 #reciptInstruction {
@@ -87,17 +94,44 @@ html, body, #app, #app>div {
 #recipe-title-container {
   border-style: solid;
   border-color: rgb(87, 25, 168);
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr;
+  grid-template-rows: 1fr .4fr;
+  grid-gap: 1em;
+  margin-bottom: 1em;
 }
 
 #recipe-title {
   border-style: solid;
   border-color: rgb(87, 25, 168);
+  text-align: center;
+  grid-column: 1 / 4;
 }
 
 #recipe-prep-time {
   border-style: solid;
   border-color: rgb(87, 25, 168);
+  grid-column: 1 / 2;
 }
+
+#details-accordian {
+  /* background-color: blue; */
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+#ingredients-accordian {
+  border-style: solid;
+  border-color: red;
+}
+
+#recipes-add-to-calendar {
+  border-style: solid;
+  border-color: red;
+  grid-column: 3 / 4;
+  width: 8rem;
+}
+
 /*
 ===================== Work Out CSS =======================
 */

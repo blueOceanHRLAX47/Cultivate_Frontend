@@ -7,7 +7,7 @@ const Details = ({ image, instructions }) => {
       <Accordion>
         <Accordion.Item eventKey="1">
           <Accordion.Header>Details</Accordion.Header>
-          <Accordion.Body>
+          <Accordion.Body id="details-accordian">
             <div id="recipeInstructionContainer">
               <img src={image} alt="image" id="recipeImage" />
               {"\n"}

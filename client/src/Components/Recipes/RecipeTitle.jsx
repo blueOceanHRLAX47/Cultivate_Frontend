@@ -9,6 +9,9 @@ const RecipeTitle = ({ name, readyInMinutes }) => {
       <div id="recipe-prep-time">
         <p>Prep Time: {readyInMinutes}</p>
       </div>
+      <div id="recipes-add-to-calendar">
+        <button>Add to Calendar</button>
+      </div>
     </div>
   )
 
