@@ -88,6 +88,7 @@ html, body, #app, #app>div {
 
 #recipeInstructions {
   margin-left: 5px;
+  /* max-width: 40ch; */
   max-width: 40ch;
 }
 

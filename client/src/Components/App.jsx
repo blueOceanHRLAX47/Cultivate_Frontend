@@ -22,6 +22,8 @@ export const AllRecipesAndWorkouts = React.createContext();
 const App = () => {
   const [view, setView] = useState('forum')
   const [recipes, setRecipes] = useState()
+  // const [savedRecipes, setSavedRecipes] = useState([])
+
 
 
   useEffect(() => {
