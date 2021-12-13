@@ -1,3 +1,8 @@
 node_modules
 
 client/dist/bundle.js
+client/src/Contexts/calendarContext.js
+client/src/Contexts/forumContext.js
+client/src/Contexts/userContext.js
+client/src/Contexts/workoutContext.js
+client/src/Contexts/recipeContext.js
