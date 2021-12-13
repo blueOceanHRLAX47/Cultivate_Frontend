@@ -23,7 +23,6 @@ const ForumPosts = (props) => {
     // console.log(props.item)
   }
 
-  //make boxes around each post and make the whole box handleclick
 
   return (
     <>

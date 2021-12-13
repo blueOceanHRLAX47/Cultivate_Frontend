@@ -15,8 +15,8 @@ const PostDetails = (props) => {
         {props.detailInfo.content}
       </div>
       <form>
-        <label>
-          <input type="text" title="detailBody" style={{ width: "350px", height: "100px", textAlign: "left" }} placeholder="What are your thoughts?..." />
+        <label className="inputComment">
+          <input type="text" title="detailBody" style={{ width: "650px", height: "100px", textAlign: "left" }} placeholder="What are your thoughts?..." />
         </label>
       </form>
       <button className="detailSubmit">Comment</button>

@@ -48,9 +48,9 @@ const Forum = (props) => {
                 </label>
                 <br />
                 <br />
-                <input type="text" title="addPhotos" style={{ width: "450px" }} placeholder="Add Photo URL" />
+                {/* <input type="text" title="addPhotos" style={{ width: "450px" }} placeholder="Add Photo URL" />
                 <br />
-                <input type="text" title="addVideos" style={{ width: "450px" }} placeholder="Add Video URL" />
+                <input type="text" title="addVideos" style={{ width: "450px" }} placeholder="Add Video URL" /> */}
               </form>
             </Modal.Body>
             <Modal.Footer>
