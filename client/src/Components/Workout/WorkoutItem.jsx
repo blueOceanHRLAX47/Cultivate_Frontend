@@ -25,19 +25,27 @@ const WorkoutItem = ({ workout }) => {
   }
 
   const showModal = () => {
-    console.log('opening modal')
     setShow(true)
-
   }
+
   const closeModal = () => {
-    console.log('closing modal')
     setShow(false)
+    clearCalendarInput()
+  }
+
+  const submitCloseModal = () => {
+    const workoutToAdd = {
+      user_id: 'something',
+      workout_id: workout.id,
+      date_on_calendar: [year, month, day, hour, minute],
+    }
+    //send axios post request to saved_workouts with object above
+    setShow(false)
+    clearCalendarInput()
+    alert(`You have successfully added ${workout.name} to your calendar`)
   }
 
   const changeInput = (e) => {
-    // const fieldToChange = e.target.name
-    console.log('target name', e.target.name)
-    console.log('target value', e.target.value)
     const targetName = e.target.name
     const targetValue = e.target.value
     if (targetName === 'setYear') {
@@ -53,8 +61,17 @@ const WorkoutItem = ({ workout }) => {
     } else {
       console.error('there was an error')
     }
+    console.log(year)
   }
 
+  const clearCalendarInput = () => {
+    setYear('')
+    setMonth('')
+    setDay('')
+    setHour('')
+    setDay('')
+    setMinute('')
+  }
 
 
   return (
@@ -123,20 +140,21 @@ const WorkoutItem = ({ workout }) => {
           <Modal.Title>Add <b>{workout.name}</b> To Calendar?</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Please indicate where you would like to add this [duration]min workout: <br />
+          Please indicate when you would like to add this XX min workout: <br />
+          <br />
           Start Time: <br />
-          Year: <input type="text" value={year} onChange={changeInput} name="setYear" maxLength={4} size={4} />
-          Month: <input type="text" value={month} onChange={changeInput} name="setMonth" maxLength={2} size={2}/>
-          Day: <input type="text" value={day} onChange={changeInput} name="setDay" maxLength={2} size={2}/>
-          Hour: <input type="text" value={hour} onChange={changeInput} name="setHour" maxLength={2} size={2}/>
-          Minute: <input type="text" value={minute} onChange={changeInput} name="setMinute" maxLength={2} size={2}/>
+          Year:<input type="text" value={year} onChange={changeInput} name="setYear" maxLength={4} size={4} />&nbsp;
+          Month:<input type="text" value={month} onChange={changeInput} name="setMonth" maxLength={2} size={2}/>&nbsp;
+          Day:<input type="text" value={day} onChange={changeInput} name="setDay" maxLength={2} size={2}/>&nbsp;
+          Hour:<input type="text" value={hour} onChange={changeInput} name="setHour" maxLength={2} size={2}/>&nbsp;
+          Minute:<input type="text" value={minute} onChange={changeInput} name="setMinute" maxLength={2} size={2}/>&nbsp;
           <br />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={closeModal}>
             Close
           </Button>
-          <Button variant="primary" onClick={closeModal}>
+          <Button variant="primary" onClick={submitCloseModal}>
             Save Changes
           </Button>
         </Modal.Footer>
