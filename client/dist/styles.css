@@ -105,12 +105,18 @@ html, body, #app, #app>div {
   /* max-width: 40ch; */
 }
 
+#recipe-meta-data {
+  border-style: solid;
+  border-color: black;
+  grid-column: 2 / span 2;
+}
+
 #recipe-title-container {
   border-style: solid;
   border-color: rgb(87, 25, 168);
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;
-  grid-template-rows: 1fr .4fr;
+  /* grid-template-rows: 1fr .4fr; */
   grid-gap: 1em;
   margin-bottom: 1em;
 }
@@ -120,6 +126,10 @@ html, body, #app, #app>div {
   border-color: rgb(87, 25, 168);
   text-align: center;
   grid-column: 1 / 4;
+}
+#recipe-summary-text {
+  border-style: solid;
+  border-color: rgb(87, 25, 168);
 }
 
 #recipe-prep-time {
@@ -153,8 +163,9 @@ html, body, #app, #app>div {
 #recipes-add-to-calendar {
   border-style: solid;
   border-color: red;
-  grid-column: 3 / 4;
-  width: 8rem;
+  grid-column: 2 / 4;
+  /* width: 8rem; */
+  justify-self: end;
 }
 
 /*

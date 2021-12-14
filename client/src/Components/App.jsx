@@ -20,7 +20,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export const AllRecipesAndWorkouts = React.createContext();
 
 const App = () => {
-  const [view, setView] = useState('forum')
+  const [view, setView] = useState('recipes')
   const [recipes, setRecipes] = useState()
   // const [savedRecipes, setSavedRecipes] = useState([])
 
