@@ -4,26 +4,26 @@ import Accordion from "react-bootstrap/Accordion";
 const Details = ({ image, instructions }) => {
   return (
     <div>
-      <Accordion>
+      {/* <Accordion>
         <Accordion.Item eventKey="1">
           <Accordion.Header>Details</Accordion.Header>
-          <Accordion.Body id="details-accordian">
-            <div id="recipeInstructionContainer">
-              <img src={image} alt="image" id="recipeImage" />
-              {"\n"}
-              <div id="recipeInstructions">
-                {instructions.map((instruction, i) => {
-                  return (
-                    <div id="recipeInstructionCard" key={`instruction-${i}`}>
-                      <p>{i + 1}. {instruction}</p>
-                    </div>
-                  )
-                })}
+          <Accordion.Body id="details-accordian"> */}
+      <div id="recipeInstructionContainer">
+        {/* <img src={image} alt="image" id="recipeImage" /> */}
+        {/* {"\n"} */}
+        <div id="recipeInstructions">
+          {instructions.map((instruction, i) => {
+            return (
+              <div id="recipeInstructionCard" key={`instruction-${i}`}>
+                <p>{i + 1}. {instruction}</p>
               </div>
-            </div>
-          </Accordion.Body>
+            )
+          })}
+        </div>
+      </div>
+      {/* </Accordion.Body>
         </Accordion.Item>
-      </Accordion>
+      </Accordion> */}
     </div>
   )
 }
