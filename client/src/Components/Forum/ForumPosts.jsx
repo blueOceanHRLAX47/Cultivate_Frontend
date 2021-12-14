@@ -8,6 +8,7 @@ import {
   faTwitter,
   faInstagram
 } from "@fortawesome/free-brands-svg-icons";
+import axios from 'axios';
 
 const ForumPosts = (props) => {
 
@@ -16,11 +17,27 @@ const ForumPosts = (props) => {
     props.setDetailInfo(props.item);
     props.setShowDetails(true);
   }
+
   const handleClickLike = () => {
-    // console.log(props.item)
+    axios.put(`http://localhost:3000/like/${props.item.id}`)
+      .then(results => {
+        axios.get(`http://localhost:3000/`)
+          .then(results => {
+            props.setForumAPI(results.data)
+          })
+      })
   }
+
+
   const handleClickDislike = () => {
-    // console.log(props.item)
+    axios.put(`http://localhost:3000/dislike/${props.item.id}`)
+      .then(results => {
+        axios.get(`http://localhost:3000/`)
+          .then(results => {
+            props.setForumAPI(results.data)
+          })
+      })
+
   }
 
 

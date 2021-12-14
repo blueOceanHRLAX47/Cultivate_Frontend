@@ -9,10 +9,13 @@ import Button from 'react-bootstrap/Button';
 import ForumPosts from './ForumPosts.jsx';
 import PostDetails from './PostDetails.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 
 const Forum = (props) => {
-  const { forumData } = useContext(AllRecipesAndWorkouts)
+  const [forumAPI, setForumAPI] = useState([]);
+
+  // const { forumData } = useContext(AllRecipesAndWorkouts)
 
   const [show, setShow] = useState(false);
   const [detailInfo, setDetailInfo] = useState({})
@@ -21,8 +24,13 @@ const Forum = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  console.log(forumData)
-  console.log(detailInfo)
+  useEffect(() => {
+    axios.get(`http://localhost:3000/`)
+      .then(results => {
+        console.log(results.data)
+        setForumAPI(results.data);
+      })
+  }, [])
 
 
   return (
@@ -59,8 +67,8 @@ const Forum = (props) => {
             </Modal.Footer>
           </Modal>
           <div className="mainPost">
-            {forumData.results.map((item, key) => {
-              return <ForumPosts item={item} key={key} setDetailInfo={setDetailInfo} setShowDetails={setShowDetails} />
+            {forumAPI.map((item, key) => {
+              return <ForumPosts item={item} key={key} setDetailInfo={setDetailInfo} setShowDetails={setShowDetails} setForumAPI={setForumAPI}/>
             })}
           </div>
         </div>}
