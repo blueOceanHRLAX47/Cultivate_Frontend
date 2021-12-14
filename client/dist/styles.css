@@ -10,7 +10,8 @@ html, body, #app, #app>div {
   width: 100%
 }
 .main-div {
-  height: 100%;
+  height: auto;
+  padding-top: 10px;
 }
 /* .nav-text a {
   font-size: 22px !important;
@@ -162,6 +163,8 @@ a:hover {
   position: relative;
   border-right: 10px solid #f0852d;
   border-left: 10px solid #f0852d;
+  border-top: 10px solid #f0852d;
+  border-bottom: 10px solid #f0852d;
 }
 .primary-container::after, .mainForum::after, .calendar-div::after {
   content: " ";
@@ -173,17 +176,21 @@ a:hover {
   bottom: 0px;
   border-right: 10px solid #e7c15f;
   border-left: 10px solid #e7c15f;
+  border-top: 10px solid #e7c15f;
+  border-bottom: 10px solid #e7c15f;
 }
 .primary-container::before, .mainForum::before, .calendar-div::before  {
   content: " ";
   position: absolute;
   z-index: -1;
-  top: 0px;
+  top: -20px;
   left: -20px;
   right: -20px;
-  bottom: 0px;
+  bottom: -20px;
   border-right: 10px solid #e76a4b;
   border-left: 10px solid #e76a4b;
+  border-top: 10px solid #e76a4b;
+  border-bottom: 10px solid #e76a4b;
 }
 .exercise-list {
   margin-top: 15px;

@@ -1,15 +1,18 @@
 import React, { useContext, useState } from "react";
-import { Accordion, Container, Button, Row, Col } from "react-bootstrap";
+import { Accordion, Container, Button, Row, Col, Modal } from "react-bootstrap";
+import { render } from "react-dom";
 import { AllRecipesAndWorkouts } from '../App';
 
 
 const WorkoutItem = ({ workout }) => {
-  console.log('this is', workout)
-  console.log('exercise info', exerciseInfo)
+  // console.log('this is', workout)
+  // console.log('exercise info', exerciseInfo)
+  const [show, setShow] = useState(false)
+  const [startTime, changeStartTime] = useState('')
   const { workoutData } = useContext(AllRecipesAndWorkouts)
   const exerciseInfo = workoutData.exercise[(workout.id - 1)]
 
-  //here is where I will take the workout ID and obtain all other exercise info via calls to db
+  //here will be mapping over the exercises within each workout, should have all of that from one call to db
   //right now only getting 'fake' data so not really how it will be obtained at the end
   //may need to create exercise component that will dynamically render exercises within the workout
 
@@ -17,11 +20,27 @@ const WorkoutItem = ({ workout }) => {
     exerciseInfo.images = 'None';
   }
 
+  const showModal = () => {
+    console.log('opening modal')
+    setShow(true)
+
+  }
+  const closeModal = () => {
+    console.log('closing modal')
+    setShow(false)
+  }
+
+  const changeInput = (e) => {
+    changeStartTime(e.target.value)
+    console.log ('start input', startTime)
+  }
+
+
 
   return (
     <Container className="exercise-item">
       <p className="item-title">{workout.name}</p>
-      <Button className="float-end" variant="outline-info" onClick={() => console.log('adding workout to calendar')}>Add to Calendar</Button>{' '}
+      <Button className="float-end" variant="outline-info" onClick={showModal}>Add to Calendar</Button>{' '}
       <p className="item-text">Type: {workout.type}</p>
       <p className="item-text">Difficulty: </p>
       <p className="item-text">Duration:</p>
@@ -71,6 +90,42 @@ const WorkoutItem = ({ workout }) => {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
+      <Modal
+        show={show}
+        onHide={closeModal}
+        backdrop="static"
+        keyboard={false}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Add <b>{workout.name}</b> To Calendar?</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Please indicate where you would like to add this workout: <br />
+          <form>
+          Start Time: <br />
+          Year: <input type="text" value={startTime} onChange={changeInput} maxLength={4} size={4}/>
+          Month: <input type="text" value={startTime} onChange={changeInput} />
+          Day: <input type="text" value={startTime} onChange={changeInput} />
+          Hour: <input type="text" value={startTime} onChange={changeInput} />
+          Minute: <input type="text" value={startTime} onChange={changeInput} />
+          <br />
+          End Time: <br />
+
+          </form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={closeModal}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={closeModal}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
     </Container>
   )
 }
