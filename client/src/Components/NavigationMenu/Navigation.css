@@ -6,8 +6,12 @@
   align-items: center;
 }
 
+.menu-bar {
+  position: absolute;
+  right: 10px;
+}
+
 .menu-bars {
-  margin-left: 2rem;
   font-size: 2rem;
   background: none;
 }
@@ -20,13 +24,13 @@
   justify-content: center;
   position: fixed;
   top: 0;
-  left: -100%;
-  transition: 850ms;
+  left: 100%;
+  transition: 350ms;
   z-index: 1;
 }
 
 .nav-menu.active {
-  left: 0;
+  left: 87%;
   transition: 350ms;
 }
 
