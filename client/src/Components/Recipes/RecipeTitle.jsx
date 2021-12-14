@@ -12,7 +12,7 @@ const RecipeTitle = ({
       <div id="recipe-title">
         <h2>{name}</h2>
       </div>
-      <div>
+      <div id="recipe-image">
         <img src={image} alt="food image" />
       </div>
       <div id="recipe-meta-data">
