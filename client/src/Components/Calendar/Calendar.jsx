@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Inject, ScheduleComponent, Day, Week, ViewsDirective, ViewDirective, DragAndDrop } from '@syncfusion/ej2-react-schedule';
-import { DateTimePickerComponent } from '@syncfusion/ej2-react-calendars';
-import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 import AppointmentInfo from './AppointmentInfo.jsx';
 
 

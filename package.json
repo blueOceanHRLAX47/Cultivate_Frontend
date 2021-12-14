@@ -23,8 +23,6 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
-    "@syncfusion/ej2-react-calendars": "^19.3.56",
-    "@syncfusion/ej2-react-dropdowns": "^19.3.56",
     "@syncfusion/ej2-react-schedule": "^19.3.55",
     "axios": "^0.24.0",
     "babel-loader": "^8.2.3",
