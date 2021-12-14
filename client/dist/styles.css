@@ -42,8 +42,9 @@ html, body, #app, #app>div {
 #recipeContainer {
   border-style: solid;
   border-color: blue;
-  min-width: 30rem;
-  max-width: 35rem;
+  /* min-width: 30rem; */
+  min-width: 800px;
+  /* max-width: 35rem; */
   grid-column: 2 / 3;
   justify-self: center;
 }
@@ -54,6 +55,11 @@ html, body, #app, #app>div {
   margin-bottom: 5px;
   display: grid;
   /* grid-template-columns: 3fr, 1fr; */
+}
+
+#recipe-details-container {
+  border-style: solid;
+  border-color: black;
 }
 
 #ingredientList {
@@ -68,13 +74,16 @@ html, body, #app, #app>div {
   border-color: orange;
   border-style: solid;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-column: 1 / 2;
 }
 
 #recipeInstructionContainer{
-  /* display: flex;
-  flex-direction: row; */
+  border-style: solid;
+  border-color: black;
+  grid-row: 2;
+  grid-column: span 2;
+
 }
 
 #recipeImage {
@@ -92,7 +101,14 @@ html, body, #app, #app>div {
 
 #recipeInstructions {
   margin-left: 5px;
-  max-width: 40ch;
+  /* max-width: 40ch; */
+  /* max-width: 40ch; */
+}
+
+#recipe-meta-data {
+  border-style: solid;
+  border-color: black;
+  grid-column: 2 / span 2;
 }
 
 #recipe-title-container {
@@ -100,7 +116,7 @@ html, body, #app, #app>div {
   border-color: rgb(87, 25, 168);
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;
-  grid-template-rows: 1fr .4fr;
+  /* grid-template-rows: 1fr .4fr; */
   grid-gap: 1em;
   margin-bottom: 1em;
 }
@@ -110,6 +126,10 @@ html, body, #app, #app>div {
   border-color: rgb(87, 25, 168);
   text-align: center;
   grid-column: 1 / 4;
+}
+#recipe-summary-text {
+  border-style: solid;
+  border-color: rgb(87, 25, 168);
 }
 
 #recipe-prep-time {
@@ -127,13 +147,25 @@ html, body, #app, #app>div {
 #ingredients-accordian {
   border-style: solid;
   border-color: red;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: .5fr .5fr;
+  grid-row-gap: 1rem;
+}
+
+#ingredient-container-test {
+  border-style: solid;
+  border-color: green;
+  /* grid-row: 2; */
+  grid-column: span 2;
 }
 
 #recipes-add-to-calendar {
   border-style: solid;
   border-color: red;
-  grid-column: 3 / 4;
-  width: 8rem;
+  grid-column: 2 / 4;
+  /* width: 8rem; */
+  justify-self: end;
 }
 
 /*

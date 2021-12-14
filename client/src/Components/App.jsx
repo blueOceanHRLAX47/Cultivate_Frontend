@@ -20,8 +20,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export const AllRecipesAndWorkouts = React.createContext();
 
 const App = () => {
-  const [view, setView] = useState('calendar')
+  const [view, setView] = useState('recipes')
   const [recipes, setRecipes] = useState()
+  // const [savedRecipes, setSavedRecipes] = useState([])
 
 
   useEffect(() => {
