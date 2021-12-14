@@ -28,6 +28,12 @@ html, body, #app, #app>div {
   margin-top: 2em;
 }
 
+.e-description-row,
+.e-all-day-time-zone-row,
+.e-title-location-row {
+  display: none !important;
+}
+
 /*
 ===================== RECIPES CSS =======================
 */
