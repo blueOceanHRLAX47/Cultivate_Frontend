@@ -10,7 +10,7 @@ const Workout = () => {
 
   return (
     <Container className="primary-container">
-      <h1 style={ { fontSize: "75px"} } className="mb-20">Workout</h1>
+      <h1 className="mb-20">Workout</h1>
       <Container className="exercise-list">
         {workoutData.workout.map((workout, index) =>
           <WorkoutItem workout={workout} key={index} />
