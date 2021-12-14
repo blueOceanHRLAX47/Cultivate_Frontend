@@ -3,10 +3,9 @@ import Button from 'react-bootstrap/Button'
 
 const RecipeTitle = ({
   name, readyInMinutes, image,
-  summary, carbs, protein,
+  summary, calories, fat, carbs, protein,
   vegan, keto, popularity
 }) => {
-  console.log(vegan)
   return (
     <div id="recipe-title-container">
       <div id="recipe-title">
@@ -17,11 +16,10 @@ const RecipeTitle = ({
       </div>
       <div id="recipe-meta-data">
         <ul>
-          <li>{`is Vegan: ${vegan}`}</li>
-          <li>{`Keto: ${keto}`}</li>
-          <li>{`carbs ${carbs}`}</li>
-          <li>{`protein: ${protein}`}</li>
-          <li>{`Popularity: ${popularity}`}</li>
+          <li>{`Calories: ${calories} g`}</li>
+          <li>{`Fat: ${fat} g`}</li>
+          <li>{`Carbohydrates: ${carbs} g`}</li>
+          <li>{`Protein: ${protein} g`}</li>
         </ul>
       </div>
       <div id="recipe-prep-time">

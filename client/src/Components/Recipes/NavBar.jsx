@@ -5,11 +5,17 @@ import Accordion from "react-bootstrap/Accordion";
 
 const NavBar = ({ summary, ingredients, image, instructions }) => {
   const [open, setOpen] = useState(false);
-  const [count, setCount] = useState(0);
-  const [name, setName] = useState("");
+  const [tab, setTab] = useState('');
 
-  const handleClick = () => {
-    setOpen(!open)
+  const handleClick = (e) => {
+    var label = e.target.getAttribute('data-rr-ui-event-key');
+    if (tab !== label) {
+      setTab(label);
+      setOpen(true);
+    } else {
+      setTab('');
+      setOpen(false)
+    }
   }
 
   // useEffect(() => {
@@ -21,31 +27,29 @@ const NavBar = ({ summary, ingredients, image, instructions }) => {
       defaultActiveKey="home"
       id="uncontrolled-tab-example"
       className="mb-3"
-      onClick={() => handleClick()}
+      onClick={(e) => handleClick(e)}
     >
-      <Tab eventKey="home" title="Summary" name="summary" >
+      <Tab eventKey="Ingredients" title="Ingredients" name="summary" >
         {open === true ?
-          < div dangerouslySetInnerHTML={{ __html: summary }} /> :
+          // < div dangerouslySetInnerHTML={{ __html: summary }} />
+          <div id="ingredient-container-test">
+            {ingredients.map((ingredient, i) => {
+              return (
+                <div key={`ingredient-${i}`} id="ingredientList">
+                  <label>
+                    <input type="checkbox" name={ingredient} />
+                    {"  "}{ingredient}
+                  </label>
+                </div>
+              )
+            })}
+          </div> :
           null
         }
       </Tab>
-      <Tab eventKey="profile" title="Ingredients & Instructions">
+      <Tab eventKey="Instructions" title="Instructions">
         {open === true ?
           <div>
-
-            {/* <img alt="image" src={image} /> */}
-            <div id="ingredient-container-test">
-              {ingredients.map((ingredient, i) => {
-                return (
-                  <div key={`ingredient-${i}`} id="ingredientList">
-                    <label>
-                      <input type="checkbox" name={ingredient} />
-                      {"  "}{ingredient}
-                    </label>
-                  </div>
-                )
-              })}
-            </div>
             <div id="recipeInstructionContainer">
               <div id="recipeInstructions">
                 {instructions.map((instruction, i) => {
@@ -62,7 +66,7 @@ const NavBar = ({ summary, ingredients, image, instructions }) => {
           null
         }
       </Tab>
-    </Tabs>
+    </Tabs >
   )
 }
 

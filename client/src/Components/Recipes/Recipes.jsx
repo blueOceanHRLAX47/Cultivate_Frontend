@@ -27,6 +27,8 @@ const Recipes = () => {
           readyInMinutes={readyInMinutes}
           image={image}
           summary={summary}
+          calories={calories}
+          fat={fat}
           carbs={carbs}
           protein={protein}
           vegan={vegan}
