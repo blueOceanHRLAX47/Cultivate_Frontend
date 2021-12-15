@@ -9,10 +9,6 @@ html, body, #app, #app>div {
   height: 100%;
   width: 100%
 }
-.main-div {
-  height: 100%;
-}
-
 
 /*
 ===================== CALENDAR CSS =======================
@@ -178,60 +174,43 @@ html, body, #app, #app>div {
 ===================== Work Out CSS =======================
 */
 .primary-container {
-  max-width: 80%;
+  max-width: 60em !important;
   height: 100%;
   margin: auto;
   position: relative;
-  border-right: 10px solid #f0852d;
-  border-left: 10px solid #f0852d;
-}
-.primary-container::after {
-  content: " ";
-  position: absolute;
-  z-index: -1;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  border-right: 10px solid #e7c15f;
-  border-left: 10px solid #e7c15f;
-}
-.primary-container::before {
-  content: " ";
-  position: absolute;
-  z-index: -1;
-  top: 0px;
-  left: -20px;
-  right: -20px;
-  bottom: 0px;
-  border-right: 10px solid #e76a4b;
-  border-left: 10px solid #e76a4b;
+  border: 1px solid gray;
+  border-radius: 8px;
+  max-width: 60em;
+  background-color: rgb(244, 250, 253);
 }
 .exercise-list {
   margin-top: 15px;
 }
-.exercise-item {
+.workout-card {
   border: 1px solid #264653;
+  border-radius: 8px;
   min-height: 200px;
   margin-bottom: 20px;
   margin-top: 20px;
   padding-bottom: 20px
 }
-.item-title {
-  margin-bottom: 0px;
-  font-size: 50px;
-  font-weight: bolder;
+.workout-title {
+  margin-bottom: 10px;
+  margin-top: 5px;
+  text-decoration: underline;
 }
-.item-text {
-  margin-bottom: 4px;
+.workout-text {
+  margin-bottom: 6px;
   margin-left: 10px;
-  font-weight: bold;
 }
-.row {
+.exercise-row {
   flex-wrap: wrap;
 }
-.col {
-  min-width: 333px;
+.exercise-col {
+  /* width: 27em !important;
+  margin-right: auto;
+  margin-left: auto; */
+  min-width: 27em !important;
   padding: 30px;
   border-width: 1px;
   border-style: dashed;
@@ -361,7 +340,8 @@ html, body, #app, #app>div {
   margin-top: 10px;
   border: 1px solid gray;
   border-radius: 8px;
-  width: 800px;
+  max-width: 60em;
+  height: 100%;
 }
 
 .postLikes {
