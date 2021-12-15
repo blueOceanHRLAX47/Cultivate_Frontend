@@ -17,6 +17,14 @@ const Workout = ({ view }) => {
       .catch(err => console.error(err))
     }, [view])
 
+  // useEffect(() => {
+  // axios.get('http://cultiveight.net/api/workouts/')
+  //   .then(results => {
+  //     changeWorkoutData(results.data)
+  //   })
+  //   .catch(err => console.error(err))
+  // }, [view])
+
   return (
     <Container className="primary-container">
       <h1 className="mb-20">Workout</h1>
