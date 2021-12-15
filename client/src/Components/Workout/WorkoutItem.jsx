@@ -22,7 +22,7 @@ const WorkoutItem = ({ workout }) => {
 
   const submitCloseModal = () => {
     const workoutToAdd = {
-      user_id: 'something',
+      user_id: 'something',//may not need
       workout_id: workout.id,
       date_on_calendar: [year, month, day, hour, minute], //conflicts with time_on_calendar, which is correct?
     }
@@ -63,7 +63,7 @@ const WorkoutItem = ({ workout }) => {
 
   return (
     <Container className="workout-card">
-      <h2 className="workout-title">{workout.name}</h2>
+      <h3 className="workout-title">{workout.name}</h3>
       <Button className="float-end" variant="outline-info" onClick={showModal}>Add to Calendar</Button>{' '}
       <p className="workout-text"><b>Type:</b> {workout.type}</p>
       <p className="workout-text"><b>Duration:</b> {workout.duration}</p>
