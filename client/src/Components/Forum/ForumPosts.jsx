@@ -9,6 +9,7 @@ import {
   faInstagram
 } from "@fortawesome/free-brands-svg-icons";
 import axios from 'axios';
+import moment from 'moment';
 
 const ForumPosts = (props) => {
 
@@ -37,7 +38,14 @@ const ForumPosts = (props) => {
             props.setForumAPI(results.data)
           })
       })
+  }
 
+  const timeConverter = () => {
+    if (props.item.time_posted === null) {
+      return 'by unknown date'
+    } else {
+      return moment(`${props.item.time_posted}`).fromNow();
+    }
   }
 
 
@@ -53,10 +61,18 @@ const ForumPosts = (props) => {
         </div>
         <div className="bodyPost" onClick={handleClick}>
           <div className="innerPost">
+            <img className="profile_photo" src={props.item.user.profile_photo_url} width="35px">
+            </img>
             <div className="titlePost">
               {props.item.title}
             </div>
-            {/* <button className="commentPost" onClick={handleClick}>Comment</button> */}
+            <div className="commentPostButton">
+              <img className="commentIcon" src="http://www.clker.com/cliparts/2/9/1/2/11949869891903109988rnd_rectg_l.svg.med.png"></img>
+              <button className="commentPost" onClick={handleClick}>Comments</button>
+            </div>
+            <div className="postUser">
+              Posted by: {props.item.user.name} {timeConverter()}
+            </div>
             <div className="socialIcons">
               <a href="https://www.youtube.com/"
                 className="youtube">

@@ -16,10 +16,17 @@ const PostDetails = (props) => {
       </div>
       <form>
         <label className="inputComment">
-          <input type="text" title="detailBody" style={{ width: "650px", height: "100px", textAlign: "left" }} placeholder="What are your thoughts?..." />
+          <input type="text" title="detailBody" style={{ width: "750px", height: "100px", textAlign: "left" }} placeholder="What are your thoughts?..." />
         </label>
       </form>
       <button className="detailSubmit">Comment</button>
+      <div className="detailCommentSection">
+        {props.detailInfo.comments.map((item, key) => {
+          return <div className="eachComment" key={key}>
+            {item.content}
+          </div>
+        })}
+      </div>
     </>
   )
 }
