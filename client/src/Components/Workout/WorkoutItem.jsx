@@ -1,7 +1,5 @@
 import React, { useContext, useState } from "react";
 import { Accordion, Container, Button, Row, Col, Modal } from "react-bootstrap";
-import { render } from "react-dom";
-import { AllRecipesAndWorkouts } from '../App';
 import ExerciseItem from "./ExerciseItem";
 
 
@@ -12,13 +10,6 @@ const WorkoutItem = ({ workout }) => {
   const [day, setDay] = useState('')
   const [hour, setHour] = useState('')
   const [minute, setMinute] = useState('')
-  // const { workoutData } = useContext(AllRecipesAndWorkouts)
-  // const exerciseInfo = workoutData.exercise[(workout.id - 1)]
-
-  //here will be mapping over the exercises within each workout, should have all of that from one call to db
-  //right now only getting 'fake' data so not really how it will be obtained at the end
-  //may need to create exercise component that will dynamically render exercises within the workout
-
 
   const showModal = () => {
     setShow(true)
