@@ -9,8 +9,16 @@ import 'regenerator-runtime/runtime'
 const Workout = ({ view }) => {
   const [workoutData, changeWorkoutData] = useState([])
 
-  useEffect(() => {
-    axios.get('http://localhost:3002/')
+  // useEffect(() => {
+  //   axios.get('http://localhost:3002/')
+  //     .then(results => {
+  //       changeWorkoutData(results.data)
+  //     })
+  //     .catch(err => console.error(err))
+  //   }, [view])
+
+    useEffect(() => {
+    axios.get('http://cultiveight.net/api/workouts/')
       .then(results => {
         changeWorkoutData(results.data)
       })

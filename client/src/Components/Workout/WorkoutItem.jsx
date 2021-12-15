@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useContext, useState } from "react";
 import { Accordion, Container, Button, Row, Col, Modal } from "react-bootstrap";
 import ExerciseItem from "./ExerciseItem";
@@ -22,14 +23,22 @@ const WorkoutItem = ({ workout }) => {
 
   const submitCloseModal = () => {
     const workoutToAdd = {
-      user_id: 'something',//may not need
+      user_id: 666,//may not need
       workout_id: workout.id,
-      date_on_calendar: [year, month, day, hour, minute], //conflicts with time_on_calendar, which is correct?
+      time_on_calendar: new Date(year, (month - 1), day, hour, minute),
     }
-    //send axios post request to saved_workouts with object above
+    console.log('month', month)
+    console.log('workout object', workoutToAdd)
+    axios.post('http://localhost:3002/savedworkouts', workoutToAdd)
+      .then(() => {
+        console.log('workout added to calendar')
+        alert(`You have successfully added ${workout.name} to your calendar`)
+      })
+      .catch(err => {
+        alert('Whoops unable to add item to calendar')
+      })
     setShow(false)
     clearCalendarInput()
-    alert(`You have successfully added ${workout.name} to your calendar`)
   }
 
   const changeInput = (e) => {
@@ -48,7 +57,6 @@ const WorkoutItem = ({ workout }) => {
     } else {
       console.error('there was an error')
     }
-    console.log(year)
   }
 
   const clearCalendarInput = () => {
