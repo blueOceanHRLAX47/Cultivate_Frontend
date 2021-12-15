@@ -29,7 +29,7 @@ const WorkoutItem = ({ workout }) => {
     }
     console.log('month', month)
     console.log('workout object', workoutToAdd)
-    axios.post('http://cultiveight.net/api/workouts/savedworkouts', workoutToAdd)
+    axios.post('http://localhost:3002/savedworkouts', workoutToAdd)
       .then(() => {
         console.log('workout added to calendar')
         alert(`You have successfully added ${workout.name} to your calendar`)
