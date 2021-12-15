@@ -1,24 +1,21 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
-// import { AllRecipesAndWorkouts } from '../App';
 import WorkoutItem from './WorkoutItem'
 import axios from 'axios';
 import { results } from '../../Contexts/forumContext';
 import 'regenerator-runtime/runtime'
 
 
-const Workout = () => {
-  // const { workoutData } = useContext(AllRecipesAndWorkouts)
+const Workout = ({ view }) => {
   const [workoutData, changeWorkoutData] = useState([])
 
-  axios.get('http://localhost:3002/')
-    .then(results => {
-      console.log('test', results.data)
-      changeWorkoutData(results.data)
-    })
-    .catch(err => console.error(err))
-
-    console.log('at workout', workoutData)
+  useEffect(() => {
+    axios.get('http://localhost:3002/')
+      .then(results => {
+        changeWorkoutData(results.data)
+      })
+      .catch(err => console.error(err))
+    }, [view])
 
   return (
     <Container className="primary-container">

@@ -200,9 +200,8 @@ html, body, #app, #app>div {
   text-decoration: underline;
 }
 .workout-text {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   margin-left: 10px;
-  font-weight: bold;
 }
 .exercise-row {
   flex-wrap: wrap;

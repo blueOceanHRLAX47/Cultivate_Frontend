@@ -49,7 +49,7 @@ const App = () => {
           <Recipes />
         </div>}
         {view === 'workout' && <div>
-          <Workout />
+          <Workout view={view}/>
         </div>}
       </div>
     </AllRecipesAndWorkouts.Provider>
