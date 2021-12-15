@@ -20,8 +20,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export const AllRecipesAndWorkouts = React.createContext();
 
 const App = () => {
-  const [view, setView] = useState('forum')
+  const [view, setView] = useState('workout')
   const [recipes, setRecipes] = useState()
+  // const [savedRecipes, setSavedRecipes] = useState([])
 
 
   useEffect(() => {
@@ -47,8 +48,8 @@ const App = () => {
         {view === 'recipes' && <div>
           <Recipes />
         </div>}
-        {view === 'workout' && <div className="main-div">
-          <Workout />
+        {view === 'workout' && <div>
+          <Workout view={view}/>
         </div>}
       </div>
     </AllRecipesAndWorkouts.Provider>

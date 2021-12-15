@@ -8,12 +8,15 @@
 
 .menu-bar {
   position: absolute;
-  right: 10px;
+  left: 1%;
+  font-size: 1.5rem;
+  color: white;
 }
 
 .menu-bars {
   font-size: 2rem;
   background: none;
+  color: white;
 }
 
 .nav-menu {
@@ -24,13 +27,13 @@
   justify-content: center;
   position: fixed;
   top: 0;
-  left: 100%;
+  left: -100%;
   transition: 350ms;
   z-index: 1;
 }
 
 .nav-menu.active {
-  left: 87%;
+  left: 0;
   transition: 350ms;
 }
 

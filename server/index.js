@@ -7,7 +7,8 @@ const morgan = require('morgan');
 
 app.use(morgan('dev'));
 app.use(cors());
-app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use('/home', express.static(path.join(__dirname, '../client/dist')));
+//don't forget to add '/home' back to the previous line before commiting
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
