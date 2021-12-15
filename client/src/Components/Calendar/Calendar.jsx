@@ -38,7 +38,19 @@ const Calendar = () => {
     // args.cancel = true;
   }
 
+  const onPopupClose = (args) => {
+    //------to save new time slots when user edits using editor window -----
+    if ( args.type === 'Editor' ) {
+      if ( args.data ) {
+        console.log(args.data.StartTime);
+        let newStartDate = args.data.StartTime;
+        //update db using new start time
+      }
+    }
+  }
+
   const onDragStop = (args) => {
+    //------to save new time slots when user edits by draging event to new slot -----
     console.log('event moved:', args);
     //update data based with new time where id = args.data.id and new date = args.data.StartTime and args.data.EndTime
     //put req to api to save new time slot
@@ -48,7 +60,7 @@ const Calendar = () => {
     <div>
       <div id='calendar'>
         <h1>Calendar</h1>
-        <ScheduleComponent currentView='Week' eventSettings={data} popupOpen={onPopupOpen.bind(this)} dragStop={onDragStop.bind(this)} >
+        <ScheduleComponent currentView='Week' eventSettings={data} popupOpen={onPopupOpen.bind(this)} popupClose={onPopupClose.bind(this)} dragStop={onDragStop.bind(this)} >
         <ViewsDirective>
           <ViewDirective option='Day' interval={1} displayName='Day' startHour='08:30' endHour='18:00'/>
           <ViewDirective option='Week' interval={1} displayName='Week' startHour='08:30' endHour='18:00' showWeekend={true} isSelected={true}/>
