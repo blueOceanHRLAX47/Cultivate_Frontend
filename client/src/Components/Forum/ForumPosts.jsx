@@ -20,9 +20,9 @@ const ForumPosts = (props) => {
   }
 
   const handleClickLike = () => {
-    axios.put(`http://localhost:3000/like/${props.item.id}`)
+    axios.put(`http://localhost:3001/like/${props.item.id}`)
       .then(results => {
-        axios.get(`http://localhost:3000/`)
+        axios.get(`http://localhost:3001/`)
           .then(results => {
             props.setForumAPI(results.data)
           })
@@ -31,9 +31,9 @@ const ForumPosts = (props) => {
 
 
   const handleClickDislike = () => {
-    axios.put(`http://localhost:3000/dislike/${props.item.id}`)
+    axios.put(`http://localhost:3001/dislike/${props.item.id}`)
       .then(results => {
-        axios.get(`http://localhost:3000/`)
+        axios.get(`http://localhost:3001/`)
           .then(results => {
             props.setForumAPI(results.data)
           })

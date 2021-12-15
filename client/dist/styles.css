@@ -213,7 +213,7 @@ html, body, #app, #app>div {
   display: inline-block;
   position: relative;
   right: -440px;
-  bottom: 17px;
+  bottom: 30px;
 }
 
 .socialIcons:hover {
@@ -262,6 +262,7 @@ html, body, #app, #app>div {
   margin-bottom: 10px;
   width: 598px;
   border-radius: 8px;
+  box-shadow: 3px 5px #888888;
 }
 
 
@@ -281,6 +282,8 @@ html, body, #app, #app>div {
 }
 .innerPost {
   margin-left: 41px;
+  position: relative;
+  width: auto;
 }
 
 .likePostCount {
@@ -326,6 +329,7 @@ html, body, #app, #app>div {
   border: 1px solid gray;
   border-radius: 8px;
   max-width: 60em;
+  box-shadow: 3px 5px #888888;
 }
 
 .postLikes {
@@ -442,4 +446,5 @@ html, body, #app, #app>div {
   right: -390px;
   font-size: x-small;
   color: gray;
+  width: 150px;
 }

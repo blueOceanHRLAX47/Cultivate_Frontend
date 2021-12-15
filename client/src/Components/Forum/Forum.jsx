@@ -20,17 +20,49 @@ const Forum = (props) => {
   const [show, setShow] = useState(false);
   const [detailInfo, setDetailInfo] = useState({})
   const [showDetails, setShowDetails] = useState(false)
+  const [postTitle, setPostTitle] = useState("")
+  const [postContent, setPostContent] = useState("")
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/`)
+    axios.get(`http://localhost:3001/`)
       .then(results => {
         console.log(results.data)
         setForumAPI(results.data);
       })
+    // axios.get(`http://cultiveight.net/`)
+    //   .then(results => {
+    //     console.log(results)
+    //   })
   }, [])
+
+  // useEffect(() => {
+  //   axios.get(`http://cultiveight.net/api/forum`)
+  //     .then(results => {
+  //       console.log(results.data)
+  //       setForumAPI(results.data);
+  //     })
+  // }, [])
+
+  const handlePostTitleChange = (e) => {
+    setPostTitle(e.target.value)
+    console.log(postTitle)
+  }
+
+  const handlePostContentChange = (e) => {
+    setPostContent(e.target.value)
+    console.log(postContent)
+  }
+
+  const handleSubmit = () => {
+    axios.post(`http://localhost:3001/`, { body: { 'title': postTitle, 'content': postContent } })
+      .then(results => {
+        console.log(results.data)
+        setForumAPI(results.data)
+      })
+  }
 
 
   return (
@@ -47,12 +79,12 @@ const Forum = (props) => {
             <Modal.Body>
               <form>
                 <label>
-                  <input type="text" title="title" style={{ width: "450px" }} placeholder="Title" />
+                  <input type="text" title="title" style={{ width: "450px" }} placeholder="Title" onChange={handlePostTitleChange} />
                 </label>
                 <br />
                 <br />
                 <label>
-                  <input type="text" title="body" style={{ width: "450px", height: "200px", textAlign: "left" }} placeholder="Write a new post..." />
+                  <input type="text" title="body" style={{ width: "450px", height: "200px", textAlign: "left" }} placeholder="Write a new post..." onChange={handlePostContentChange} />
                 </label>
                 <br />
                 <br />
@@ -60,17 +92,17 @@ const Forum = (props) => {
             </Modal.Body>
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>Close</Button>
-              <Button variant="primary" onClick={handleClose}>Add Post</Button>
+              <Button variant="primary" onClick={() => { handleClose(); handleSubmit() }}>Add Post</Button>
             </Modal.Footer>
           </Modal>
           <div className="mainPost">
             {forumAPI.map((item, key) => {
-              return <ForumPosts item={item} key={key} setDetailInfo={setDetailInfo} setShowDetails={setShowDetails} setForumAPI={setForumAPI}/>
+              return <ForumPosts item={item} key={key} setDetailInfo={setDetailInfo} setShowDetails={setShowDetails} setForumAPI={setForumAPI} />
             })}
           </div>
         </div>}
         {showDetails === true && <div>
-          <PostDetails detailInfo={detailInfo} setShowDetails={setShowDetails} setForumAPI={setForumAPI}/>
+          <PostDetails detailInfo={detailInfo} setShowDetails={setShowDetails} setForumAPI={setForumAPI} />
         </div>}
       </div>
     </>
