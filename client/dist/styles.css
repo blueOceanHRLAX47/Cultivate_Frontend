@@ -14,7 +14,13 @@ html, body, #app, #app>div {
   background-attachment: fixed;
   padding-top: 20px
 }
-
+.logoBanner {
+  /* style={{textAlign: "center", fontSize: "50px", fontColor: "white"}} */
+  font-size: 50px;
+  text-align: center;
+  color: whitesmoke;
+  padding-left: 15px;
+}
 /*
 ===================== CALENDAR CSS =======================
 */
