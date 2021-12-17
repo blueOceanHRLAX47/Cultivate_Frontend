@@ -398,7 +398,6 @@ html, body, #app, #app>div {
   max-width: 60em;
   box-shadow: 3px 5px #888888;
   height: 100%;
-  padding-bottom: 20px;
 }
 
 .postLikes {
@@ -541,6 +540,7 @@ html, body, #app, #app>div {
 }
 .detailCommentSection {
   margin-top: 100px;
+  margin-bottom: 50px;
 }
 
 
