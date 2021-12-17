@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Ubuntu';
 }
 
 html, body, #app, #app>div {
@@ -197,10 +197,10 @@ html, body, #app, #app>div {
   flex-wrap: wrap;
 }
 .exercise-col {
-  width: 27em !important;
+  /* width: 27em !important;
   margin-right: auto;
-  margin-left: auto;
-  /* min-width: 27em !important; */
+  margin-left: auto; */
+  min-width: 27em !important;
   padding: 30px;
   border-width: 1px;
   border-style: dashed;
