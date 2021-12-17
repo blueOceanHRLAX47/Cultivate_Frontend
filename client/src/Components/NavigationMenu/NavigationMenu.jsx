@@ -31,10 +31,6 @@ const NavigationMenu = ({ setView }) => {
         <Link to='#' className='menu-bar' title="Menu">
           <FaIcons.FaBars onClick={toggleSideBar} />
         </Link>
-        <div>
-          <p className='logoBanner'>Cultivate</p>
-
-        </div>
         <div className="img">
           <img className="profilePic" src={profilePic} aria-label="user profile photo" />
         </div>
