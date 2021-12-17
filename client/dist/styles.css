@@ -235,7 +235,7 @@ html, body, #app, #app>div {
   /* width: 27em !important;
   margin-right: auto;
   margin-left: auto; */
-  min-width: 27em !important;
+  max-width: 27em !important;
   padding: 30px;
   border-width: 1px;
   border-style: dashed;
