@@ -70,6 +70,20 @@ const Forum = (props) => {
     }
   }
 
+  // const handleSubmit = () => {
+  //   if (postTitle.length === 0) {
+  //     console.alert("Please input a title")
+  //   } else {
+  //     axios.post(`http://localhost:3001/api/forum`, { 'title': postTitle, 'content': postContent })
+  //       .then(results => {
+  //         axios.get(`http://localhost:3001/api/forum`)
+  //           .then(results => {
+  //             setForumAPI(results.data)
+  //           })
+  //       })
+  //   }
+  // }
+
   return (
     <>
       <div className="mainForum">

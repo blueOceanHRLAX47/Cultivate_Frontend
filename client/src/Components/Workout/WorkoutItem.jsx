@@ -91,7 +91,7 @@ const WorkoutItem = ({ workout, isCalendarView }) => {
     <Container className="workout-card">
       <h3 className="workout-title">{workout.name}</h3>
       {isCalendarView &&
-        <Button className="float-end" variant="outline-info" onClick={showModal}>Add to Calendar</Button>
+        <Button className="float-end" variant="outline-info" onClick={showModal} aria-label="Add To Calendar Button">Add to Calendar</Button>
       }
       {/* <Button className="float-end" variant="outline-info" onClick={showModal}>Add to Calendar</Button>{' '} */}
       <p className="workout-text"><b>Type:</b> {workout.type}</p>
@@ -103,10 +103,10 @@ const WorkoutItem = ({ workout, isCalendarView }) => {
       <Accordion className="accordion" >
         <Accordion.Item eventKey="0">
           <Accordion.Header>Instructions</Accordion.Header>
-          <Accordion.Body style={{maxWidth: "1244px"}}>
+          <Accordion.Body style={{ maxWidth: "1244px" }}>
             <Row className="exercise-row">
               {workout.workout_exercises.map((exercise, index) =>
-                <ExerciseItem exercise={exercise} key={index} index={index}/>
+                <ExerciseItem exercise={exercise} key={index} index={index} />
               )}
             </Row>
           </Accordion.Body>
@@ -128,18 +128,18 @@ const WorkoutItem = ({ workout, isCalendarView }) => {
           When you would like to schedule this {workout.duration} workout: <br />
           <br />
           Start Time: <br />
-          Year:<input type="text" value={year} onChange={changeInput} name="setYear" maxLength={4} size={4} required={true}/>&nbsp;
-          Month:<input type="text" value={month} onChange={changeInput} name="setMonth" maxLength={2} size={2} required={true}/>&nbsp;
-          Day:<input type="text" value={day} onChange={changeInput} name="setDay" maxLength={2} size={2} required={true}/>&nbsp;
-          Hour:<input type="text" value={hour} onChange={changeInput} name="setHour" maxLength={2} size={2} required={true}/>&nbsp;
-          Min:<input type="text" value={minute} onChange={changeInput} name="setMinute" maxLength={2} size={2} required={true}/>&nbsp;
+          Year:<input type="text" value={year} onChange={changeInput} name="setYear" maxLength={4} size={4} required={true} />&nbsp;
+          Month:<input type="text" value={month} onChange={changeInput} name="setMonth" maxLength={2} size={2} required={true} />&nbsp;
+          Day:<input type="text" value={day} onChange={changeInput} name="setDay" maxLength={2} size={2} required={true} />&nbsp;
+          Hour:<input type="text" value={hour} onChange={changeInput} name="setHour" maxLength={2} size={2} required={true} />&nbsp;
+          Min:<input type="text" value={minute} onChange={changeInput} name="setMinute" maxLength={2} size={2} required={true} />&nbsp;
           <br />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={closeModal}>
+          <Button variant="secondary" onClick={closeModal} aria-label="Close Button">
             Close
           </Button>
-          <Button variant="primary" onClick={submitCloseModal}>
+          <Button variant="primary" onClick={submitCloseModal} aria-label="Save Changes Button">
             Save Changes
           </Button>
         </Modal.Footer>
