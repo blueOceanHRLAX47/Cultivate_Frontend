@@ -15,19 +15,19 @@ export const NavigationData = [
   {
     title: 'Workout',
     path: '/',
-    icon: <FaDumbbell />,
+    icon: <FaDumbbell size={30} />,
     className: 'nav-text'
   },
   {
     title: 'Recipes',
     path: '/',
-    icon: <GiIcons.GiMeal />,
+    icon: <GiIcons.GiMeal size={30} />,
     className: 'nav-text'
   },
   {
     title: 'Forum',
     path: '/',
-    icon: <IoIcons.IoIosPeople />,
+    icon: <IoIcons.IoIosPeople size={30} />,
     className: 'nav-text'
   },
 ]

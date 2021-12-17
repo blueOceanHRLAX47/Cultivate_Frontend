@@ -82,15 +82,9 @@ const Calendar = () => {
         }
       }
     }
-    // else {
-    //   console.log('event data', args);
-    //   console.log(args.data.workout);
-    //   setInfo(args.data);
-    // }
   }
 
   const onPopupClose = (args) => {
-    //------to save new time slots when user edits using editor window -----
     if (args.type === 'Editor') {
       if (args.data) {
         saveNewStartTime(args);
@@ -149,37 +143,29 @@ const Calendar = () => {
   }
 
   return (
-    <div>
-      <div id='calendar'>
-        <h1>Calendar</h1>
-        <ScheduleComponent height='600px' width='auto' currentView='Week' eventSettings={events} popupOpen={onPopupOpen.bind(this)} popupClose={onPopupClose.bind(this)} dragStop={onDragStop.bind(this)}>
-          <ViewsDirective>
-            <ViewDirective option='Day' interval={1} displayName='Day' startHour='00:00' endHour='24:00' />
-            <ViewDirective option='Week' interval={1} displayName='Week' startHour='00:00' endHour='24:00' showWeekend={true} isSelected={true} />
-          </ViewsDirective>
-          <Inject services={[Day, Week, DragAndDrop]} />
-        </ScheduleComponent>
-        <span>Total Calories: </span>
-        <span>Workout Total: </span>
+    <div id='calendarPageLayout'>
+      <div id='calendar-section'>
+        <div id='calendar'>
+          <h1>Calendar</h1>
+          <ScheduleComponent height='600px' width='auto' currentView='Week' eventSettings={events} popupOpen={onPopupOpen.bind(this)} popupClose={onPopupClose.bind(this)} dragStop={onDragStop.bind(this)}>
+            <ViewsDirective>
+              <ViewDirective option='Day' interval={1} displayName='Day' startHour='00:00' endHour='24:00' />
+              <ViewDirective option='Week' interval={1} displayName='Week' startHour='00:00' endHour='24:00' showWeekend={true} isSelected={true} />
+            </ViewsDirective>
+            <Inject services={[Day, Week, DragAndDrop]} />
+          </ScheduleComponent>
+        </div>
+        {workoutView &&
+          <div id='appointment'>
+            <AppointmentInfo data={workoutView} />
+          </div>
+        }
+        {recipeView &&
+          <div id='appointment'>
+            <AppointmentInfo data={recipeView} />
+          </div>
+        }
       </div>
-      {/* ----------ask mike how to add workout component
-      {console.log(info)}
-      {info &&
-        <WorkoutItem workout={info} />
-      } */}
-      {/* {info && info.Subject &&
-        <div id='appointment'>
-          <AppointmentInfo data={info}/>
-        </div>
-      } */}
-      {workoutView &&
-        <AppointmentInfo data={workoutView} />
-      }
-      {recipeView &&
-        <div id='appointment'>
-          <AppointmentInfo data={recipeView} />
-        </div>
-      }
       <Footer />
     </div>
   )

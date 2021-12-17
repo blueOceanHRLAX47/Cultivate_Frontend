@@ -92,7 +92,7 @@ const WorkoutItem = ({ workout, isCalendarView }) => {
     <Container className="workout-card">
       <h3 className="workout-title">{workout.name}</h3>
       {isCalendarView &&
-        <Button className="float-end" variant="outline-info" onClick={showModal}>Add to Calendar</Button>
+        <Button className="float-end" variant="outline-info" onClick={showModal} aria-label="Add To Calendar Button">Add to Calendar</Button>
       }
       {/* <Button className="float-end" variant="outline-info" onClick={showModal}>Add to Calendar</Button>{' '} */}
       <p className="workout-text"><b>Type:</b> {workout.type}</p>
@@ -137,10 +137,10 @@ const WorkoutItem = ({ workout, isCalendarView }) => {
           <br />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={closeModal}>
+          <Button variant="secondary" onClick={closeModal} aria-label="Close Button">
             Close
           </Button>
-          <Button variant="primary" onClick={submitCloseModal}>
+          <Button variant="primary" onClick={submitCloseModal} aria-label="Save Changes Button">
             Save Changes
           </Button>
         </Modal.Footer>
