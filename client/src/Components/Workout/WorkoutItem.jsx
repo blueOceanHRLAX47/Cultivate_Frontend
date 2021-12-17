@@ -5,20 +5,27 @@ import ExerciseItem from "./ExerciseItem";
 
 
 const WorkoutItem = ({ workout }) => {
-  const [show, setShow] = useState(false)
+  const [show1, setShow1] = useState(false)
+  const [show2, setShow2] = useState(false)
   const [year, setYear] = useState('')
   const [month, setMonth] = useState('')
   const [day, setDay] = useState('')
   const [hour, setHour] = useState('')
   const [minute, setMinute] = useState('')
 
-  const showModal = () => {
-    setShow(true)
+  const showModal1 = () => {
+    setShow1(true)
+  }
+  const showModal2 = () => {
+    setShow2(true)
   }
 
   const closeModal = () => {
-    setShow(false)
+    setShow1(false)
     clearCalendarInput()
+  }
+  const closeModal2 = () => {
+    setShow2(false)
   }
 
   const submitCloseModal = () => {
@@ -31,7 +38,8 @@ const WorkoutItem = ({ workout }) => {
     // axios.post('http://cultiveight.net/api/workouts/savedworkouts', workoutToAdd)
     //   .then(() => {
     //     console.log('workout added to calendar')
-    //     alert(`You have successfully added ${workout.name} to your calendar`)
+    //     showModal2(true)
+    //     //alert(`You have successfully added ${workout.name} to your calendar`)
     //   })
     //   .catch(err => {
     //     alert('Whoops, unable to add item to calendar')
@@ -49,13 +57,13 @@ const WorkoutItem = ({ workout }) => {
     axios.post('http://localhost:3002/savedworkouts', workoutToAdd)
       .then(() => {
         console.log('workout added to calendar');
-        alert(`You have successfully added ${workout.name} to your calendar`)
+        showModal2(true)
       })
       .catch(err => {
         alert('Whoops, unable to add item to calendar')
       })
 
-    setShow(false)
+    setShow1(false)
     clearCalendarInput()
   }
 
@@ -90,7 +98,7 @@ const WorkoutItem = ({ workout }) => {
   return (
     <Container className="workout-card">
       <h3 className="workout-title">{workout.name}</h3>
-      <Button className="float-end" variant="outline-info" onClick={showModal}>Add to Calendar</Button>{' '}
+      <Button className="float-end" variant="outline-info" onClick={showModal1}>Add to Calendar</Button>{' '}
       <p className="workout-text"><b>Type:</b> {workout.type}</p>
       <p className="workout-text"><b>Duration:</b> {workout.duration}</p>
       <p className="workout-text"><b>Target Muscle Groups:</b> {workout.body_group}</p>
@@ -110,7 +118,7 @@ const WorkoutItem = ({ workout }) => {
         </Accordion.Item>
       </Accordion>
       <Modal
-        show={show}
+        show={show1}
         onHide={closeModal}
         backdrop="static"
         keyboard={false}
@@ -138,6 +146,28 @@ const WorkoutItem = ({ workout }) => {
           </Button>
           <Button variant="primary" onClick={submitCloseModal}>
             Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal
+        show={show2}
+        onHide={closeModal2}
+        backdrop="static"
+        keyboard={false}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Great Job!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          You have successfully added {workout.name} to your calendar
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={closeModal2}>
+            Close
           </Button>
         </Modal.Footer>
       </Modal>
