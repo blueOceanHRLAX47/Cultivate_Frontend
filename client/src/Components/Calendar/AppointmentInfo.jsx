@@ -19,7 +19,7 @@ const AppointmentInfo = ({data}) => {
         </div>
       }
       {isRecipe &&
-        <div>
+        <div id='recipeContainer'>
           <RecipeTitle
             name={data.name}
             readyInMinutes={data.readyInMinutes}
