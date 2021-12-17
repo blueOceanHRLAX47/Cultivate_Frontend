@@ -27,7 +27,7 @@ const NavigationMenu = ({ setView }) => {
 
   return (
     <>
-      <div className='navbar'>
+      <div className='navbar sticky-top'>
         <Link to='#' className='menu-bar' title="Menu">
           <FaIcons.FaBars onClick={toggleSideBar} />
         </Link>
