@@ -315,7 +315,8 @@ html, body, #app, #app>div {
   border: 1px solid gray;
   max-width: 598px;
   border-radius: 8px;
-  box-shadow: 3px 5px #888888;
+  border-color: #E7C15F;
+  box-shadow: 3px 5px #E76A4B;
 }
 
 .bodyPost {
