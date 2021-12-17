@@ -81,7 +81,7 @@ const Recipes = () => {
               onChange={(e) => setParams({ ...params, intolerances: e.target.value })} />
             <br />
             <br />
-            <Button className='search-button' type='submit' onClick={getRecipes}>
+            <Button className='search-button' type='submit' onClick={getRecipes} aria-label="Search Recipes">
               Search
             </Button>
             {/* <button className='search-button' type='submit' onClick={getRecipes}>
