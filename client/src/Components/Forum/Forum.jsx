@@ -10,6 +10,7 @@ import ForumPosts from './ForumPosts.jsx';
 import PostDetails from './PostDetails.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import Footer from '../Footer.jsx';
 
 
 const Forum = (props) => {
@@ -124,6 +125,7 @@ const Forum = (props) => {
           <PostDetails detailInfo={detailInfo} setShowDetails={setShowDetails} setForumAPI={setForumAPI} />
         </div>}
       </div>
+      <Footer />
     </>
   )
 }
