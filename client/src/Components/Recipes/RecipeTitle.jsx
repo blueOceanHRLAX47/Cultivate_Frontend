@@ -10,6 +10,7 @@ const RecipeTitle = ({
 }) => {
   const [show1, setShow1] = useState(false)
   const [show2, setShow2] = useState(false)
+  const [user, setUser] = useState(0)
   const [year, setYear] = useState('')
   const [month, setMonth] = useState('')
   const [day, setDay] = useState('')
@@ -40,57 +41,61 @@ const RecipeTitle = ({
     // }
 
     const saveRecipe = {
-      "user_id": 7,
+      "user_id": user,
       "added_to_calendar": false,
       "date_on_calendar": new Date(year, (month - 1), day, hour, minute),
       "spoon_recipe_id": id
     }
 
-    // const addRecipe = {
-    //   name: name,
-    //   vegan: vegan,
-    //   vegetarian: vegetarian,
-    //   dairy_free: dairy_free,
-    //   keto: keto,
-    //   low_fodmap: low_fodmap,
-    //   ingredients: [
-    //     ingredients
-    //   ],
-    //   instructions: [
-    //     instructions
-    //   ],
-    //   summary: summary,
-    //   calories: calories,
-    //   protein: protein,
-    //   fat: fat,
-    //   carbs: carbs,
-    //   popularity_score: popularity,
-    //   likes: likes
-    // }
-
-    // axios.post('http://localhost:3002/savedRecipes', saveRecipe)
-    axios.post('http://cultiveight/api/recipes/savedRecipes', saveRecipe)
-      .then((responseData) => {
-        console.log('Recipe added to calendar', responseData)
-        // alert(`You have successfully added ${name} to your calendar`)
-        showModal2(true)
+    axios.get('http://cultiveight.net/api/users')
+      .then((responseUser) => {
+        setUser(responseUser.data.id)
       })
-      // .then(() => {
-      //   axios.post('http://localhost:3002/addRecipe', addRecipe)
-      //     // axios.post('http://cultiveight/api/recipes/addRecipe', addRecipe)
-      //     .then(() => {
-      //       console.log('Recipe added to database')
-      //       alert('Recipe saved to saved recipes')
-      //     })
-      //     .catch(err => {
-      //       console.error(err)
-      //       alert('Error saving to save recipes')
-      //     })
-      // })
+      .then(axios.post('http://cultiveight/api/recipes/savedRecipes', saveRecipe)
+        .then((responseData) => {
+          console.log('Recipe added to calendar', responseData)
+          showModal2(true)
+        })
+        .catch(err => {
+          alert(`Couldn't add to calendar`)
+          console.error(err)
+        }))
       .catch(err => {
-        alert(`ERROR BITCH`)
         console.error(err)
       })
+
+
+    // axios.post('http://localhost:3002/savedRecipes', saveRecipe)
+    // axios.post('http://cultiveight/api/recipes/savedRecipes', saveRecipe)
+    //   .then((responseData) => {
+    //     console.log('Recipe added to calendar', responseData)
+    //     showModal2(true)
+    //   })
+    //   .catch(err => {
+    //     alert(`ERROR BITCH`)
+    //     console.error(err)
+    //   })
+
+
+    // axios.get('http://cultiveight.net/api/users')
+    //   .then((responseUser) => {
+    //     setUser(responseUser.data.id)
+    //   })
+    //   .catch(err => {
+    //     console.error(err)
+    //   })
+
+
+    //     // axios.post('http://localhost:3002/savedRecipes', saveRecipe)
+    // axios.post('http://cultiveight/api/recipes/savedRecipes', saveRecipe)
+    //   .then((responseData) => {
+    //     console.log('Recipe added to calendar', responseData)
+    //     showModal2(true)
+    //   })
+    //   .catch(err => {
+    //     alert(`ERROR BITCH`)
+    //     console.error(err)
+    //   })
 
 
     setShow1(false)

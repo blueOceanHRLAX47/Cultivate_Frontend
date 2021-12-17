@@ -60,7 +60,7 @@ const Recipes = () => {
     )
   })
 
-  console.log(recipes)
+  // console.log(recipes)
   return (
     <div id="recipePageLayout">
       <div id="recipeContainer">
