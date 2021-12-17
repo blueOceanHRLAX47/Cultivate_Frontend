@@ -46,8 +46,6 @@
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-flow": "^7.16.0",
     "@babel/preset-react": "^7.16.0",
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
     "css-loader": "^6.5.1",
     "sass": "^1.44.0",
     "sass-loader": "^12.4.0",
