@@ -25,7 +25,7 @@ const Calendar = () => {
       recipe: null
     }
     var id = 0;
-    axios.get(`http://cultiveight.net/api/calendar/workouts`)
+    axios.get(`http://cultiveight.net/api/workouts/savedWorkouts`)
       .then(results => {
         var savedWorkouts = results.data;
         console.log('saved workouts', savedWorkouts)
