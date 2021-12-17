@@ -30,39 +30,39 @@ const WorkoutItem = ({ workout, isCalendarView }) => {
 
   const submitCloseModal = () => {
 
-    //for cloud deployment
-    // const workoutToAdd = {
-    //   workout_id: workout.id,
-    //   time_on_calendar: new Date(year, (month - 1), day, hour, minute),
-    // }
-    // axios.post('http://cultiveight.net/api/workouts/savedworkouts', workoutToAdd)
-    //   .then(() => {
-    //     console.log('workout added to calendar')
-    //     showModal2(true)
-    //     //alert(`You have successfully added ${workout.name} to your calendar`)
-    //   })
-    //   .catch(err => {
-    //     alert('Whoops, unable to add item to calendar')
-    //   })
-
-    //for local testing
+    // for cloud deployment
     const workoutToAdd = {
-      user: {
-        id: 2
-      },
       workout_id: workout.id,
       time_on_calendar: new Date(year, (month - 1), day, hour, minute),
     }
-    console.log('workout object', workoutToAdd)
-    axios.post('http://localhost:3002/savedworkouts', workoutToAdd)
+    axios.post('http://cultiveight.net/api/workouts/savedworkouts', workoutToAdd)
       .then(() => {
-        console.log('workout added to calendar');
+        console.log('workout added to calendar')
         showModal2(true)
+        //alert(`You have successfully added ${workout.name} to your calendar`)
       })
       .catch(err => {
         alert('Whoops, unable to add item to calendar')
-        console.error(err)
       })
+
+    //for local testing
+    // const workoutToAdd = {
+    //   user: {
+    //     id: 2
+    //   },
+    //   workout_id: workout.id,
+    //   time_on_calendar: new Date(year, (month - 1), day, hour, minute),
+    // }
+    // console.log('workout object', workoutToAdd)
+    // axios.post('http://localhost:3002/savedworkouts', workoutToAdd)
+    //   .then(() => {
+    //     console.log('workout added to calendar');
+    //     showModal2(true)
+    //   })
+    //   .catch(err => {
+    //     alert('Whoops, unable to add item to calendar')
+    //     console.error(err)
+    //   })
 
     setShow1(false)
     clearCalendarInput()
