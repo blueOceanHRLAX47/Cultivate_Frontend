@@ -41,7 +41,7 @@ const RecipeItem = ({ recipe }) => {
 
   const nutrition = recipeInfo.nutritionData;
   const recipeDetails = recipeInfo.recipeData;
-
+  console.log(recipeDetails)
   return (
     // <div key={recipe.id} id="individualRecipeContainer">
     <Container id="individualRecipeContainer" >
@@ -50,12 +50,21 @@ const RecipeItem = ({ recipe }) => {
         name={recipeDetails.name}
         readyInMinutes={recipeDetails.readyInMinutes}
         image={recipe.image}
+        vegan={recipeDetails.vegan}
+        vegetarian={recipeDetails.vegetarian}
+        dairy_free={recipeDetails.dairy_free}
+        gluten_free={recipeDetails.gluten_free}
+        keto={recipeDetails.keto}
+        low_fodmap={recipeDetails.low_fodmap}
+        ingredients={recipeDetails.ingredients}
+        instructions={recipeDetails.instructions}
         summary={recipeDetails.summary}
         calories={nutrition.calories}
+        protein={nutrition.protein}
         fat={nutrition.fat}
         carbs={nutrition.carbs}
-        protein={nutrition.protein}
         popularity={recipeDetails.popularity_score}
+        likes={recipeDetails.likes}
       />
       <NavBar
         ingredients={recipeDetails.ingredients}
