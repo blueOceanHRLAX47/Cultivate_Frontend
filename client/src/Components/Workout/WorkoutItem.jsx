@@ -4,7 +4,7 @@ import { Accordion, Container, Button, Row, Col, Modal, Alert } from "react-boot
 import ExerciseItem from "./ExerciseItem";
 
 
-const WorkoutItem = ({ workout }) => {
+const WorkoutItem = ({ workout, isCalendarView }) => {
   const [show, setShow] = useState(false)
   const [year, setYear] = useState('')
   const [month, setMonth] = useState('')
@@ -90,7 +90,10 @@ const WorkoutItem = ({ workout }) => {
   return (
     <Container className="workout-card">
       <h3 className="workout-title">{workout.name}</h3>
-      <Button className="float-end" variant="outline-info" onClick={showModal}>Add to Calendar</Button>{' '}
+      {isCalendarView &&
+        <Button className="float-end" variant="outline-info" onClick={showModal}>Add to Calendar</Button>
+      }
+      {/* <Button className="float-end" variant="outline-info" onClick={showModal}>Add to Calendar</Button>{' '} */}
       <p className="workout-text"><b>Type:</b> {workout.type}</p>
       <p className="workout-text"><b>Duration:</b> {workout.duration}</p>
       <p className="workout-text"><b>Target Muscle Groups:</b> {workout.body_group}</p>
