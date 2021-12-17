@@ -4,6 +4,7 @@ import WorkoutItem from './WorkoutItem'
 import axios from 'axios';
 import { results } from '../../Contexts/forumContext';
 import 'regenerator-runtime/runtime'
+import Footer from '../Footer.jsx';
 
 
 const Workout = ({ view }) => {
@@ -15,26 +16,28 @@ const Workout = ({ view }) => {
         changeWorkoutData(results.data)
       })
       .catch(err => console.error(err))
-    }, [view])
+  }, [view])
 
-    // useEffect(() => {
-    // axios.get('http://cultiveight.net/api/workouts/')
-    //   .then(results => {
-    //     changeWorkoutData(results.data)
-    //   })
-    //   .catch(err => console.error(err))
-    // }, [view])
+  // useEffect(() => {
+  // axios.get('http://cultiveight.net/api/workouts/')
+  //   .then(results => {
+  //     changeWorkoutData(results.data)
+  //   })
+  //   .catch(err => console.error(err))
+  // }, [view])
 
   return (
-    <Container className="primary-container">
-      <h1 className="mb-20">Workout</h1>
-      <Container className="exercise-list">
-        {workoutData.map((workout, index) =>
-          <WorkoutItem workout={workout} key={index} />
-        )}
+    <div>
+      <Container className="primary-container">
+        <h1 className="mb-20">Workout</h1>
+        <Container className="exercise-list">
+          {workoutData.map((workout, index) =>
+            <WorkoutItem workout={workout} isCalendarView={false} key={index} />
+          )}
+        </Container>
       </Container>
-    </Container>
-
+      <Footer />
+    </div>
   )
 }
 

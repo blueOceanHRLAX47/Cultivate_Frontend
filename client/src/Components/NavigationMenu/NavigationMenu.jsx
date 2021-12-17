@@ -1,28 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { NavigationData } from './NavigationData.jsx';
 import './Navigation.css';
+import axios from 'axios'
 
 const NavigationMenu = ({ setView }) => {
   const [sidebar, setSidebar] = useState(false);
+  const [profilePic, setProfilePic] = useState();
 
   const toggleSideBar = () => setSidebar(!sidebar);
 
   const changeView = (e) => {
     let view = e.currentTarget.id.toLowerCase();
-    if ( view ) {
+    if (view) {
       setView(view);
     }
     toggleSideBar();
   }
+  useEffect(() => {
+    axios.get('cultivate.net/api/user')
+      .then((response => setProfilePic(response.data.profile_photo_url)))
+      .catch(error => console.log(error))
+  }, [])
+
   return (
     <>
       <div className='navbar'>
-        <Link to='#' className='menu-bar'>
+        <Link to='#' className='menu-bar' title="Menu">
           <FaIcons.FaBars onClick={toggleSideBar} />
         </Link>
+        <div className="img">
+          <img className="profilePic" src={profilePic} aria-label="user profile photo" />
+        </div>
       </div>
       <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
         <ul className='nav-menu-items' >

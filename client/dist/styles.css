@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Ubuntu';
 }
 
 html, body, #app, #app>div {
@@ -13,16 +13,29 @@ html, body, #app, #app>div {
 /*
 ===================== CALENDAR CSS =======================
 */
-#calendar, #appointment {
+#calendar {
   border-style: solid;
+  border-color: #E7C15F;
+  border-radius: 8px;
+  border-width: 1px;
   max-width: 60em;
   display: block;
   margin: auto;
+  margin-top: 9px;
+  padding: 3px 3px 3px 3px;
+  box-shadow: 3px 5px #E76A4B;
 }
 
 #appointment {
+  max-width: 60em;
+  display: block;
+  margin: auto;
   margin-top: 2em;
 }
+
+/* #appointment {
+  margin-top: 2em;
+} */
 
 .e-description-row,
 .e-all-day-time-zone-row,
@@ -38,23 +51,36 @@ html, body, #app, #app>div {
   border-color: orange;
   display: flex;
   justify-content: center;
+  background: rgb(239,250,253);
+  background: linear-gradient(186deg, rgba(239,250,253,1) 0%, rgba(75,211,220,1) 100%);
+}
+
+#foodImage {
+  border-radius: 9%;
+}
+
+#search-term-container {
+  margin-left: 15px;
 }
 
 #recipeContainer {
+
   border-style: solid;
-  border-color: grey;
+  border-color: #E7C15F;
   border-radius: 8px;
   border-width: 1px;
   max-width: 60em;
+  margin-top: 9px;
   display: flex;
   flex-direction: column;
   padding: 3px 3px 3px 3px;
   background-color: #F4FAFD;
-  box-shadow: 3px 5px #888888;
+  box-shadow: 3px 5px #E76A4B;
 }
 
 #individualRecipeContainer {
   border-style: solid;
+  border-radius: 8px;
   border-color: grey;
   border-width: 1px;
   margin-bottom: 5px;
@@ -91,7 +117,7 @@ html, body, #app, #app>div {
   /* border-style: solid; */
   /* border-color: yellow; */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-flow: wrap;
 }
 
@@ -117,6 +143,7 @@ html, body, #app, #app>div {
   /* margin-bottom: 5px; */
   /* margin-right: 5px; */
   /* grid-column: 2 / span 2; */
+  align-self: center;
 }
 
 #recipe-title-container {
@@ -128,7 +155,9 @@ html, body, #app, #app>div {
 #recipe-title {
   /* border-style: solid; */
   /* border-color: rgb(87, 25, 168); */
+  text-decoration: underline;
   text-align: center;
+  color: #C04021;
   margin-bottom: 15px;
 }
 
@@ -142,7 +171,9 @@ html, body, #app, #app>div {
 
 #ingredient-container-test {
   border-style: solid;
-  border-color: green;
+  border-color: #298C83;
+  border-width: 2px;
+  border-radius: 8px;
 }
 
 #recipes-add-to-calendar {
@@ -156,8 +187,12 @@ html, body, #app, #app>div {
   /* border-style: solid; */
   /* border-color: tomato; */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-flow: wrap;
+}
+
+.recipe-meta-list {
+  font-style: italic;
 }
 
 /*
@@ -197,10 +232,10 @@ html, body, #app, #app>div {
   flex-wrap: wrap;
 }
 .exercise-col {
-  width: 27em !important;
+  /* width: 27em !important;
   margin-right: auto;
-  margin-left: auto;
-  /* min-width: 27em !important; */
+  margin-left: auto; */
+  max-width: 27em !important;
   padding: 30px;
   border-width: 1px;
   border-style: dashed;
@@ -214,13 +249,24 @@ html, body, #app, #app>div {
 -------------- Forum ----------------
 ------------------------------------*/
 
-.socialIcons {
+/* ----------------------------------
+-------------- Forum ----------------
+------------------------------------*/
+
+/* .socialIcons {
   margin: 0 1rem;
   transition: transform 250ms;
   display: inline-block;
   position: relative;
   right: -440px;
   bottom: 30px;
+} */
+.socialIcons {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  position: absolute;
+  bottom: 10px;
+  right: 50px;
 }
 
 .socialIcons:hover {
@@ -266,10 +312,17 @@ html, body, #app, #app>div {
 .bodyPost {
   margin: auto;
   border: 1px solid gray;
-  margin-bottom: 10px;
-  width: 598px;
+  max-width: 598px;
   border-radius: 8px;
   box-shadow: 3px 5px #888888;
+}
+
+.bodyPost {
+  margin-top: 100px;
+  position: relative;
+  width: 80%;
+  bottom: 65px;
+  margin-bottom: 50px;
 }
 
 
@@ -290,7 +343,7 @@ html, body, #app, #app>div {
 .innerPost {
   margin-left: 41px;
   position: relative;
-  width: auto;
+  width: 100%;
 }
 
 .likePostCount {
@@ -341,18 +394,15 @@ html, body, #app, #app>div {
 }
 
 .postLikes {
-  margin: auto;
+  position: absolute;
+  top: -30px;
+  right: 90%;
   width: 30px;
   height: 117px;
-  position: relative;
-  right: 34%;
-  top: 90px;
 }
-.bodyPost {
-  position: relative;
-  bottom: 65px;
-  margin-bottom: -50px;
-}
+
+
+
 .detailTitle {
   text-align: center;
   margin-bottom: 60px;
@@ -366,19 +416,14 @@ html, body, #app, #app>div {
   padding: 10%;
 }
 
-.inputComment{
-  position: relative;
-  left: 10%;
-  border-radius: 8px;
-}
+
 
 .detailSubmit{
   position: relative;
-  left: 78%;
+  width: 62%;
+  margin-left: 10%;
+  margin-top: 5px;
   padding: .375rem .75rem;
-  margin-top: 1%;
-  margin-left: 1%;
-  margin-bottom: 5%;
   color: black !important;
   background-color: transparent;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -417,12 +462,14 @@ html, body, #app, #app>div {
 }
 
 .commentIcon{
+  position: absolute;
+  left: 100px;
   height: 18px;
   width: 18px;
 }
 
 .commentPostButton{
-  margin-bottom: -3%;
+  margin-bottom: 3%;
   background-color: transparent;
   border: 0px;
   padding: .275rem .55rem;
@@ -443,16 +490,60 @@ html, body, #app, #app>div {
   margin-left: 10%;
   border: 1px solid gray;
   margin-bottom: 10px;
-  width: 598px;
+  width: 60%;
   border-radius: 8px;
   padding: .375rem .75rem;
 }
-
-.postUser{
+.eachPost {
   position: relative;
-  top: -180px;
-  right: -390px;
+  width: 100%;
+}
+
+.postUser {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: x-small;
+  color: gray;
+  width: 200px;
+}
+.commentUsername {
+  position: relative;
+  top: -40px;
+  right: -450px;
   font-size: x-small;
   color: gray;
   width: 150px;
+}
+
+.createTitle{
+  box-sizing: border-box;
+  width: 100%;
+}
+.createBody{
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.inputComment {
+  position: relative;
+  border-radius: 8px;
+  width: 62%;
+  margin-left: 10%;
+}
+.detailCommentSection {
+  margin-top: 100px;
+}
+
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1%;
+  background: #F0852D;
+  box-shadow: 0 0 0 8px #E7C15F,
+  0 0 0 14px #E76A4B;
 }

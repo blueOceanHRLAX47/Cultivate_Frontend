@@ -4,7 +4,7 @@ import { Accordion, Container, Button, Row, Col, Modal, Alert } from "react-boot
 import ExerciseItem from "./ExerciseItem";
 
 
-const WorkoutItem = ({ workout }) => {
+const WorkoutItem = ({ workout, isCalendarView }) => {
   const [show1, setShow1] = useState(false)
   const [show2, setShow2] = useState(false)
   const [year, setYear] = useState('')
@@ -61,6 +61,7 @@ const WorkoutItem = ({ workout }) => {
       })
       .catch(err => {
         alert('Whoops, unable to add item to calendar')
+        console.error(err)
       })
 
     setShow1(false)
@@ -98,7 +99,10 @@ const WorkoutItem = ({ workout }) => {
   return (
     <Container className="workout-card">
       <h3 className="workout-title">{workout.name}</h3>
-      <Button className="float-end" variant="outline-info" onClick={showModal1}>Add to Calendar</Button>{' '}
+      {!isCalendarView &&
+        <Button className="float-end" variant="outline-info" onClick={showModal1} aria-label="Add To Calendar Button">Add to Calendar</Button>
+      }
+      {/* <Button className="float-end" variant="outline-info" onClick={showModal}>Add to Calendar</Button>{' '} */}
       <p className="workout-text"><b>Type:</b> {workout.type}</p>
       <p className="workout-text"><b>Duration:</b> {workout.duration}</p>
       <p className="workout-text"><b>Target Muscle Groups:</b> {workout.body_group}</p>
@@ -108,10 +112,10 @@ const WorkoutItem = ({ workout }) => {
       <Accordion className="accordion" >
         <Accordion.Item eventKey="0">
           <Accordion.Header>Instructions</Accordion.Header>
-          <Accordion.Body style={{maxWidth: "1244px"}}>
+          <Accordion.Body style={{ maxWidth: "1244px" }}>
             <Row className="exercise-row">
               {workout.workout_exercises.map((exercise, index) =>
-                <ExerciseItem exercise={exercise} key={index} index={index}/>
+                <ExerciseItem exercise={exercise} key={index} index={index} />
               )}
             </Row>
           </Accordion.Body>
@@ -133,18 +137,18 @@ const WorkoutItem = ({ workout }) => {
           When you would like to schedule this {workout.duration} workout: <br />
           <br />
           Start Time: <br />
-          Year:<input type="text" value={year} onChange={changeInput} name="setYear" maxLength={4} size={4} required={true}/>&nbsp;
-          Month:<input type="text" value={month} onChange={changeInput} name="setMonth" maxLength={2} size={2} required={true}/>&nbsp;
-          Day:<input type="text" value={day} onChange={changeInput} name="setDay" maxLength={2} size={2} required={true}/>&nbsp;
-          Hour:<input type="text" value={hour} onChange={changeInput} name="setHour" maxLength={2} size={2} required={true}/>&nbsp;
-          Min:<input type="text" value={minute} onChange={changeInput} name="setMinute" maxLength={2} size={2} required={true}/>&nbsp;
+          Year:<input type="text" value={year} onChange={changeInput} name="setYear" maxLength={4} size={4} required={true} />&nbsp;
+          Month:<input type="text" value={month} onChange={changeInput} name="setMonth" maxLength={2} size={2} required={true} />&nbsp;
+          Day:<input type="text" value={day} onChange={changeInput} name="setDay" maxLength={2} size={2} required={true} />&nbsp;
+          Hour:<input type="text" value={hour} onChange={changeInput} name="setHour" maxLength={2} size={2} required={true} />&nbsp;
+          Min:<input type="text" value={minute} onChange={changeInput} name="setMinute" maxLength={2} size={2} required={true} />&nbsp;
           <br />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={closeModal}>
+          <Button variant="secondary" onClick={closeModal} aria-label="Close Button">
             Close
           </Button>
-          <Button variant="primary" onClick={submitCloseModal}>
+          <Button variant="primary" onClick={submitCloseModal} aria-label="Save Changes Button">
             Save Changes
           </Button>
         </Modal.Footer>
