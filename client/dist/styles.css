@@ -48,8 +48,8 @@ html, body, #app, #app>div {
 ===================== RECIPES CSS =======================
 */
 #recipePageLayout {
-  border-style: solid;
-  border-color: orange;
+  /* border-style: solid; */
+  /* border-color: orange; */
   display: flex;
   justify-content: center;
   background: rgb(239,250,253);

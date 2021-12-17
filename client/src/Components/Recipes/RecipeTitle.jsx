@@ -3,9 +3,10 @@ import { Button, Modal } from 'react-bootstrap';
 import axios from 'axios';
 
 const RecipeTitle = ({
-  name, readyInMinutes, image,
-  summary, calories, fat, carbs, protein,
-  vegan, keto, popularity, id
+  id, name, readyInMinutes, image,
+  vegan, vegetarian, dairy_free, gluten_free,
+  keto, low_fodmap, ingredients, instructions, summary,
+  calories, protein, fat, carbs, popularity, likes
 }) => {
   const [show, setShow] = useState(false)
   const [year, setYear] = useState('')
@@ -30,15 +31,49 @@ const RecipeTitle = ({
       date_on_calendar: new Date(year, (month - 1), day, hour, minute),
     }
 
+    const saveRecipe = {
+      name: name,
+      vegan: vegan,
+      vegetarian: vegetarian,
+      dairy_free: dairy_free,
+      keto: keto,
+      low_fodmap: low_fodmap,
+      ingredients: [
+        ingredients
+      ],
+      instructions: [
+        instructions
+      ],
+      summary: summary,
+      calories: calories,
+      protein: protein,
+      fat: fat,
+      carbs: carbs,
+      popularity_score: popularity_score,
+      likes: likes
+    }
+
     axios.post('http://localhost:3002/savedRecipes', recipeToAdd)
       .then(() => {
         console.log('Recipe added to calendar')
         alert(`You have successfully added ${name} to your calendar`)
       })
+      .then(() => {
+        axios.post('http://localhost:3002/addRecipe', recipeToAdd)
+          .then(() => {
+            console.log('Recipe added to database')
+            alert('Recipe saved to saved recipes')
+          })
+          .catch(err => {
+            console.error(err)
+            alert('Error saving to save recipes')
+          })
+      })
       .catch(err => {
         alert(`ERROR BITCH`)
         console.error(err)
       })
+
 
     setShow(false)
     clearCalendarInput()
