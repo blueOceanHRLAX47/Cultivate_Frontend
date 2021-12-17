@@ -25,13 +25,13 @@ const RecipeTitle = ({
   }
 
   const submitCloseModal = () => {
-    const recipeToAdd = {
+    const saveRecipe = {
       user_id: 3,
       recipe_id: id,
       date_on_calendar: new Date(year, (month - 1), day, hour, minute),
     }
 
-    const saveRecipe = {
+    const addRecipe = {
       name: name,
       vegan: vegan,
       vegetarian: vegetarian,
@@ -53,13 +53,15 @@ const RecipeTitle = ({
       likes: likes
     }
 
-    axios.post('http://localhost:3002/savedRecipes', recipeToAdd)
+    // axios.post('http://localhost:3002/savedRecipes', recipeToAdd)
+    axios.post('http://cultiveight/api/recipes/savedRecipes', saveRecipe)
       .then(() => {
         console.log('Recipe added to calendar')
         alert(`You have successfully added ${name} to your calendar`)
       })
       .then(() => {
-        axios.post('http://localhost:3002/addRecipe', recipeToAdd)
+        // axios.post('http://localhost:3002/addRecipe', recipeToAdd)
+        axios.post('http://cultiveight/api/recipes/addRecipe', addRecipe)
           .then(() => {
             console.log('Recipe added to database')
             alert('Recipe saved to saved recipes')
