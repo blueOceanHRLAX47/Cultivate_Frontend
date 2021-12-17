@@ -3,18 +3,19 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import * as GiIcons from 'react-icons/gi';
+import { FaDumbbell } from "react-icons/fa";
 
 export const NavigationData = [
   {
     title: 'Calendar',
     path: '/',
-    icon: <AiIcons.AiOutlineCalendar />,
+    icon: <AiIcons.AiOutlineCalendar size={30} />,
     className: 'nav-text'
   },
   {
     title: 'Workout',
     path: '/',
-    icon: <AiIcons.AiOutlineCalendar />,
+    icon: <FaDumbbell />,
     className: 'nav-text'
   },
   {
