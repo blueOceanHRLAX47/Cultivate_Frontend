@@ -31,7 +31,7 @@ const PostDetails = (props) => {
 
   return (
     <>
-      <button className="return" onClick={() => props.setShowDetails(false)}>Return</button>
+      <button className="return" onClick={() => props.setShowDetails(false)} aria-label="Return">Return</button>
       <div className="detailTitle">
         {props.detailInfo.title}
       </div>
