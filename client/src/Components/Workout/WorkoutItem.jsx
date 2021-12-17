@@ -37,38 +37,38 @@ const WorkoutItem = ({ workout, isCalendarView }) => {
   const submitCloseModal = () => {
 
     //for cloud deployment
-    // const workoutToAdd = {
-    //   workout_id: workout.id,
-    //   time_on_calendar: new Date(year, (month - 1), day, hour, minute),
-    // }
-    // axios.post('http://cultiveight.net/api/workouts/savedworkouts', workoutToAdd)
-    //   .then(() => {
-    //     console.log('workout added to calendar')
-    //     showModal2(true)
-    //   })
-    //   .catch(err => {
-    //     console.error('there was an error', err)
-    //     showModal3(true)
-    //   })
-
-    //for local testing
     const workoutToAdd = {
-      user: {
-        id: 7
-      },
       workout_id: workout.id,
       time_on_calendar: new Date(year, (month - 1), day, hour, minute),
     }
-    console.log('workout object', workoutToAdd)
-    axios.post('http://localhost:3002/savedworkouts', workoutToAdd)
+    axios.post('http://cultiveight.net/api/workouts/savedworkouts', workoutToAdd)
       .then(() => {
-        console.log('workout added to calendar');
+        console.log('workout added to calendar')
         showModal2(true)
       })
       .catch(err => {
         console.error('there was an error', err)
         showModal3(true)
       })
+
+    //for local testing
+    // const workoutToAdd = {
+    //   user: {
+    //     id: 7
+    //   },
+    //   workout_id: workout.id,
+    //   time_on_calendar: new Date(year, (month - 1), day, hour, minute),
+    // }
+    // console.log('workout object', workoutToAdd)
+    // axios.post('http://localhost:3002/savedworkouts', workoutToAdd)
+    //   .then(() => {
+    //     console.log('workout added to calendar');
+    //     showModal2(true)
+    //   })
+    //   .catch(err => {
+    //     console.error('there was an error', err)
+    //     showModal3(true)
+    //   })
 
     setShow1(false)
     clearCalendarInput()
