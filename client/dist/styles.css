@@ -515,7 +515,7 @@ html, body, #app, #app>div {
 .postUser {
   position: absolute;
   top: 0px;
-  right: 5px;
+  right: 8px;
   font-size: x-small;
   color: gray;
   width: 200px;
@@ -546,6 +546,7 @@ html, body, #app, #app>div {
 }
 .detailCommentSection {
   margin-top: 100px;
+  margin-bottom: 50px;
 }
 
 
