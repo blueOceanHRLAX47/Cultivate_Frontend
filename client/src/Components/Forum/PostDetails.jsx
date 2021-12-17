@@ -19,9 +19,9 @@ const PostDetails = (props) => {
   }, [])
 
   const handleCommentSubmit = () => {
-    axios.post(`http://cultiveight.net/comment/${props.detailInfo.id}`, { 'content': commentContent })
+    axios.post(`http://cultiveight.net/api/forum/comment/${props.detailInfo.id}`, { 'content': commentContent })
       .then(results => {
-        axios.get(`http://cultiveight.net/comment/${props.detailInfo.id}`)
+        axios.get(`http://cultiveight.net/api/forum/comment/${props.detailInfo.id}`)
           .then(results => {
             setListComments(results.data)
           })
