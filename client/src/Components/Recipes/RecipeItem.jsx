@@ -17,6 +17,9 @@ const RecipeItem = ({ recipe }) => {
     const recipeDataUrl = `http://localhost:3002/oneRecipe?id=${recipe.id}`;
     const recipeNutritionUrl = `http://localhost:3002/oneRecipeNutrition?id=${recipe.id}`
 
+    // const recipeDataUrlCloud = `http://cultiveight.net/api/recipes/oneRecipe?id=${recpie.id}`
+    // const recipeNutritionUrlCloud = `http://cultiveight.net/api/recipes/oneRecipeNutrition?id=${recpie.id}`
+
     const getProductInfo = async () => {
       try {
         const getRecipe = await axios.get(recipeDataUrl);
@@ -41,7 +44,7 @@ const RecipeItem = ({ recipe }) => {
 
   const nutrition = recipeInfo.nutritionData;
   const recipeDetails = recipeInfo.recipeData;
-  console.log(recipeDetails)
+  // console.log(recipeDetails)
   return (
     // <div key={recipe.id} id="individualRecipeContainer">
     <Container id="individualRecipeContainer" >
