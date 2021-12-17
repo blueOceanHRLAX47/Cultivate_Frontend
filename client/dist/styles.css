@@ -223,7 +223,13 @@ html, body, #app, #app>div {
   min-height: 200px;
   margin-bottom: 20px;
   margin-top: 20px;
-  padding-bottom: 20px
+  padding-bottom: 20px;
+  box-shadow: 3px 5px #888888;
+}
+.workout-card:hover {
+  transition: transform 250ms;
+  transform: translateY(-5px);
+  border: 1.5px solid black;
 }
 .workout-title {
   margin-bottom: 10px;
