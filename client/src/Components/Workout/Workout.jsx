@@ -30,7 +30,7 @@ const Workout = ({ view }) => {
       <h1 className="mb-20">Workout</h1>
       <Container className="exercise-list">
         {workoutData.map((workout, index) =>
-          <WorkoutItem workout={workout} key={index} />
+          <WorkoutItem workout={workout} isCalendarView={false} key={index} />
         )}
       </Container>
     </Container>
