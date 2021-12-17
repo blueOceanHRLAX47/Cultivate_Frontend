@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { AllRecipesAndWorkouts } from '../App.jsx';
 import RecipeItem from './RecipeItem.jsx';
 import RecipeTitle from './RecipeTitle.jsx';
-import { Accordion, Container } from 'react-bootstrap';
+import { Accordion, Container, Button } from 'react-bootstrap';
 import NavBar from './NavBar.jsx';
 import axios from 'axios';
 import Footer from '../Footer.jsx';
@@ -81,9 +81,11 @@ const Recipes = () => {
               onChange={(e) => setParams({ ...params, intolerances: e.target.value })} />
             <br />
             <br />
-            <button className='search-button' type='submit' onClick={getRecipes} aria-label="Search Recipes">
+            <Button className='search-button' type='submit' onClick={getRecipes} aria-label="Search Recipes">
               Search
-            </button>
+            </Button>
+            {/* <button className='search-button' type='submit' onClick={getRecipes}>
+            </button> */}
             <br />
             <br />
           </form>

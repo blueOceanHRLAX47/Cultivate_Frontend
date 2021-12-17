@@ -51,11 +51,18 @@ html, body, #app, #app>div {
   border-color: orange;
   display: flex;
   justify-content: center;
+  background: rgb(239,250,253);
+  background: linear-gradient(186deg, rgba(239,250,253,1) 0%, rgba(75,211,220,1) 100%);
 }
 
 #foodImage {
   border-radius: 9%;
 }
+
+#search-term-container {
+  margin-left: 15px;
+}
+
 #recipeContainer {
 
   border-style: solid;
@@ -110,7 +117,7 @@ html, body, #app, #app>div {
   /* border-style: solid; */
   /* border-color: yellow; */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-flow: wrap;
 }
 
@@ -136,6 +143,7 @@ html, body, #app, #app>div {
   /* margin-bottom: 5px; */
   /* margin-right: 5px; */
   /* grid-column: 2 / span 2; */
+  align-self: center;
 }
 
 #recipe-title-container {
@@ -147,7 +155,9 @@ html, body, #app, #app>div {
 #recipe-title {
   /* border-style: solid; */
   /* border-color: rgb(87, 25, 168); */
+  text-decoration: underline;
   text-align: center;
+  color: #C04021;
   margin-bottom: 15px;
 }
 
@@ -161,7 +171,9 @@ html, body, #app, #app>div {
 
 #ingredient-container-test {
   border-style: solid;
-  border-color: green;
+  border-color: #298C83;
+  border-width: 2px;
+  border-radius: 8px;
 }
 
 #recipes-add-to-calendar {
@@ -175,8 +187,12 @@ html, body, #app, #app>div {
   /* border-style: solid; */
   /* border-color: tomato; */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-flow: wrap;
+}
+
+.recipe-meta-list {
+  font-style: italic;
 }
 
 /*

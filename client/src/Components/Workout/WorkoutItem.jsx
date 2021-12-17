@@ -53,6 +53,7 @@ const WorkoutItem = ({ workout, isCalendarView }) => {
       })
       .catch(err => {
         alert('Whoops, unable to add item to calendar')
+        console.error(err)
       })
 
     setShow(false)
