@@ -44,6 +44,7 @@ const WorkoutItem = ({ workout, isCalendarView }) => {
     axios.post('http://cultiveight.net/api/workouts/savedworkouts', workoutToAdd)
       .then(() => {
         console.log('workout added to calendar')
+        console.log('workout object', workoutToAdd)
         showModal2(true)
       })
       .catch(err => {
