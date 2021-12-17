@@ -117,12 +117,15 @@ const Calendar = () => {
   }
 
   const saveNewStartTime = (args) => {
+    console.log('is workout', isWorkout);
+    console.log('is recipe', !isWorkout);
     var startDate = new Date(args.data.StartTime);
     startDate.setHours(startDate.getHours() - 8);
 
+    console.log('new start date', startDate);
+
     var evId = args.data.Id ? args.data.Id : eventId;
     var isWorkoutEvent = args.data.workout ? true : isWorkout;
-    console.log('is workout', isWorkoutEvent);
 
     if (!isWorkoutEvent) {
       var obj = {
@@ -132,7 +135,10 @@ const Calendar = () => {
       axios.put(`http://cultiveight.net/api/calendar/recipes`, obj)
         .then(result => {
           console.log(result);
-        });
+        })
+        .catch( err => {
+          console.log('error saving new start time to recipes', err);
+        })
     } else if (isWorkoutEvent) {
       var obj = {
         id: evId,
@@ -141,7 +147,10 @@ const Calendar = () => {
       axios.put(`http://cultiveight.net/api/calendar/workouts`, obj)
         .then(result => {
           console.log(result);
-        });
+        })
+        .catch( err => {
+          console.log('error saving new start time to workouts', err);
+        })
     }
   }
 
