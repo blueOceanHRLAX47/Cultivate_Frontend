@@ -8,20 +8,28 @@ const RecipeTitle = ({
   keto, low_fodmap, ingredients, instructions, summary,
   calories, protein, fat, carbs, popularity, likes
 }) => {
-  const [show, setShow] = useState(false)
+  const [show1, setShow1] = useState(false)
+  const [show2, setShow2] = useState(false)
   const [year, setYear] = useState('')
   const [month, setMonth] = useState('')
   const [day, setDay] = useState('')
   const [hour, setHour] = useState('')
   const [minute, setMinute] = useState('')
 
-  const showModal = () => {
-    setShow(true)
+  const showModal1 = () => {
+    setShow1(true)
   }
 
+  const showModal2 = () => {
+    setShow2(true)
+  }
   const closeModal = () => {
-    setShow(false)
+    setShow1(false)
     clearCalendarInput()
+  }
+
+  const closeModal2 = () => {
+    setShow2(false)
   }
 
   const submitCloseModal = () => {
@@ -31,7 +39,7 @@ const RecipeTitle = ({
     //   date_on_calendar: new Date(year, (month - 1), day, hour, minute),
     // }
 
-    const test = {
+    const saveRecipe = {
       "user_id": 7,
       "added_to_calendar": false,
       "date_on_calendar": new Date(year, (month - 1), day, hour, minute),
@@ -60,11 +68,12 @@ const RecipeTitle = ({
     //   likes: likes
     // }
 
-    axios.post('http://localhost:3002/savedRecipes', test)
-      // axios.post('http://cultiveight/api/recipes/savedRecipes', saveRecipe)
-      .then(() => {
-        console.log('Recipe added to calendar')
-        alert(`You have successfully added ${name} to your calendar`)
+    // axios.post('http://localhost:3002/savedRecipes', saveRecipe)
+    axios.post('http://cultiveight/api/recipes/savedRecipes', saveRecipe)
+      .then((responseData) => {
+        console.log('Recipe added to calendar', responseData)
+        // alert(`You have successfully added ${name} to your calendar`)
+        showModal2(true)
       })
       // .then(() => {
       //   axios.post('http://localhost:3002/addRecipe', addRecipe)
@@ -84,7 +93,7 @@ const RecipeTitle = ({
       })
 
 
-    setShow(false)
+    setShow1(false)
     clearCalendarInput()
   }
 
@@ -141,9 +150,9 @@ const RecipeTitle = ({
           <p>Prep Time: {readyInMinutes} minutes</p>
         </div>
         <div id="recipes-add-to-calendar">
-          <Button variant="outline-primary" onClick={showModal}>Add to Calendar</Button>
+          <Button variant="outline-primary" onClick={showModal1}>Add to Calendar</Button>
           <Modal
-            show={show}
+            show={show1}
             onHide={closeModal}
             backdrop="static"
             keyboard={false}
@@ -171,6 +180,28 @@ const RecipeTitle = ({
               </Button>
               <Button variant="primary" onClick={submitCloseModal}>
                 Save Changes
+              </Button>
+            </Modal.Footer>
+          </Modal>
+
+          <Modal
+            show={show2}
+            onHide={closeModal2}
+            backdrop="static"
+            keyboard={false}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
+            <Modal.Header closeButton>
+              <Modal.Title>Great Job!</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              You have successfully added {name} to your calendar
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={closeModal2}>
+                Close
               </Button>
             </Modal.Footer>
           </Modal>

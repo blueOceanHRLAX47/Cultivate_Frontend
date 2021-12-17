@@ -21,8 +21,8 @@ const Recipes = () => {
 
   const getRecipes = (query, diet, intolerances) => {
     event.preventDefault();
-    axios.get(`http://localhost:3002/recipes`, { params: params })
-      // axios.get(`http://cultiveight.net/api/recipes/recipes`, { params: params })
+    // axios.get(`http://localhost:3002/recipes`, { params: params })
+    axios.get(`http://cultiveight.net/api/recipes/recipes`, { params: params })
       .then(function (response) {
         setRecipes(response.data.results)
       })
@@ -34,8 +34,8 @@ const Recipes = () => {
 
   useEffect(() => {
     const { query, diet, intolerances } = params;
-    const recipesUrl = `http://localhost:3002/recipes`;
-    // const recipesUrlDeploy = `http://cultiveight.net/api/recipes/recipes`;
+    // const recipesUrl = `http://localhost:3002/recipes`;
+    const recipesUrl = `http://cultiveight.net/api/recipes/recipes`;
 
     const getTenRecipes = async () => {
       try {
@@ -86,8 +86,6 @@ const Recipes = () => {
             <Button className='search-button' type='submit' onClick={getRecipes} aria-label="Search Recipes">
               Search
             </Button>
-            {/* <button className='search-button' type='submit' onClick={getRecipes}>
-            </button> */}
             <br />
             <br />
           </form>

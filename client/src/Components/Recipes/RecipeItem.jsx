@@ -14,11 +14,11 @@ const RecipeItem = ({ recipe }) => {
   });
 
   useEffect(() => {
-    const recipeDataUrl = `http://localhost:3002/oneRecipe?id=${recipe.id}`;
-    const recipeNutritionUrl = `http://localhost:3002/oneRecipeNutrition?id=${recipe.id}`
+    // const recipeDataUrl = `http://localhost:3002/oneRecipe?id=${recipe.id}`;
+    // const recipeNutritionUrl = `http://localhost:3002/oneRecipeNutrition?id=${recipe.id}`
 
-    // const recipeDataUrlCloud = `http://cultiveight.net/api/recipes/oneRecipe?id=${recpie.id}`
-    // const recipeNutritionUrlCloud = `http://cultiveight.net/api/recipes/oneRecipeNutrition?id=${recpie.id}`
+    const recipeDataUrl = `http://cultiveight.net/api/recipes/oneRecipe?id=${recpie.id}`
+    const recipeNutritionUrl = `http://cultiveight.net/api/recipes/oneRecipeNutrition?id=${recpie.id}`
 
     const getProductInfo = async () => {
       try {
