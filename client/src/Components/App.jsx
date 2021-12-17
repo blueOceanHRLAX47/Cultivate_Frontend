@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import Forum from './Forum/Forum.jsx';
-import Calendar from './Calendar/Calendar.jsx';
+import React, { useState, useEffect, Suspense } from 'react';
+// import Forum from './Forum/Forum.jsx';
+const Forum = React.lazy(() => import('./Forum/Forum.jsx'));
+// import Calendar from './Calendar/Calendar.jsx';
+const Calendar = React.lazy(() => import('./Calendar/Calendar.jsx'));
 import Chat from './Chat/Chat.jsx';
 import Login from './Login/Login.jsx';
 import Recipes from './Recipes/Recipes.jsx';
@@ -39,12 +41,12 @@ const App = () => {
         {view === 'login' && <div>
           <Login />
         </div>}
-        {view === 'calendar' && <div>
+        {view === 'calendar' && <Suspense fallback={<div>loading...</div>}>
           <Calendar />
-        </div>}
-        {view === 'forum' && <div>
+        </Suspense>}
+        {view === 'forum' && <Suspense fallback={<div>loading...</div>}>
           <Forum />
-        </div>}
+        </Suspense>}
         {view === 'recipes' && <div>
           <Recipes />
         </div>}
