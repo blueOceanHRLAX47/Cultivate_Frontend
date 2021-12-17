@@ -5,6 +5,7 @@ import RecipeTitle from './RecipeTitle.jsx';
 import { Accordion, Container } from 'react-bootstrap';
 import NavBar from './NavBar.jsx';
 import axios from 'axios';
+import Footer from '../Footer.jsx';
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([])
@@ -89,6 +90,7 @@ const Recipes = () => {
         </div>
         {recipeList}
       </div >
+      <Footer />
     </div >
   )
 }

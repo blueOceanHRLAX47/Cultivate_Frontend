@@ -20,7 +20,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export const AllRecipesAndWorkouts = React.createContext();
 
 const App = () => {
-  const [view, setView] = useState('workout')
+  const [view, setView] = useState('calendar')
   const [recipes, setRecipes] = useState()
   // const [savedRecipes, setSavedRecipes] = useState([])
 
@@ -49,7 +49,7 @@ const App = () => {
           <Recipes />
         </div>}
         {view === 'workout' && <div>
-          <Workout view={view}/>
+          <Workout view={view} />
         </div>}
       </div>
     </AllRecipesAndWorkouts.Provider>
