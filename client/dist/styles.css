@@ -13,16 +13,29 @@ html, body, #app, #app>div {
 /*
 ===================== CALENDAR CSS =======================
 */
-#calendar, #appointment {
+#calendar {
   border-style: solid;
+  border-color: #E7C15F;
+  border-radius: 8px;
+  border-width: 1px;
   max-width: 60em;
   display: block;
   margin: auto;
+  margin-top: 9px;
+  padding: 3px 3px 3px 3px;
+  box-shadow: 3px 5px #E76A4B;
 }
 
 #appointment {
+  max-width: 60em;
+  display: block;
+  margin: auto;
   margin-top: 2em;
 }
+
+/* #appointment {
+  margin-top: 2em;
+} */
 
 .e-description-row,
 .e-all-day-time-zone-row,
