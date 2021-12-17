@@ -20,7 +20,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export const AllRecipesAndWorkouts = React.createContext();
 
 const App = () => {
-  const [view, setView] = useState('recipes')
+  const [view, setView] = useState('workout')
   const [recipes, setRecipes] = useState()
   // const [savedRecipes, setSavedRecipes] = useState([])
 
@@ -48,7 +48,7 @@ const App = () => {
         {view === 'recipes' && <div>
           <Recipes />
         </div>}
-        {view === 'workout' && <div>
+        {view === 'workout' && <div style={ {marginTop: "9px"} }>
           <Workout view={view} />
         </div>}
       </div>

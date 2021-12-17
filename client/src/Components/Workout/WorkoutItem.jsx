@@ -7,6 +7,7 @@ import ExerciseItem from "./ExerciseItem";
 const WorkoutItem = ({ workout, isCalendarView }) => {
   const [show1, setShow1] = useState(false)
   const [show2, setShow2] = useState(false)
+  const [show3, setShow3] = useState(false)
   const [year, setYear] = useState('')
   const [month, setMonth] = useState('')
   const [day, setDay] = useState('')
@@ -19,18 +20,23 @@ const WorkoutItem = ({ workout, isCalendarView }) => {
   const showModal2 = () => {
     setShow2(true)
   }
+  const showModal3 = () => {
+    setShow3(true)
+  }
 
   const closeModal = () => {
     setShow1(false)
     clearCalendarInput()
-  }
-  const closeModal2 = () => {
     setShow2(false)
+    setShow3(false)
   }
+  // const closeModal2 = () => {
+  //   setShow2(false)
+  // }
 
   const submitCloseModal = () => {
 
-    // for cloud deployment
+    //for cloud deployment
     const workoutToAdd = {
       workout_id: workout.id,
       time_on_calendar: new Date(year, (month - 1), day, hour, minute),
@@ -39,16 +45,16 @@ const WorkoutItem = ({ workout, isCalendarView }) => {
       .then(() => {
         console.log('workout added to calendar')
         showModal2(true)
-        //alert(`You have successfully added ${workout.name} to your calendar`)
       })
       .catch(err => {
-        alert('Whoops, unable to add item to calendar')
+        console.error('there was an error', err)
+        showModal3(true)
       })
 
     //for local testing
     // const workoutToAdd = {
     //   user: {
-    //     id: 2
+    //     id: 7
     //   },
     //   workout_id: workout.id,
     //   time_on_calendar: new Date(year, (month - 1), day, hour, minute),
@@ -60,8 +66,8 @@ const WorkoutItem = ({ workout, isCalendarView }) => {
     //     showModal2(true)
     //   })
     //   .catch(err => {
-    //     alert('Whoops, unable to add item to calendar')
-    //     console.error(err)
+    //     console.error('there was an error', err)
+    //     showModal3(true)
     //   })
 
     setShow1(false)
@@ -121,6 +127,7 @@ const WorkoutItem = ({ workout, isCalendarView }) => {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
+
       <Modal
         show={show1}
         onHide={closeModal}
@@ -135,6 +142,7 @@ const WorkoutItem = ({ workout, isCalendarView }) => {
         </Modal.Header>
         <Modal.Body>
           When you would like to schedule this {workout.duration} workout: <br />
+          Please enter in military time!
           <br />
           Start Time: <br />
           Year:<input type="text" value={year} onChange={changeInput} name="setYear" maxLength={4} size={4} required={true} />&nbsp;
@@ -156,7 +164,7 @@ const WorkoutItem = ({ workout, isCalendarView }) => {
 
       <Modal
         show={show2}
-        onHide={closeModal2}
+        onHide={closeModal}
         backdrop="static"
         keyboard={false}
         size="lg"
@@ -167,10 +175,33 @@ const WorkoutItem = ({ workout, isCalendarView }) => {
           <Modal.Title>Great Job!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          You have successfully added {workout.name} to your calendar
+          You have successfully added <b>{workout.name}</b> to your calendar
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={closeModal2}>
+          <Button variant="secondary" onClick={closeModal}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal
+        show={show3}
+        onHide={closeModal}
+        backdrop="static"
+        keyboard={false}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Whoops!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          There was an error adding <b>{workout.name}</b> to your calendar. <br />
+          Please try again!
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={closeModal}>
             Close
           </Button>
         </Modal.Footer>
