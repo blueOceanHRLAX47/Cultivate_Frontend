@@ -44,7 +44,7 @@ const Calendar = () => {
         })
       })
       .then(() => {
-        axios.get(`http://cultiveight/api/calendar/recipes`)
+        axios.get(`http://cultiveight.net/api/calendar/recipes`)
           .then(results => {
             var savedRecipes = results.data;
             savedRecipes.map(saved => {
