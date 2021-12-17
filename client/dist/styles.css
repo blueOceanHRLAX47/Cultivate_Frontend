@@ -509,13 +509,13 @@ html, body, #app, #app>div {
 .postUser {
   position: absolute;
   top: 0px;
-  right: 0px;
+  right: 5px;
   font-size: x-small;
   color: gray;
   width: 200px;
 }
 .commentUsername {
-  position: absolute;
+  position: relative;
   top: 0px;
   right: 0px;
   font-size: x-small;
