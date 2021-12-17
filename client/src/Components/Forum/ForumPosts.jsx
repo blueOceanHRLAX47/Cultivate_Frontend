@@ -13,27 +13,45 @@ import moment from 'moment';
 
 const ForumPosts = (props) => {
 
-
   const handleClick = () => {
     props.setDetailInfo(props.item);
     props.setShowDetails(true);
   }
 
+  // const handleClickLike = () => {
+  //   axios.put(`http://localhost:3001/like/${props.item.id}`)
+  //     .then(results => {
+  //       axios.get(`http://localhost:3001/`)
+  //         .then(results => {
+  //           props.setForumAPI(results.data)
+  //         })
+  //     })
+  // }
+
   const handleClickLike = () => {
-    axios.put(`http://localhost:3001/like/${props.item.id}`)
+    axios.put(`http://cultiveight.net/api/forum/like/${props.item.id}`)
       .then(results => {
-        axios.get(`http://localhost:3001/`)
+        axios.get(`http://cultiveight.net/api/forum`)
           .then(results => {
             props.setForumAPI(results.data)
           })
       })
   }
 
+  // const handleClickDislike = () => {
+  //   axios.put(`http://localhost:3001/dislike/${props.item.id}`)
+  //     .then(results => {
+  //       axios.get(`http://localhost:3001/`)
+  //         .then(results => {
+  //           props.setForumAPI(results.data)
+  //         })
+  //     })
+  // }
 
   const handleClickDislike = () => {
-    axios.put(`http://localhost:3001/dislike/${props.item.id}`)
+    axios.put(`http://cultiveight.net/api/forum/dislike/${props.item.id}`)
       .then(results => {
-        axios.get(`http://localhost:3001/`)
+        axios.get(`http://cultiveight.net/api/forum`)
           .then(results => {
             props.setForumAPI(results.data)
           })

@@ -10,61 +10,65 @@ import ForumPosts from './ForumPosts.jsx';
 import PostDetails from './PostDetails.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import Footer from '../Footer.jsx';
 
 
 const Forum = (props) => {
   const [forumAPI, setForumAPI] = useState([]);
-
-  // const { forumData } = useContext(AllRecipesAndWorkouts)
 
   const [show, setShow] = useState(false);
   const [detailInfo, setDetailInfo] = useState({})
   const [showDetails, setShowDetails] = useState(false)
   const [postTitle, setPostTitle] = useState("")
   const [postContent, setPostContent] = useState("")
+  const [userId, setUserId] = useState(0)
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  useEffect(() => {
-    axios.get(`http://localhost:3001/`)
-      .then(results => {
-        console.log(results.data)
-        setForumAPI(results.data);
-      })
-    // axios.get(`http://cultiveight.net/`)
-    //   .then(results => {
-    //     console.log(results)
-    //   })
-  }, [])
-
   // useEffect(() => {
-  //   axios.get(`http://cultiveight.net/api/forum`)
+  //   axios.get(`http://localhost:3001/`)
   //     .then(results => {
-  //       console.log(results.data)
+  //       // console.log(results.data)
   //       setForumAPI(results.data);
+  //     })
+  //     .catch(err => {
+  //       // console.log(err)
   //     })
   // }, [])
 
+  useEffect(() => {
+    axios.get(`http://cultiveight.net/api/forum`)
+      .then(results => {
+        // console.log(results.data)
+        setForumAPI(results.data);
+      })
+  }, [])
+
+
   const handlePostTitleChange = (e) => {
     setPostTitle(e.target.value)
-    console.log(postTitle)
+    // console.log(postTitle)
   }
 
   const handlePostContentChange = (e) => {
     setPostContent(e.target.value)
-    console.log(postContent)
+    // console.log(postContent)
   }
+
 
   const handleSubmit = () => {
-    axios.post(`http://localhost:3001/`, { body: { 'title': postTitle, 'content': postContent } })
-      .then(results => {
-        console.log(results.data)
-        setForumAPI(results.data)
-      })
+    if (postTitle.length === 0) {
+      console.alert("Please input a title")
+    } else {
+      axios.post(`http://cultiveight.net/api/forum`, { 'title': postTitle, 'content': postContent })
+        .then(results => {
+          axios.get(`http://cultiveight.net/api/forum`)
+            .then(results => {
+              setForumAPI(results.data)
+            })
+        })
+    }
   }
-
 
   return (
     <>
@@ -79,13 +83,13 @@ const Forum = (props) => {
             </Modal.Header>
             <Modal.Body>
               <form>
-                <label>
-                  <input type="text" title="title" style={{ width: "450px" }} placeholder="Title" onChange={handlePostTitleChange} />
+                <label className="createTitle">
+                  <input type="text" title="title" style={{ width: "100%" }} placeholder="Title" onChange={handlePostTitleChange} />
                 </label>
                 <br />
                 <br />
-                <label>
-                  <input type="text" title="body" style={{ width: "450px", height: "200px", textAlign: "left" }} placeholder="Write a new post..." onChange={handlePostContentChange} />
+                <label className="createBody">
+                  <input type="text" title="body" style={{ width: "100%", height: "200px", textAlign: "left" }} placeholder="Write a new post..." onChange={handlePostContentChange} />
                 </label>
                 <br />
                 <br />
@@ -106,7 +110,6 @@ const Forum = (props) => {
           <PostDetails detailInfo={detailInfo} setShowDetails={setShowDetails} setForumAPI={setForumAPI} />
         </div>}
       </div>
-      <Footer />
     </>
   )
 }

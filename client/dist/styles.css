@@ -40,21 +40,27 @@ html, body, #app, #app>div {
   justify-content: center;
 }
 
+#foodImage {
+  border-radius: 9%;
+}
 #recipeContainer {
+
   border-style: solid;
-  border-color: grey;
+  border-color: #E7C15F;
   border-radius: 8px;
   border-width: 1px;
   max-width: 60em;
+  margin-top: 9px;
   display: flex;
   flex-direction: column;
   padding: 3px 3px 3px 3px;
   background-color: #F4FAFD;
-  box-shadow: 3px 5px #888888;
+  box-shadow: 3px 5px #E76A4B;
 }
 
 #individualRecipeContainer {
   border-style: solid;
+  border-radius: 8px;
   border-color: grey;
   border-width: 1px;
   margin-bottom: 5px;
@@ -214,13 +220,24 @@ html, body, #app, #app>div {
 -------------- Forum ----------------
 ------------------------------------*/
 
-.socialIcons {
+/* ----------------------------------
+-------------- Forum ----------------
+------------------------------------*/
+
+/* .socialIcons {
   margin: 0 1rem;
   transition: transform 250ms;
   display: inline-block;
   position: relative;
   right: -440px;
   bottom: 30px;
+} */
+.socialIcons {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  position: absolute;
+  bottom: 10px;
+  right: 50px;
 }
 
 .socialIcons:hover {
@@ -266,10 +283,17 @@ html, body, #app, #app>div {
 .bodyPost {
   margin: auto;
   border: 1px solid gray;
-  margin-bottom: 10px;
-  width: 598px;
+  max-width: 598px;
   border-radius: 8px;
   box-shadow: 3px 5px #888888;
+}
+
+.bodyPost {
+  margin-top: 100px;
+  position: relative;
+  width: 80%;
+  bottom: 65px;
+  margin-bottom: 50px;
 }
 
 
@@ -290,7 +314,7 @@ html, body, #app, #app>div {
 .innerPost {
   margin-left: 41px;
   position: relative;
-  width: auto;
+  width: 100%;
 }
 
 .likePostCount {
@@ -341,18 +365,15 @@ html, body, #app, #app>div {
 }
 
 .postLikes {
-  margin: auto;
+  position: absolute;
+  top: -30px;
+  right: 90%;
   width: 30px;
   height: 117px;
-  position: relative;
-  right: 34%;
-  top: 90px;
 }
-.bodyPost {
-  position: relative;
-  bottom: 65px;
-  margin-bottom: -50px;
-}
+
+
+
 .detailTitle {
   text-align: center;
   margin-bottom: 60px;
@@ -366,19 +387,14 @@ html, body, #app, #app>div {
   padding: 10%;
 }
 
-.inputComment{
-  position: relative;
-  left: 10%;
-  border-radius: 8px;
-}
+
 
 .detailSubmit{
   position: relative;
-  left: 78%;
+  width: 62%;
+  margin-left: 10%;
+  margin-top: 5px;
   padding: .375rem .75rem;
-  margin-top: 1%;
-  margin-left: 1%;
-  margin-bottom: 5%;
   color: black !important;
   background-color: transparent;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -417,12 +433,14 @@ html, body, #app, #app>div {
 }
 
 .commentIcon{
+  position: absolute;
+  left: 100px;
   height: 18px;
   width: 18px;
 }
 
 .commentPostButton{
-  margin-bottom: -3%;
+  margin-bottom: 3%;
   background-color: transparent;
   border: 0px;
   padding: .275rem .55rem;
@@ -443,18 +461,49 @@ html, body, #app, #app>div {
   margin-left: 10%;
   border: 1px solid gray;
   margin-bottom: 10px;
-  width: 598px;
+  width: 60%;
   border-radius: 8px;
   padding: .375rem .75rem;
 }
-
-.postUser{
+.eachPost {
   position: relative;
-  top: -180px;
-  right: -390px;
+  width: 100%;
+}
+
+.postUser {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: x-small;
+  color: gray;
+  width: 200px;
+}
+.commentUsername {
+  position: relative;
+  top: -40px;
+  right: -450px;
   font-size: x-small;
   color: gray;
   width: 150px;
+}
+
+.createTitle{
+  box-sizing: border-box;
+  width: 100%;
+}
+.createBody{
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.inputComment {
+  position: relative;
+  border-radius: 8px;
+  width: 62%;
+  margin-left: 10%;
+}
+.detailCommentSection {
+  margin-top: 100px;
 }
 
 

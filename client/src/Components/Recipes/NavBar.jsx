@@ -3,7 +3,7 @@ import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 import Accordion from "react-bootstrap/Accordion";
 
-const NavBar = ({ summary, ingredients, image, instructions }) => {
+const NavBar = ({ ingredients, instructions }) => {
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState('');
 
@@ -18,10 +18,6 @@ const NavBar = ({ summary, ingredients, image, instructions }) => {
     }
   }
 
-  // useEffect(() => {
-  //   setOpen(false)
-  // }, [])
-
   return (
     <Tabs
       defaultActiveKey="home"
@@ -31,7 +27,6 @@ const NavBar = ({ summary, ingredients, image, instructions }) => {
     >
       <Tab eventKey="Ingredients" title="Ingredients" name="summary" >
         {open === true ?
-          // < div dangerouslySetInnerHTML={{ __html: summary }} />
           <div id="ingredient-container-test">
             {ingredients.map((ingredient, i) => {
               return (
@@ -52,13 +47,9 @@ const NavBar = ({ summary, ingredients, image, instructions }) => {
           <div>
             <div id="recipeInstructionContainer">
               <div id="recipeInstructions">
-                {instructions.map((instruction, i) => {
-                  return (
-                    <div id="recipeInstructionCard" key={`instruction-${i}`}>
-                      <p>{i + 1}. {instruction}</p>
-                    </div>
-                  )
-                })}
+                <div id="recipeInstructionCard">
+                  <div dangerouslySetInnerHTML={{ __html: instructions }} />
+                </div>
               </div>
             </div>
 

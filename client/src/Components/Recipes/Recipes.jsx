@@ -77,7 +77,7 @@ const Recipes = () => {
             <br />
             Search Intolerances
             <br />
-            <input className='search-bar' placeholder='diary...' type='text' value={params.intolerances}
+            <input className='search-bar' placeholder='dairy...' type='text' value={params.intolerances}
               onChange={(e) => setParams({ ...params, intolerances: e.target.value })} />
             <br />
             <br />
