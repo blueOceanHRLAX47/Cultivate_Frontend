@@ -28,6 +28,7 @@ const Calendar = () => {
     axios.get(`http://cultiveight.net/api/calendar/workouts`)
       .then(results => {
         var savedWorkouts = results.data;
+        console.log('saved workouts', savedWorkouts)
         savedWorkouts.map(saved => {
           var obj = {};
           obj.Id = saved.id;
@@ -147,6 +148,7 @@ const Calendar = () => {
       <div id='calendar-section'>
         <div id='calendar'>
           <h1>Calendar</h1>
+          {events && console.log('saved events', events)}
           <ScheduleComponent height='600px' width='auto' currentView='Week' eventSettings={events} popupOpen={onPopupOpen.bind(this)} popupClose={onPopupClose.bind(this)} dragStop={onDragStop.bind(this)}>
             <ViewsDirective>
               <ViewDirective option='Day' interval={1} displayName='Day' startHour='00:00' endHour='24:00' />
