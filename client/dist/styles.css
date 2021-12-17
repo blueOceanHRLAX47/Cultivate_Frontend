@@ -52,8 +52,8 @@ html, body, #app, #app>div {
 ===================== RECIPES CSS =======================
 */
 #recipePageLayout {
-  border-style: solid;
-  border-color: orange;
+  /* border-style: solid; */
+  /* border-color: orange; */
   display: flex;
   justify-content: center;
   background: rgb(239,250,253);
@@ -320,7 +320,8 @@ html, body, #app, #app>div {
   border: 1px solid gray;
   max-width: 598px;
   border-radius: 8px;
-  box-shadow: 3px 5px #888888;
+  border-color: #E7C15F;
+  box-shadow: 3px 5px #E76A4B;
 }
 
 .bodyPost {
@@ -514,9 +515,9 @@ html, body, #app, #app>div {
   width: 200px;
 }
 .commentUsername {
-  position: relative;
-  top: -40px;
-  right: -450px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
   font-size: x-small;
   color: gray;
   width: 150px;
