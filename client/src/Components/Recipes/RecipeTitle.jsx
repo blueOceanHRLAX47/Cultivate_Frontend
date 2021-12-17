@@ -47,7 +47,7 @@ const RecipeTitle = ({
       "spoon_recipe_id": id
     }
 
-    axios.get('http://cultiveight.net/api/users')
+    axios.get('http://cultiveight.net/api/user')
       .then((responseUser) => {
         setUser(responseUser.data.id)
       })
