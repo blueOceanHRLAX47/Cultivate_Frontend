@@ -33,7 +33,7 @@ const Calendar = () => {
           var obj = {};
           obj.Id = saved.id;
           obj.Subject = saved.workout.name;
-          obj.StartTime = saved.time_on_calendar;
+          obj.StartTime = new Date(saved.time_on_calendar);
           var end = new Date(saved.time_on_calendar);
           end.setHours(end.getHours() + 1);
           obj.EndTime = end;
