@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { Button, Modal } from 'react-bootstrap'
+import { Button, Modal } from 'react-bootstrap';
+import axios from 'axios';
 
 const RecipeTitle = ({
   name, readyInMinutes, image,
@@ -23,15 +24,24 @@ const RecipeTitle = ({
   }
 
   const submitCloseModal = () => {
-    const workoutToAdd = {
-      user_id: 'something',//may not need
-      workout_id: id,
-      date_on_calendar: [year, month, day, hour, minute], //conflicts with time_on_calendar, which is correct?
+    const recipeToAdd = {
+      user_id: 3,
+      recipe_id: id,
+      date_on_calendar: new Date(year, (month - 1), day, hour, minute),
     }
-    //send axios post request to saved_workouts with object above
+
+    axios.post('http://localhost:3002/savedRecipes', recipeToAdd)
+      .then(() => {
+        console.log('Recipe added to calendar')
+        alert(`You have successfully added ${name} to your calendar`)
+      })
+      .catch(err => {
+        alert(`ERROR BITCH`)
+        console.error(err)
+      })
+
     setShow(false)
     clearCalendarInput()
-    alert(`You have successfully added ${name} to your calendar`)
   }
 
   const changeInput = (e) => {
@@ -50,7 +60,6 @@ const RecipeTitle = ({
     } else {
       console.error('there was an error')
     }
-    // console.log(year)
   }
 
   const clearCalendarInput = () => {
@@ -74,10 +83,10 @@ const RecipeTitle = ({
         </div>
         <div id="recipe-meta-data">
           <ul>
-            <li>{`Calories: ${calories}`}</li>
-            <li>{`Fat: ${fat}`}</li>
-            <li>{`Carbohydrates: ${carbs}`}</li>
-            <li>{`Protein: ${protein}`}</li>
+            <li className="recipe-meta-list">{`Calories: ${calories}`}</li>
+            <li className="recipe-meta-list">{`Fat: ${fat}`}</li>
+            <li className="recipe-meta-list">{`Carbohydrates: ${carbs}`}</li>
+            <li className="recipe-meta-list">{`Protein: ${protein}`}</li>
           </ul>
         </div>
       </div>
