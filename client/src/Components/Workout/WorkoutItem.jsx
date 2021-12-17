@@ -45,10 +45,10 @@ const WorkoutItem = ({ workout, isCalendarView }) => {
     //   .then(() => {
     //     console.log('workout added to calendar')
     //     showModal2(true)
-    //     //alert(`You have successfully added ${workout.name} to your calendar`)
     //   })
     //   .catch(err => {
-    //     alert('Whoops, unable to add item to calendar')
+    //     console.error('there was an error', err)
+    //     showModal3(true)
     //   })
 
     //for local testing
