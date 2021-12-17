@@ -25,52 +25,59 @@ const RecipeTitle = ({
   }
 
   const submitCloseModal = () => {
-    const saveRecipe = {
-      user_id: 3,
-      recipe_id: id,
-      date_on_calendar: new Date(year, (month - 1), day, hour, minute),
+    // const saveRecipe = {
+    //   user_id: 3,
+    //   recipe_id: id,
+    //   date_on_calendar: new Date(year, (month - 1), day, hour, minute),
+    // }
+
+    const test = {
+      "user_id": 7,
+      "added_to_calendar": false,
+      "date_on_calendar": new Date(year, (month - 1), day, hour, minute),
+      "spoon_recipe_id": id
     }
 
-    const addRecipe = {
-      name: name,
-      vegan: vegan,
-      vegetarian: vegetarian,
-      dairy_free: dairy_free,
-      keto: keto,
-      low_fodmap: low_fodmap,
-      ingredients: [
-        ingredients
-      ],
-      instructions: [
-        instructions
-      ],
-      summary: summary,
-      calories: calories,
-      protein: protein,
-      fat: fat,
-      carbs: carbs,
-      popularity_score: popularity_score,
-      likes: likes
-    }
+    // const addRecipe = {
+    //   name: name,
+    //   vegan: vegan,
+    //   vegetarian: vegetarian,
+    //   dairy_free: dairy_free,
+    //   keto: keto,
+    //   low_fodmap: low_fodmap,
+    //   ingredients: [
+    //     ingredients
+    //   ],
+    //   instructions: [
+    //     instructions
+    //   ],
+    //   summary: summary,
+    //   calories: calories,
+    //   protein: protein,
+    //   fat: fat,
+    //   carbs: carbs,
+    //   popularity_score: popularity,
+    //   likes: likes
+    // }
 
-    // axios.post('http://localhost:3002/savedRecipes', recipeToAdd)
-    axios.post('http://cultiveight/api/recipes/savedRecipes', saveRecipe)
+    axios.post('http://localhost:3002/savedRecipes', test)
+      // axios.post('http://cultiveight/api/recipes/savedRecipes', saveRecipe)
       .then(() => {
         console.log('Recipe added to calendar')
         alert(`You have successfully added ${name} to your calendar`)
       })
-      .then(() => {
-        // axios.post('http://localhost:3002/addRecipe', recipeToAdd)
-        axios.post('http://cultiveight/api/recipes/addRecipe', addRecipe)
-          .then(() => {
-            console.log('Recipe added to database')
-            alert('Recipe saved to saved recipes')
-          })
-          .catch(err => {
-            console.error(err)
-            alert('Error saving to save recipes')
-          })
-      })
+      // .then(() => {
+      //   axios.post('http://localhost:3002/addRecipe', addRecipe)
+      //     // axios.post('http://cultiveight/api/recipes/addRecipe', addRecipe)
+      //     .then(() => {
+      //       console.log('Recipe added to database')
+      //       alert('Recipe saved to saved recipes')
+      //     })
+      //     .catch(err => {
+      //       console.error(err)
+      //       alert('Error saving to save recipes')
+      //     })
+      // })
       .catch(err => {
         alert(`ERROR BITCH`)
         console.error(err)

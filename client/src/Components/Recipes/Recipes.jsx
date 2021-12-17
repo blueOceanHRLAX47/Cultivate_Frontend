@@ -21,8 +21,8 @@ const Recipes = () => {
 
   const getRecipes = (query, diet, intolerances) => {
     event.preventDefault();
-    // axios.get(`http://localhost:3002/recipes`, { params: params })
-    axios.get(`http://cultiveight.net/api/recipes/recipes`, { params: params })
+    axios.get(`http://localhost:3002/recipes`, { params: params })
+      // axios.get(`http://cultiveight.net/api/recipes/recipes`, { params: params })
       .then(function (response) {
         setRecipes(response.data.results)
       })
@@ -34,12 +34,12 @@ const Recipes = () => {
 
   useEffect(() => {
     const { query, diet, intolerances } = params;
-    // const recipesUrl = `http://localhost:3002/recipes`;
-    const recipesUrlDeploy = `http://cultiveight.net/api/recipes/recipes`;
+    const recipesUrl = `http://localhost:3002/recipes`;
+    // const recipesUrlDeploy = `http://cultiveight.net/api/recipes/recipes`;
 
     const getTenRecipes = async () => {
       try {
-        const response = await axios.get(recipesUrlDeploy, { params: params })
+        const response = await axios.get(recipesUrl, { params: params })
           .then(results => {
             setRecipes(results.data.results)
           })
