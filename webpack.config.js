@@ -4,7 +4,7 @@ const SRC_DIR = path.join(__dirname, '/client/src');
 const DIST_DIR = path.join(__dirname, '/client/dist');
 
 module.exports = {
-  entry: `${SRC_DIR}/index.js`,
+  entry: ["regenerator-runtime/runtime.js", `${SRC_DIR}/index.js`],
   output: {
     filename: 'bundle.js',
     path: DIST_DIR,
@@ -22,6 +22,17 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader",
+        ],
       }
     ],
   },

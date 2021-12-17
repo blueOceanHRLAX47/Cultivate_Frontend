@@ -2,5 +2,457 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Ubuntu';
+  font-family: 'Oxygen', sans-serif;
+}
+
+html, body, #app, #app>div {
+  height: 100%;
+  width: 100%
+}
+
+/*
+===================== CALENDAR CSS =======================
+*/
+#calendar, #appointment {
+  border-style: solid;
+  max-width: 60em;
+  display: block;
+  margin: auto;
+}
+
+#appointment {
+  margin-top: 2em;
+}
+
+.e-description-row,
+.e-all-day-time-zone-row,
+.e-title-location-row {
+  display: none !important;
+}
+
+/*
+===================== RECIPES CSS =======================
+*/
+#recipePageLayout {
+  border-style: solid;
+  border-color: orange;
+  display: flex;
+  justify-content: center;
+}
+
+#recipeContainer {
+  border-style: solid;
+  border-color: grey;
+  border-radius: 8px;
+  border-width: 1px;
+  max-width: 60em;
+  display: flex;
+  flex-direction: column;
+  padding: 3px 3px 3px 3px;
+  background-color: #F4FAFD;
+  box-shadow: 3px 5px #888888;
+}
+
+#individualRecipeContainer {
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px;
+  margin-bottom: 5px;
+  max-width: 60em;
+}
+
+#recipe-details-container {
+  border-style: solid;
+  border-color: black;
+}
+
+#ingredientList {
+  /* border-style: solid; */
+  /* border-color: black; */
+  /* color: blue; */
+  margin-bottom: 5px;
+  padding-left: 5px;
+}
+
+#ingredient-details-container {
+  border-color: orange;
+  border-style: solid;
+  display: grid;
+}
+
+#recipeInstructionContainer{
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+#image-meta-container {
+  /* border-style: solid; */
+  /* border-color: yellow; */
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+}
+
+#recipe-image {
+  padding-left: 7px;
+}
+
+#reciptInstruction {
+  justify-content: center;
+  text-align: justify;
+  float: right;
+}
+
+#recipeInstructions {
+  margin-left: 5px;
+}
+
+#recipe-meta-data {
+  /* border-style: solid; */
+  /* border-color: grey; */
+  /* border-width: 1px; */
+  /* border-radius: 8px; */
+  /* margin-bottom: 5px; */
+  /* margin-right: 5px; */
+  /* grid-column: 2 / span 2; */
+}
+
+#recipe-title-container {
+  /* border-style: solid; */
+  /* border-color: rgb(87, 25, 168); */
+  margin-bottom: 1em;
+}
+
+#recipe-title {
+  /* border-style: solid; */
+  /* border-color: rgb(87, 25, 168); */
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#recipe-prep-time {
+  /* border-style: solid; */
+  /* border-color: rgb(87, 25, 168); */
+  padding-left: 7px;
+  grid-column: 1 / 2;
+}
+
+
+#ingredient-container-test {
+  border-style: solid;
+  border-color: green;
+}
+
+#recipes-add-to-calendar {
+  /* border-style: solid; */
+  /* border-color: red; */
+  margin-right: 5px;
+  justify-self: end;
+}
+
+#prep-calendar-container {
+  /* border-style: solid; */
+  /* border-color: tomato; */
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+}
+
+/*
+===================== Work Out CSS =======================
+*/
+.primary-container {
+  max-width: 60em !important;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  border: 1px solid gray;
+  border-radius: 8px;
+  max-width: 60em;
+  background-color: rgb(244, 250, 253);
+}
+.exercise-list {
+  margin-top: 15px;
+}
+.workout-card {
+  border: 1px solid #264653;
+  border-radius: 8px;
+  min-height: 200px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-bottom: 20px
+}
+.workout-title {
+  margin-bottom: 10px;
+  margin-top: 5px;
+  text-decoration: underline;
+}
+.workout-text {
+  margin-bottom: 6px;
+  margin-left: 10px;
+}
+.exercise-row {
+  flex-wrap: wrap;
+}
+.exercise-col {
+  width: 27em !important;
+  margin-right: auto;
+  margin-left: auto;
+  /* min-width: 27em !important; */
+  padding: 30px;
+  border-width: 1px;
+  border-style: dashed;
+  border-color: rgb(210 208 208);
+}
+.exercise-title {
+  display: flex;
+  justify-content: center;
+}
+/* ----------------------------------
+-------------- Forum ----------------
+------------------------------------*/
+
+.socialIcons {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+  position: relative;
+  right: -440px;
+  bottom: 30px;
+}
+
+.socialIcons:hover {
+  transform: translateY(-5px);
+}
+
+.youtube {
+  color: #eb3223;
+}
+
+.facebook {
+  color: #4968ad;
+}
+
+.twitter {
+  color: #49a1eb;
+}
+
+.instagram {
+  color: black;
+}
+.forumTop {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.createPostButton {
+  position: relative;
+  top:15%;
+  left:70%;
+}
+.btn-primary {
+  color: black !important;
+  background-color: transparent !important;
+}
+.btn-primary:hover {
+  transition: transform 250ms;
+  transform: translateY(-3px);
+  background-color: lightseagreen !important;
+  color: white !important;
+}
+
+.bodyPost {
+  margin: auto;
+  border: 1px solid gray;
+  margin-bottom: 10px;
+  width: 598px;
+  border-radius: 8px;
+  box-shadow: 3px 5px #888888;
+}
+
+
+.bodyPost:hover {
+  transition: transform 250ms;
+  transform: translateY(-5px);
+  border: 1.5px solid black;
+  cursor: pointer;
+}
+
+.titlePost {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  padding-top: 10px;
+  margin-left: 8%;
+}
+.innerPost {
+  margin-left: 41px;
+  position: relative;
+  width: auto;
+}
+
+.likePostCount {
+  text-align: center;
+  position: relative;
+  top: 10px;
+}
+.arrowUp {
+  position: relative;
+  left: 0px;
+  background-image: url("https://www.clker.com/cliparts/T/U/I/m/X/S/red-go-up-md.png");
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+}
+
+.arrowUp:hover {
+  transition: transform 250ms;
+  transform: translateY(-5px);
+}
+.arrowDown {
+  position: relative;
+  left: 0px;
+  top: 24px;
+  background-image: url("https://www.clker.com/cliparts/D/E/S/a/O/B/blue-go-down-md.png");
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+}
+.arrowDown:hover {
+  transition: transform 250ms;
+  transform: translateY(5px);
+}
+
+.mainForum {
+  margin: auto;
+  background-color: rgb(244, 250, 253, 1);
+  margin-top: 10px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  max-width: 60em;
+  box-shadow: 3px 5px #888888;
+  height: 100%;
+}
+
+.postLikes {
+  margin: auto;
+  width: 30px;
+  height: 117px;
+  position: relative;
+  right: 34%;
+  top: 90px;
+}
+.bodyPost {
+  position: relative;
+  bottom: 65px;
+  margin-bottom: -50px;
+}
+.detailTitle {
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+
+.detailContent{
+  margin-bottom:70px;
+  padding: 10%;
+}
+
+.inputComment{
+  position: relative;
+  left: 10%;
+  border-radius: 8px;
+}
+
+.detailSubmit{
+  position: relative;
+  left: 78%;
+  padding: .375rem .75rem;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-bottom: 5%;
+  color: black !important;
+  background-color: transparent;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  border-color: #0d6efd;
+  border-radius: .25rem;
+}
+
+.detailSubmit:hover {
+  transition: transform 250ms;
+  transform: translateY(-5px);
+  background-color: lightseagreen !important;
+  color: white !important;
+}
+.return{
+  margin-top: 1%;
+  margin-left: 1%;
+  padding: .375rem .75rem;
+  color: black !important;
+  background-color: transparent;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  border-color: #0d6efd;
+  border-radius: .25rem;
+}
+.return:hover {
+  transition: transform 250ms;
+  transform: translateY(-5px);
+  background-color: lightseagreen !important;
+  color: white !important;
+}
+
+.commentPost{
+  margin-bottom: 1%;
+  background-color: transparent;
+  border: 0px;
+  padding: .375rem .75rem;
+}
+
+.commentIcon{
+  height: 18px;
+  width: 18px;
+}
+
+.commentPostButton{
+  margin-bottom: -3%;
+  background-color: transparent;
+  border: 0px;
+  padding: .275rem .55rem;
+  width: 25%;
+}
+
+.commentPostButton:hover{
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+
+.profile_photo{
+  margin-top: 5%;
+}
+
+.eachComment{
+  margin-top: 2%;
+  margin-left: 10%;
+  border: 1px solid gray;
+  margin-bottom: 10px;
+  width: 598px;
+  border-radius: 8px;
+  padding: .375rem .75rem;
+}
+
+.postUser{
+  position: relative;
+  top: -180px;
+  right: -390px;
+  font-size: x-small;
+  color: gray;
+  width: 150px;
 }

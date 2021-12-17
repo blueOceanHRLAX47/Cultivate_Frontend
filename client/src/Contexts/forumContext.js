@@ -24,3 +24,45 @@ const forum = {
 }
 
 module.exports = forum
+
+// [{
+//   "id": 13,
+//   "user_id": 2,
+//   "title": "Reasonably New Post That Says New Stuff",
+//   "content": "Reasonably New Stuff",
+//   "likes": 100,
+//   "time_posted": "2124-04-14T22:00:56.694Z",
+//   "post_comments": [
+//   {
+//     "post_id": 13.
+//     "id": 1,
+//     "comment": "That new stuff is pretty good!",
+//     "time_posted": "2124-04-15T14:31:56.694Z"
+//     "user_id": 2,
+//   },
+//   {
+//     "post_id": 13.
+//     "id": 2,
+//     "comment": "What! the new stuff is not good!!!!",
+//     "time_posted": "2124-04-15T21:31:56.694Z"
+//     "user_id": 3,
+//   },
+//   {
+//     "post_id": 13.
+//     "id": 3,
+//     "comment": "idk bout u guys but the new stuff is just old stuff recycled dawg",
+//     "time_posted": "2124-04-16T01:15:56.694Z"
+//     "user_id": 5,
+//   }
+// ]
+//   "user": {
+//       "id": 2,
+//       "google_id": "110162354796093372200",
+//       "is_coach": false,
+//       "coach_id": null,
+//       "name": "Kaitlyn Gill",
+//       "profile_photo_url": "https://lh3.googleusercontent.com/a-/AOh14Gg95hV31zIXDTHQ-FPr3s8yu6LcKkFi_l71m2qtcA=s96-c",
+//       "weight": null,
+//       "age": null
+//   }
+// }]

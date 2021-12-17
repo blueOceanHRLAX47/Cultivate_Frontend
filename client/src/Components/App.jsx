@@ -6,7 +6,6 @@ import Login from './Login/Login.jsx';
 import Recipes from './Recipes/Recipes.jsx';
 import Workout from './Workout/Workout.jsx';
 import NavigationMenu from './NavigationMenu/NavigationMenu.jsx';
-import recipeInfo from '../../../mockData/r_Mock_Info.js'
 
 // context
 import recipeData from '../Contexts/recipeContext.js'
@@ -16,12 +15,14 @@ import forumData from '../Contexts/forumContext.js'
 import userData from '../Contexts/userContext.js'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const AllRecipesAndWorkouts = React.createContext();
 
 const App = () => {
-  const [view, setView] = useState('forum')
+  const [view, setView] = useState('workout')
   const [recipes, setRecipes] = useState()
+  // const [savedRecipes, setSavedRecipes] = useState([])
 
 
   useEffect(() => {
@@ -48,7 +49,7 @@ const App = () => {
           <Recipes />
         </div>}
         {view === 'workout' && <div>
-          <Workout />
+          <Workout view={view}/>
         </div>}
       </div>
     </AllRecipesAndWorkouts.Provider>
