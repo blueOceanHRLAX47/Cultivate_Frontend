@@ -25,9 +25,10 @@ const Calendar = () => {
       recipe: null
     }
     var id = 0;
-    axios.get(`http://localhost:3002/savedworkouts/3`)
+    axios.get(`http://cultiveight.net/api/calendar/workouts`)
       .then(results => {
         var savedWorkouts = results.data;
+        console.log('saved workouts', savedWorkouts)
         savedWorkouts.map(saved => {
           var obj = {};
           obj.Id = saved.id;
@@ -43,7 +44,7 @@ const Calendar = () => {
         })
       })
       .then(() => {
-        axios.get(`http://localhost:3003/recipes`)
+        axios.get(`http://cultiveight/api/calendar/recipes`)
           .then(results => {
             var savedRecipes = results.data;
             savedRecipes.map(saved => {
@@ -95,12 +96,12 @@ const Calendar = () => {
           id: args.data.Id
         }
         if (args.data.recipe) {
-          axios.delete(`http://localhost:3003/recipes/${obj.id}`)
+          axios.delete(`http://cultiveight.net/api/calendar/recipes/${obj.id}`)
             .catch(err => {
               console.log('Error', err);
             })
         } else if (args.data.workout) {
-          axios.delete(`http://localhost:3003/workouts/${obj.id}`)
+          axios.delete(`http://cultiveight.net/api/calendar/workouts/${obj.id}`)
             .catch(err => {
               console.log('Error', err);
             })
@@ -126,7 +127,7 @@ const Calendar = () => {
         id: evId,
         date_on_calendar: startDate
       }
-      axios.put(`http://localhost:3003/recipes`, obj)
+      axios.put(`http://cultiveight.net/api/calendar/recipes`, obj)
         .then(result => {
           console.log(result);
         });
@@ -135,7 +136,7 @@ const Calendar = () => {
         id: evId,
         time_on_calendar: startDate
       }
-      axios.put(`http://localhost:3003/workouts`, obj)
+      axios.put(`http://cultiveight.net/api/calendar/workouts`, obj)
         .then(result => {
           console.log(result);
         });
@@ -147,6 +148,7 @@ const Calendar = () => {
       <div id='calendar-section'>
         <div id='calendar'>
           <h1>Calendar</h1>
+          {events && console.log('saved events', events)}
           <ScheduleComponent height='600px' width='auto' currentView='Week' eventSettings={events} popupOpen={onPopupOpen.bind(this)} popupClose={onPopupClose.bind(this)} dragStop={onDragStop.bind(this)}>
             <ViewsDirective>
               <ViewDirective option='Day' interval={1} displayName='Day' startHour='00:00' endHour='24:00' />

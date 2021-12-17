@@ -26,6 +26,10 @@ const PostDetails = (props) => {
             setListComments(results.data)
           })
       })
+    axios.get(`http://cultiveight.net/api/forum`)
+      .then(results => {
+        props.setForumAPI(results.data)
+      })
   }
 
 

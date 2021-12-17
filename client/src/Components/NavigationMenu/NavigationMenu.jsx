@@ -20,7 +20,7 @@ const NavigationMenu = ({ setView }) => {
     toggleSideBar();
   }
   useEffect(() => {
-    axios.get('cultivate.net/api/user')
+    axios.get('http://cultiveight.net/api/user')
       .then((response => setProfilePic(response.data.profile_photo_url)))
       .catch(error => console.log(error))
   }, [])
