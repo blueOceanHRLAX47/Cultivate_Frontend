@@ -74,10 +74,12 @@ const Calendar = () => {
         setInfo(args.data);
         if (args.data.workout) {
           setIsWorkout(true);
+          console.log('clicked on workout', args.data.workout)
           setWorkoutView(args.data.workout);
           setRecipeView(null);
         } else {
           setIsWorkout(false);
+          console.log('clicked on recipe', args.data.workout)
           setRecipeView(args.data.recipe);
           setWorkoutView(null);
         }
