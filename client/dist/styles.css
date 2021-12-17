@@ -509,9 +509,9 @@ html, body, #app, #app>div {
   width: 200px;
 }
 .commentUsername {
-  position: relative;
-  top: -40px;
-  right: -450px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
   font-size: x-small;
   color: gray;
   width: 150px;
