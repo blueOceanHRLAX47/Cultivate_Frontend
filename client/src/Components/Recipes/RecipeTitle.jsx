@@ -66,11 +66,11 @@ const RecipeTitle = ({
   return (
     <div id="recipe-title-container">
       <div id="recipe-title">
-        <h2>{name}</h2>
+        <h3>{name}</h3>
       </div>
       <div id="image-meta-container">
         <div id="recipe-image">
-          <img src={image} alt="food image" />
+          <img src={image} alt="food image" id="foodImage" />
         </div>
         <div id="recipe-meta-data">
           <ul>
