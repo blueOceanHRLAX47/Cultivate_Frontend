@@ -36,27 +36,29 @@ html, body, #app, #app>div {
 #recipePageLayout {
   border-style: solid;
   border-color: orange;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 #recipeContainer {
   border-style: solid;
-  border-color: blue;
-  /* min-width: 30rem; */
-  min-width: 800px;
-  /* max-width: 35rem; */
-  grid-column: 2 / 3;
-  justify-self: center;
+  border-color: grey;
+  border-radius: 8px;
+  border-width: 1px;
+  max-width: 60em;
+  display: flex;
+  flex-direction: column;
+  padding: 3px 3px 3px 3px;
+  background-color: #F4FAFD;
+  box-shadow: 3px 5px #888888;
 }
 
 #individualRecipeContainer {
   border-style: solid;
-  border-color: black;
+  border-color: grey;
+  border-width: 1px;
   margin-bottom: 5px;
-  display: grid;
-  /* grid-template-columns: 3fr, 1fr; */
+  max-width: 60em;
 }
 
 #recipe-details-container {
@@ -65,9 +67,9 @@ html, body, #app, #app>div {
 }
 
 #ingredientList {
-  border-color: black;
-  border-style: solid;
-  color: blue;
+  /* border-style: solid; */
+  /* border-color: black; */
+  /* color: blue; */
   margin-bottom: 5px;
   padding-left: 5px;
 }
@@ -76,98 +78,86 @@ html, body, #app, #app>div {
   border-color: orange;
   border-style: solid;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-column: 1 / 2;
 }
 
 #recipeInstructionContainer{
   border-style: solid;
-  border-color: black;
-  grid-row: 2;
-  grid-column: span 2;
-
+  border-color: grey;
+  border-width: 1px;
+  border-radius: 4px;
 }
 
-#recipeImage {
-  /* float: left; */
-  width: 100%;
-  margin-bottom: 10px;
+#image-meta-container {
+  /* border-style: solid; */
+  /* border-color: yellow; */
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+}
+
+#recipe-image {
+  padding-left: 7px;
 }
 
 #reciptInstruction {
   justify-content: center;
   text-align: justify;
-  /* text-align: center; */
   float: right;
 }
 
 #recipeInstructions {
   margin-left: 5px;
-  /* max-width: 40ch; */
-  /* max-width: 40ch; */
 }
 
 #recipe-meta-data {
-  border-style: solid;
-  border-color: black;
-  grid-column: 2 / span 2;
+  /* border-style: solid; */
+  /* border-color: grey; */
+  /* border-width: 1px; */
+  /* border-radius: 8px; */
+  /* margin-bottom: 5px; */
+  /* margin-right: 5px; */
+  /* grid-column: 2 / span 2; */
 }
 
 #recipe-title-container {
-  border-style: solid;
-  border-color: rgb(87, 25, 168);
-  display: grid;
-  grid-template-columns: 4fr 1fr 1fr;
-  /* grid-template-rows: 1fr .4fr; */
-  grid-gap: 1em;
+  /* border-style: solid; */
+  /* border-color: rgb(87, 25, 168); */
   margin-bottom: 1em;
 }
 
 #recipe-title {
-  border-style: solid;
-  border-color: rgb(87, 25, 168);
+  /* border-style: solid; */
+  /* border-color: rgb(87, 25, 168); */
   text-align: center;
-  grid-column: 1 / 4;
-}
-#recipe-summary-text {
-  border-style: solid;
-  border-color: rgb(87, 25, 168);
+  margin-bottom: 15px;
 }
 
 #recipe-prep-time {
-  border-style: solid;
-  border-color: rgb(87, 25, 168);
+  /* border-style: solid; */
+  /* border-color: rgb(87, 25, 168); */
+  padding-left: 7px;
   grid-column: 1 / 2;
 }
 
-#details-accordian {
-  /* background-color: blue; */
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-#ingredients-accordian {
-  border-style: solid;
-  border-color: red;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: .5fr .5fr;
-  grid-row-gap: 1rem;
-}
 
 #ingredient-container-test {
   border-style: solid;
   border-color: green;
-  /* grid-row: 2; */
-  grid-column: span 2;
 }
 
 #recipes-add-to-calendar {
-  border-style: solid;
-  border-color: red;
-  grid-column: 2 / 4;
-  /* width: 8rem; */
+  /* border-style: solid; */
+  /* border-color: red; */
+  margin-right: 5px;
   justify-self: end;
+}
+
+#prep-calendar-container {
+  /* border-style: solid; */
+  /* border-color: tomato; */
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
 }
 
 /*
@@ -207,10 +197,10 @@ html, body, #app, #app>div {
   flex-wrap: wrap;
 }
 .exercise-col {
-  /* width: 27em !important;
+  width: 27em !important;
   margin-right: auto;
-  margin-left: auto; */
-  min-width: 27em !important;
+  margin-left: auto;
+  /* min-width: 27em !important; */
   padding: 30px;
   border-width: 1px;
   border-style: dashed;
