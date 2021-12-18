@@ -47,6 +47,7 @@ const Calendar = () => {
         axios.get(`http://cultiveight.net/api/calendar/recipes`)
           .then(results => {
             var savedRecipes = results.data;
+            console.log('saved recipes', savedRecipes);
             savedRecipes.map(saved => {
               var obj = {};
               obj.Id = saved.id;
@@ -60,6 +61,38 @@ const Calendar = () => {
               obj.description = saved.recipe.summary;
               allData.dataSource.push(obj);
             })
+            var mockRecipeData = {
+              Id: 1000,
+              Subject: 'Grandma’s Beef Stew',
+              StartTime: '2021-12-17T10:30:00.000Z',
+              EndTime: '2021-12-17T11:30:00.000Z',
+              ImgURL: 'https://picsum.photos/200',
+              recipe: {
+                'name':'Grandma’s Beef Stew',
+                'vegan':false,
+                'vegetarian':false,
+                'dairy_free':false,
+                'gluten_free':true,
+                'keto':false,
+                'low_fodmap':false,
+                'ingredients':[
+                    'Beef',
+                    'veggies'
+                ],
+                'instructions':[
+                    'make it'
+                ],
+                'summary':'Make a Chicken Bake',
+                'calories':1000,
+                'protien':10,
+                'fat':10,
+                'carbs':1000,
+                'popularity_score':8,
+                'likes':45
+              }
+              description: 'yum yum yum'
+            }
+            allData.dataSource.push(mockRecipeData);
             setEvents(allData);
           })
       });
