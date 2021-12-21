@@ -25,7 +25,7 @@ put a link to the video demo and embed here
   - Cloud SQL
   - Cloud Build
 
-### Fron end diagrams
+### Front end diagrams
 + TODO: Ask Nick to make some diagrams for how the front end works or some screenshots explaining the flow of the app
 
 ### Back end and cloud diagrams
