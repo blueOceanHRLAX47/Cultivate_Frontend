@@ -8,7 +8,9 @@ Cultivates is a health and wellness application.
 + Post on the forum where you can communicate with other users
 
 ## Video demo
-put a link to the video demo and embed here
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=xQU1R3EQHdI
+" target="_blank"><img src="http://img.youtube.com/vi/xQU1R3EQHdI/0.jpg"
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 ## Tech stack
 - Front end
