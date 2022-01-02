@@ -10,7 +10,7 @@ Cultivates is a health and wellness application.
 ## Video demo
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=xQU1R3EQHdI
 " target="_blank"><img src="http://img.youtube.com/vi/xQU1R3EQHdI/0.jpg"
-alt="Cultivate App Demo" width="240" height="180" border="10" /></a>
+alt="Cultivate App Demo" width="480" height="360" border="10" /></a>
 
 [![Cultivate App Demo](http://img.youtube.com/vi/xQU1R3EQHdI/0.jpg)](http://www.youtube.com/watch?v=xQU1R3EQHdI)
 
