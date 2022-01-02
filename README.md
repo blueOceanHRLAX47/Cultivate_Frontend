@@ -12,9 +12,6 @@ Cultivates is a health and wellness application.
 " target="_blank"><img src="http://img.youtube.com/vi/xQU1R3EQHdI/0.jpg"
 alt="Cultivate App Demo" width="480" height="360" border="10" /></a>
 
-[![Cultivate App Demo](http://img.youtube.com/vi/xQU1R3EQHdI/0.jpg)](http://www.youtube.com/watch?v=xQU1R3EQHdI)
-
-
 ## Tech stack
 - Front end
   - React.js
