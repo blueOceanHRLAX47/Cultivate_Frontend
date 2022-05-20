@@ -15,7 +15,6 @@
 *Cultivate is a **Health** and **Wellness** application where individuals can come together as a community to **Design**, **Plan** and share their own **Workout Routines** and **Healthy Recipes**.*
 
 ## Features
-***
 + A Recipes Component to search for or add new Recipes for your specific diet or needs.
 + A Workout Component to search for or add new workout videos/routines.
 + A Calendar for organizing your goals, workouts and meal times.
@@ -25,7 +24,6 @@
 
 
 ## Tech stack
-***
 <br />
 <br />
 
@@ -84,10 +82,10 @@ alt="Cultivate App Demo" width="480" height="360" border="10" /></a>
 <br />
 
 ## Front End Diagrams
-***
 <br />
 
-<p style="font-weight: bold; font-size: 1.7rem">{ Login Screen }</p>
+<p style="font-weight: bold; font-size: 1.7rem; color: #eab676
+;">{ Login Screen }</p>
 <p style="font-style: italic"> Users will be directed to a login page when first coming to - or returning to - Cultivate. They will be prompted to sign in or sign up. This page will display the cultivate logo as well as a small slogan underneath if requested. </p>
 
 <br />
@@ -99,7 +97,8 @@ alt="Cultivate App Demo" width="480" height="360" border="10" /></a>
 <br />
 <br />
 
-<p style="font-weight: bold; font-size: 1.7rem">{ Navigation Menu }</p>
+<p style="font-weight: bold; font-size: 1.7rem; color: #eab676
+;">{ Navigation Menu }</p>
 <p style="font-style: italic">The navigation menu allows users to navigate to various sections of the application. Users can select a navigation icon in the top left to toggle a drawer, where different areas of the app will be listed. </p>
 
 <br />
@@ -111,7 +110,8 @@ alt="Cultivate App Demo" width="480" height="360" border="10" /></a>
 <br />
 <br />
 
-<p style="font-weight: bold; font-size: 1.7rem;">{ Calendar }</p>
+<p style="font-weight: bold; font-size: 1.7rem; color: #eab676
+;">{ Calendar }</p>
 <p style="font-style: italic">The calendar component allows users to view their scheduled meals and/or workouts for any given day. Users may add their desired workouts/meals by selecting the ‘Add to Calendar’ button within the respective component.  </p>
 
 <br />
@@ -134,7 +134,8 @@ Features: </br>
 <br />
 <br />
 
-<p style="font-weight: bold; font-size: 1.7rem">{ Workouts }</p>
+<p style="font-weight: bold; font-size: 1.7rem; color: #eab676
+;">{ Workouts }</p>
 <p style="font-style: italic">This section will allow users to browse through a list of workouts that Cultivate or other active users have shared or made. The format will be similar to the “recipes” section, and users will  have the ability to expand a workout to see an instructional video or more details. They may also select a button to add a specific workout to their calendar.  </p>
 
 <br />
@@ -160,7 +161,8 @@ Features: </br>
 <br />
 <br />
 
-<p style="font-weight: bold; font-size: 1.7rem">{ Recipes }</p>
+<p style="font-weight: bold; font-size: 1.7rem; color: #eab676
+;">{ Recipes }</p>
 <p style="font-style: italic">The recipe component allows the user to view recipes they save as well as public recipes. There will be two tabs: (1) a “public” tab that, when selected, will render the ten most recently saved recipes by all users, and (2) a “my recipes” tab that will render the ten most recently saved recipes of the current user. 
 
 Users will open this component from the navigation pane. Each recipe will appear as a clickable tile, one on top of the other. When clicked, the tile will expand to show any additional details about the recipe, instructions, and a list of ingredients. 
@@ -190,7 +192,8 @@ Features: </br>
 <br />
 <br />
 
-<p style="font-weight: bold; font-size: 1.7rem">{ Forum }</p>
+<p style="font-weight: bold; font-size: 1.7rem; color: #eab676
+;">{ Forum }</p>
 <p style="font-style: italic">In this section, users will be able to see a list of public posts made by other users, interact with these stories (like a comment), and also be able to create a new post. The list of main features of the Forum section are shown below:
 
 In the forum's overview, users will see a list of posts created by other users. This page will contain a "New Post" button at the top to add new posts and a list of posts below in their respective sections. In addition, each post will include the body, an incrementing like button, a comment button to open additional post details, and social media icons on the bottom right to share the post.
@@ -218,8 +221,7 @@ Features: </br>
 <br />
 
 
-### Back end and cloud diagrams
-***
+## Back end and cloud diagrams
 + TODO: Put in the diagrams to a folder and explain them here
 
 <br />
@@ -227,16 +229,14 @@ Features: </br>
 <br />
 
 ## Development Challenges
-***
 + Developing the front end had some extra challenges since the backend was over architected and hard to run on local machines
 + Switching to a mobile first css layout is hard when css was not originally designed for it
 + Google Cloud Platform makes you jump through some hoops to enforce security
 
-</br>
+<br />
 <br />
 
 ## Team Members
-***
 - Mike Ortiz
 - Kaitlyn Gill
 - Yi Qiao
