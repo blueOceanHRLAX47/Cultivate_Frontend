@@ -30,9 +30,10 @@
 <br />
 
 ### Front end
+<div style="display: flex; align-items: center;">
   <img width="15%" src="https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg" />
-  <img width="15%" src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-ar21.svg" style="padding-left: 1em"/>
-
+  <img width="15%" src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-ar21.svg" style="padding-left: 1rem"/>
+</div>
 
 <br />
 <br />
@@ -40,9 +41,9 @@
 ### Back end
 <div style="display: flex; align-items: center;">
   <img width="15%" src="https://www.vectorlogo.zone/logos/nodejs/nodejs-horizontal.svg"/>
-  <img width="7%" src="https://cdn.auth0.com/website/assets/pages/homepage/img/std_cert/oauth2-360e300bd3.svg" style="padding-left: 1em"/>
-  <img width="7%" src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg" style="padding-left: 1em"/>
-  <img width="10%" src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" style="padding-left: 1em"/>
+  <img width="7%" src="https://cdn.auth0.com/website/assets/pages/homepage/img/std_cert/oauth2-360e300bd3.svg" style="padding-left: 1rem"/>
+  <img width="7%" src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg" style="padding-left: 1rem"/>
+  <img width="10%" src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" style="padding-left: 1rem"/>
 </div>
 
   
@@ -53,9 +54,9 @@
 <br />
 <div style="display: flex; align-items: center;">
   <img width="15%" src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-ar21.svg"/>
-  <img width="12%" src="https://raw.githubusercontent.com/cncf/landscape/03e6087264809d60426e82ab4ec49748c794bbef/hosted_logos/google-kubernetes-engine.svg" style="padding-left: 1em"/>
-  <img width="7%" src="https://stephanefrechette.dev/images/cloudsql.png" style="padding-left: 1em"/>
-  <img width="7%" src="https://miro.medium.com/max/256/0*u3LacWYz2vFH3OSH.png" style="padding-left: 1em"/>
+  <img width="12%" src="https://raw.githubusercontent.com/cncf/landscape/03e6087264809d60426e82ab4ec49748c794bbef/hosted_logos/google-kubernetes-engine.svg" style="padding-left: 1rem"/>
+  <img width="7%" src="https://stephanefrechette.dev/images/cloudsql.png" style="padding-left: 1rem"/>
+  <img width="7%" src="https://miro.medium.com/max/256/0*u3LacWYz2vFH3OSH.png" style="padding-left: 1rem"/>
 </div>
 
 <br />
@@ -63,7 +64,7 @@
 
 ### Project Management
 <br />
-  <img width="15%" src="https://www.vectorlogo.zone/logos/trello/trello-ar21.svg" style="padding-left: 1em"/>
+  <img width="15%" src="https://www.vectorlogo.zone/logos/trello/trello-ar21.svg" style="padding-left: 1rem"/>
 
 <br />
 <br />
@@ -72,6 +73,7 @@
 
 ## Product Demo
 ***
+
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=xQU1R3EQHdI
 " target="_blank"><img src="http://img.youtube.com/vi/xQU1R3EQHdI/0.jpg"
 alt="Cultivate App Demo" width="480" height="360" border="10" /></a>
@@ -200,18 +202,16 @@ In the forum's overview, users will see a list of posts created by other users. 
 <p>
 <img src="./Pictures/Forum.png" width="70%" alt="Recipes Diagram"/>
 </p>
-<p style="display: flex; align-items: flex-start;">
 Features: </br>
-<p>* Render tiles according to a users saved recipes (“My Recipes” tab)</p>
-<br />
-<p>* Render an expanded view when a tile is clicked</p>
-<br />
-<p>* List all recipes with ability to sort and filter</p>
-<br />
-<p>* Add a Recipe to calendar</p>
-<br />
-<p>* Share to forum</p>
-  </p>
+  * Render tiles according to a users saved recipes (“My Recipes” tab) <br />
+  <br />
+  * Render an expanded view when a tile is clicked <br />
+  <br />
+  * List all recipes with ability to sort and filter <br />
+  <br />
+  * Add a Recipe to calendar <br />
+  <br />
+  * Share to forum <br />
 </div>
 
 <br />
