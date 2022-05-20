@@ -41,6 +41,7 @@
 ### Back end
 <div style="display: flex; align-items: center;">
   <img width="15%" src="https://www.vectorlogo.zone/logos/nodejs/nodejs-horizontal.svg"/>
+  <img width="15%" src="https://www.vectorlogo.zone/logos/expressjs/expressjs-ar21.svg" style="padding-left: 1rem"/>
   <img width="7%" src="https://cdn.auth0.com/website/assets/pages/homepage/img/std_cert/oauth2-360e300bd3.svg" style="padding-left: 1rem"/>
   <img width="7%" src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg" style="padding-left: 1rem"/>
   <img width="10%" src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" style="padding-left: 1rem"/>
@@ -72,7 +73,6 @@
 <br />
 
 ## Product Demo
-***
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=xQU1R3EQHdI
 " target="_blank"><img src="http://img.youtube.com/vi/xQU1R3EQHdI/0.jpg"
